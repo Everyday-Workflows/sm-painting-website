@@ -64,18 +64,18 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ src }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
           
           {/* Video Container with Mask */}
-          <div className="relative w-full lg:w-1/2 aspect-video max-w-2xl mx-auto">
+          <div className="relative w-full lg:w-3/5 aspect-video max-w-4xl mx-auto">
             {/* CSS Mask to blend the edges into the background */}
             <div 
               className="absolute inset-0 z-10 pointer-events-none"
               style={{
-                background: 'radial-gradient(circle, transparent 50%, var(--background) 95%)'
+                background: 'radial-gradient(circle, transparent 30%, var(--background) 75%)'
               }}
             />
             <video
               ref={videoRef}
               src={src}
-              className="w-full h-full object-cover rounded-2xl shadow-2xl"
+              className="w-full h-full object-cover"
               muted
               playsInline
               preload="auto"
@@ -83,7 +83,7 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ src }) => {
           </div>
           
           {/* Text Content on the Right */}
-          <div className="w-full lg:w-1/2 text-center lg:text-left z-20">
+          <div className="w-full lg:w-2/5 text-center lg:text-left z-20">
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6">
               {t('video.title') || 'See the Transformation'}
             </h2>
