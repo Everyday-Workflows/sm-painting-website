@@ -161,7 +161,7 @@ export default function Home() {
           <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
             {t('cta.description')}
           </p>
-          <Button variant="secondary" className="bg-white text-brand-primary hover:bg-gray-100 px-10 py-4 text-lg">
+          <Button variant="secondary" className="bg-white text-brand-primary hover:bg-gray-100 hover:text-brand-primary px-10 py-4 text-lg font-bold shadow-md">
             {t('cta.button')}
           </Button>
         </div>

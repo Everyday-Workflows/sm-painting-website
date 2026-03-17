@@ -14,9 +14,9 @@ const Button: React.FC<ButtonProps> = ({
   const baseStyles = 'px-6 py-2 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
   
   const variantStyles = {
-    primary: 'bg-brand-primary text-white hover:opacity-90 focus:ring-brand-primary',
-    secondary: 'bg-brand-secondary text-white hover:opacity-90 focus:ring-brand-secondary',
-    tertiary: 'bg-brand-tertiary text-white hover:opacity-90 focus:ring-brand-tertiary',
+    primary: 'bg-brand-primary text-white hover:bg-brand-secondary focus:ring-brand-primary',
+    secondary: 'bg-brand-secondary text-white hover:bg-brand-tertiary focus:ring-brand-secondary',
+    tertiary: 'bg-brand-tertiary text-white hover:bg-brand-primary focus:ring-brand-tertiary',
   };
 
   return (
