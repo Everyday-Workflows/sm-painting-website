@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import ScrollVideo from "@/components/ScrollVideo";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -65,6 +66,9 @@ export default function Home() {
           <div className="aspect-[1000/1000] w-[60rem] bg-gradient-to-tr from-brand-primary to-brand-secondary" />
         </div>
       </section>
+
+      {/* Scroll Video Section */}
+      <ScrollVideo src="/videos/before-after.mp4" />
 
       {/* About Us Section */}
       <section className="py-12 sm:py-20 bg-white dark:bg-black transition-colors duration-300">
@@ -161,7 +165,7 @@ export default function Home() {
           <p className="text-lg sm:text-xl mb-8 sm:mb-10 opacity-90 max-w-2xl mx-auto">
             {t('cta.description')}
           </p>
-          <Button variant="secondary" className="w-full sm:w-auto bg-white text-brand-primary hover:bg-gray-100 hover:text-brand-primary px-8 sm:px-10 py-4 text-lg font-bold shadow-md">
+          <Button variant="secondary" className="w-full sm:w-auto bg-white text-brand-primary hover:bg-gray-100 px-8 sm:px-10 py-4 text-lg font-bold shadow-md">
             {t('cta.button')}
           </Button>
         </div>

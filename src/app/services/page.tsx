@@ -98,7 +98,7 @@ const ServicesPage = () => {
           <p className="text-lg sm:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
             {t('services.footer.description')}
           </p>
-          <Button variant="primary" className="w-full sm:w-auto bg-white text-brand-secondary hover:bg-gray-100 hover:text-brand-secondary px-8 sm:px-10 py-4 text-lg font-bold shadow-md">
+          <Button variant="primary" className="w-full sm:w-auto bg-white text-brand-secondary hover:bg-gray-100 px-8 sm:px-10 py-4 text-lg font-bold shadow-md">
             {t('services.footer.cta')}
           </Button>
         </div>

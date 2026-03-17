@@ -49,6 +49,8 @@ const translations = {
     'service.commercial.desc': 'Professional painting solutions for businesses. We work around your schedule to minimize disruption while delivering high-quality results.',
     'service.specialty.title': 'Specialty Finishes',
     'service.specialty.desc': 'Add a unique touch to your space with our specialty painting techniques and finishes.',
+    'video.title': 'See the Transformation',
+    'video.subtitle': 'Scroll to reveal the before and after of our premium painting services.',
   },
   es: {
     'nav.home': 'Inicio',
@@ -88,6 +90,8 @@ const translations = {
     'service.commercial.desc': 'Soluciones de pintura profesional para empresas. Trabajamos según su horario para minimizar las interrupciones mientras brindamos resultados de alta calidad.',
     'service.specialty.title': 'Acabados Especiales',
     'service.specialty.desc': 'Agregue un toque único a su espacio con nuestras técnicas y acabados de pintura especializados.',
+    'video.title': 'Vea la Transformación',
+    'video.subtitle': 'Desplácese para revelar el antes y el después de nuestros servicios de pintura premium.',
   }
 };
 
