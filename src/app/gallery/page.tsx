@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '@/context/LanguageContext';
 
 const galleryImages = [
   "03f36018-e2da-49ff-a7d3-ce16ebcd2127.jpeg",
@@ -16,21 +19,18 @@ const galleryImages = [
   "c02cf30a-4ea3-4e7e-b6e6-71e96cd2cedd.jpeg"
 ];
 
-export const metadata = {
-  title: "Gallery | S&M Painting",
-  description: "View our portfolio of residential and commercial painting projects. See the quality of our work for yourself.",
-};
-
 const GalleryPage = () => {
+  const { t } = useLanguage();
+
   return (
-    <div className="bg-white py-12 sm:py-20">
+    <div className="bg-white dark:bg-black py-12 sm:py-20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-            Our Work Gallery
+          <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
+            {t('gallery.title')}
           </h1>
-          <p className="mt-4 text-xl text-gray-500 max-w-2xl mx-auto">
-            A showcase of our recent painting projects. From interior transformations to exterior revivals, we take pride in every stroke.
+          <p className="mt-4 text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+            {t('gallery.subtitle')}
           </p>
         </div>
 

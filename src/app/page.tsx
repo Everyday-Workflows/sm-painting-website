@@ -1,31 +1,48 @@
+'use client';
+
 import Image from "next/image";
 import Button from "@/components/Button";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const { t } = useLanguage();
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
+
+  const logoSrc = resolvedTheme === 'dark' 
+    ? '/images/logos/Logo_Dark_Mode.webp' 
+    : '/images/logos/Logo_Light_Mode.webp';
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-gray-50 py-20 sm:py-32 overflow-hidden">
+      <section className="relative bg-gray-50 dark:bg-black py-20 sm:py-32 overflow-hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center lg:text-left lg:flex lg:items-center lg:justify-between">
             <div className="lg:w-1/2">
-              <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block">Transform Your Space with</span>
-                <span className="block text-brand-primary">Expert Painting Services</span>
+              <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+                <span className="block">{t('hero.title1')}</span>
+                <span className="block text-brand-primary">{t('hero.title2')}</span>
               </h1>
-              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto lg:mx-0 md:mt-5 md:text-xl">
-                Professional residential and commercial painting that brings your vision to life. Quality craftsmanship, attention to detail, and a finish that lasts.
+              <p className="mt-3 text-base text-gray-500 dark:text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto lg:mx-0 md:mt-5 md:text-xl">
+                {t('hero.description')}
               </p>
               <div className="mt-8 sm:flex sm:justify-center lg:justify-start gap-4">
                 <Link href="/services">
                   <Button variant="primary" className="w-full sm:w-auto text-lg px-8 py-3">
-                    Our Services
+                    {t('hero.cta1')}
                   </Button>
                 </Link>
                 <Link href="/gallery">
                   <Button variant="secondary" className="w-full sm:w-auto text-lg px-8 py-3 mt-3 sm:mt-0">
-                    View Gallery
+                    {t('hero.cta2')}
                   </Button>
                 </Link>
               </div>
@@ -33,7 +50,7 @@ export default function Home() {
             <div className="mt-12 lg:mt-0 lg:w-1/2 flex justify-center">
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
                 <Image 
-                  src="/images/logos/Logo_Dark_Mode.webp" 
+                  src={logoSrc} 
                   alt="S&M Painting Logo" 
                   fill
                   className="object-contain"
@@ -50,23 +67,23 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-black transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:flex lg:items-center lg:gap-12">
             <div className="lg:w-1/2">
-              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                About S&M Painting
+              <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+                {t('about.title')}
               </h2>
-              <p className="mt-4 text-lg text-gray-500">
-                With years of experience in the industry, S&M Painting has built a reputation for excellence. We believe that a fresh coat of paint can do more than just change a color—it can revitalize a home or business, increase property value, and create an environment you love.
+              <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">
+                {t('about.p1')}
               </p>
-              <p className="mt-4 text-lg text-gray-500">
-                Our team of skilled professionals is dedicated to providing top-tier service from the initial consultation to the final walkthrough. We use only high-quality materials and proven techniques to ensure a flawless finish every time.
+              <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">
+                {t('about.p2')}
               </p>
               <div className="mt-8">
                 <Link href="/services">
                   <Button variant="tertiary" className="px-6 py-2">
-                    Learn More About Us
+                    {t('about.cta')}
                   </Button>
                 </Link>
               </div>
@@ -84,14 +101,14 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-zinc-950 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-              What Our Clients Say
+            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+              {t('testimonials.title')}
             </h2>
-            <p className="mt-4 text-xl text-gray-500">
-              Don't just take our word for it—hear from our satisfied customers.
+            <p className="mt-4 text-xl text-gray-500 dark:text-gray-400">
+              {t('testimonials.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -115,7 +132,7 @@ export default function Home() {
                 role: "Homeowner"
               }
             ].map((testimonial) => (
-              <div key={testimonial.id} className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+              <div key={testimonial.id} className="bg-white dark:bg-black p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-900">
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={`${testimonial.id}-star-${i}`} className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -124,10 +141,10 @@ export default function Home() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-gray-600 italic mb-6">"{testimonial.text}"</p>
+                <p className="text-gray-600 dark:text-gray-400 italic mb-6">"{testimonial.text}"</p>
                 <div>
-                  <p className="font-bold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  <p className="font-bold text-gray-900 dark:text-white">{testimonial.name}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-500">{testimonial.role}</p>
                 </div>
               </div>
             ))}
@@ -139,13 +156,13 @@ export default function Home() {
       <section className="py-20 bg-brand-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-extrabold sm:text-4xl mb-8">
-            Ready to Start Your Project?
+            {t('cta.title')}
           </h2>
           <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
-            Contact us today for a free estimate and let's bring some color to your world.
+            {t('cta.description')}
           </p>
           <Button variant="secondary" className="bg-white text-brand-primary hover:bg-gray-100 px-10 py-4 text-lg">
-            Get a Free Quote
+            {t('cta.button')}
           </Button>
         </div>
       </section>
