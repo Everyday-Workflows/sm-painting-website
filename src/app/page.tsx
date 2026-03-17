@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-gray-50 dark:bg-black py-20 sm:py-32 overflow-hidden transition-colors duration-300">
+      <section className="relative bg-gray-50 dark:bg-black py-12 sm:py-24 lg:py-32 overflow-hidden transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center lg:text-left lg:flex lg:items-center lg:justify-between">
             <div className="lg:w-1/2">
@@ -34,14 +34,14 @@ export default function Home() {
               <p className="mt-3 text-base text-gray-500 dark:text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto lg:mx-0 md:mt-5 md:text-xl">
                 {t('hero.description')}
               </p>
-              <div className="mt-8 sm:flex sm:justify-center lg:justify-start gap-4">
-                <Link href="/services">
-                  <Button variant="primary" className="w-full sm:w-auto text-lg px-8 py-3">
+              <div className="mt-8 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4">
+                <Link href="/services" className="w-full sm:w-auto block">
+                  <Button variant="primary" className="w-full text-lg px-8 py-3">
                     {t('hero.cta1')}
                   </Button>
                 </Link>
-                <Link href="/gallery">
-                  <Button variant="secondary" className="w-full sm:w-auto text-lg px-8 py-3 mt-3 sm:mt-0">
+                <Link href="/gallery" className="w-full sm:w-auto block">
+                  <Button variant="secondary" className="w-full text-lg px-8 py-3">
                     {t('hero.cta2')}
                   </Button>
                 </Link>
@@ -51,7 +51,7 @@ export default function Home() {
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
                 <Image 
                   src={logoSrc} 
-                  alt="S&M Painting Logo" 
+                  alt="S&M Painting - Professional Residential and Commercial Painting Logo" 
                   fill
                   className="object-contain"
                   priority
@@ -67,7 +67,7 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-20 bg-white dark:bg-black transition-colors duration-300">
+      <section className="py-12 sm:py-20 bg-white dark:bg-black transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:flex lg:items-center lg:gap-12">
             <div className="lg:w-1/2">
@@ -81,8 +81,8 @@ export default function Home() {
                 {t('about.p2')}
               </p>
               <div className="mt-8">
-                <Link href="/services">
-                  <Button variant="tertiary" className="px-6 py-2">
+                <Link href="/services" className="block w-full sm:w-auto sm:inline-block">
+                  <Button variant="tertiary" className="w-full sm:w-auto px-6 py-3 sm:py-2">
                     {t('about.cta')}
                   </Button>
                 </Link>
@@ -90,10 +90,10 @@ export default function Home() {
             </div>
             <div className="mt-12 lg:mt-0 lg:w-1/2 grid grid-cols-2 gap-4">
               <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
-                <Image src="/images/gallery/03f36018-e2da-49ff-a7d3-ce16ebcd2127.jpeg" alt="Painting work" fill className="object-cover" />
+                <Image src="/images/gallery/03f36018-e2da-49ff-a7d3-ce16ebcd2127.jpeg" alt="Professional interior painting project by S&M Painting" fill className="object-cover" />
               </div>
               <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg mt-8">
-                <Image src="/images/gallery/3248cf5d-16fe-4d74-b57b-a7030ff5908d.jpeg" alt="Painting work" fill className="object-cover" />
+                <Image src="/images/gallery/3248cf5d-16fe-4d74-b57b-a7030ff5908d.jpeg" alt="High-quality exterior painting finish by S&M Painting" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -101,17 +101,17 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50 dark:bg-zinc-950 transition-colors duration-300">
+      <section className="py-12 sm:py-20 bg-gray-50 dark:bg-zinc-950 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
               {t('testimonials.title')}
             </h2>
-            <p className="mt-4 text-xl text-gray-500 dark:text-gray-400">
+            <p className="mt-4 text-lg sm:text-xl text-gray-500 dark:text-gray-400">
               {t('testimonials.subtitle')}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
                 id: "testimonial-1",
@@ -153,15 +153,15 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-brand-primary text-white">
+      <section className="py-16 sm:py-20 bg-brand-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold sm:text-4xl mb-8">
+          <h2 className="text-3xl font-extrabold sm:text-4xl mb-6 sm:mb-8">
             {t('cta.title')}
           </h2>
-          <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl mb-8 sm:mb-10 opacity-90 max-w-2xl mx-auto">
             {t('cta.description')}
           </p>
-          <Button variant="secondary" className="bg-white text-brand-primary hover:bg-gray-100 hover:text-brand-primary px-10 py-4 text-lg font-bold shadow-md">
+          <Button variant="secondary" className="w-full sm:w-auto bg-white text-brand-primary hover:bg-gray-100 hover:text-brand-primary px-8 sm:px-10 py-4 text-lg font-bold shadow-md">
             {t('cta.button')}
           </Button>
         </div>

@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
           <div>
             <Image 
               src="/images/logos/Logo_White.webp" 
-              alt="S&M Painting Logo" 
+              alt="S&M Painting - Professional Painting Services Logo White" 
               width={120} 
               height={40} 
               className="h-10 w-auto mb-4"

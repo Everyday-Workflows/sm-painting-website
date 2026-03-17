@@ -42,7 +42,7 @@ const GalleryPage = () => {
             >
               <Image 
                 src={`/images/gallery/${image}`} 
-                alt={`S&M Painting project ${index + 1}`} 
+                alt={`Professional painting project by S&M Painting - Showcase Image ${index + 1}`} 
                 fill 
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

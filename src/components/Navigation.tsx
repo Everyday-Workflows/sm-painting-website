@@ -30,7 +30,7 @@ const Navigation: React.FC = () => {
             <Link href="/" className="flex items-center">
               <Image 
                 src={logoSrc} 
-                alt="S&M Painting Logo" 
+                alt="S&M Painting - Professional Painting Services Logo" 
                 width={150} 
                 height={50} 
                 className="h-12 w-auto"
