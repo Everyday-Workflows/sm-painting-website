@@ -54,51 +54,51 @@ const ServicesPage = () => {
   return (
     <div className="bg-white dark:bg-black py-12 sm:py-20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
+        <div className="text-center mb-12 sm:mb-16">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white lg:text-5xl">
             {t('services.title')}
           </h1>
-          <p className="mt-4 text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg sm:text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
             {t('services.subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {services.map((service, index) => (
             <div 
               key={service.title} 
-              className="bg-gray-50 dark:bg-zinc-950 p-8 rounded-2xl border border-gray-100 dark:border-gray-900 hover:shadow-lg transition-shadow duration-300"
+              className="bg-gray-50 dark:bg-zinc-950 p-6 sm:p-8 rounded-2xl border border-gray-100 dark:border-gray-900 hover:shadow-lg transition-shadow duration-300 flex flex-col h-full"
             >
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
                 {service.title}
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed flex-grow">
                 {service.description}
               </p>
               <ul className="space-y-3 mb-8">
                 {getFeatures(index).map((feature) => (
-                  <li key={feature} className="flex items-center text-gray-700 dark:text-gray-300">
-                    <svg className="h-5 w-5 text-brand-primary mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <li key={feature} className="flex items-center text-sm sm:text-base text-gray-700 dark:text-gray-300">
+                    <svg className="h-5 w-5 text-brand-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <title>Check</title>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    {feature}
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <Button variant={index % 3 === 0 ? 'primary' : index % 3 === 1 ? 'secondary' : 'tertiary'} className="w-full">
+              <Button variant={index % 3 === 0 ? 'primary' : index % 3 === 1 ? 'secondary' : 'tertiary'} className="w-full mt-auto">
                 {t('services.cta')} {service.title}
               </Button>
             </div>
           ))}
         </div>
 
-        <div className="mt-20 bg-brand-secondary rounded-3xl p-12 text-center text-white">
-          <h2 className="text-3xl font-bold mb-6">{t('services.footer.title')}</h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+        <div className="mt-16 sm:mt-20 bg-brand-secondary rounded-3xl p-8 sm:p-12 text-center text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">{t('services.footer.title')}</h2>
+          <p className="text-lg sm:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
             {t('services.footer.description')}
           </p>
-          <Button variant="primary" className="bg-white text-brand-secondary hover:bg-gray-100 hover:text-brand-secondary px-10 py-4 text-lg font-bold shadow-md">
+          <Button variant="primary" className="w-full sm:w-auto bg-white text-brand-secondary hover:bg-gray-100 hover:text-brand-secondary px-8 sm:px-10 py-4 text-lg font-bold shadow-md">
             {t('services.footer.cta')}
           </Button>
         </div>

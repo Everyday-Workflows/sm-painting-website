@@ -25,16 +25,16 @@ const GalleryPage = () => {
   return (
     <div className="bg-white dark:bg-black py-12 sm:py-20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
+        <div className="text-center mb-12 sm:mb-16">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white lg:text-5xl">
             {t('gallery.title')}
           </h1>
-          <p className="mt-4 text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg sm:text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
             {t('gallery.subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {galleryImages.map((image, index) => (
             <div 
               key={image} 
