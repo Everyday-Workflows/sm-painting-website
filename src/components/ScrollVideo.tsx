@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useEffect, useState } from 'react';
-import { useScroll, useTransform } from 'framer-motion';
+import { useScroll } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 
 interface ScrollVideoProps {
@@ -14,6 +14,8 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ src }) => {
   const { t } = useLanguage();
   const [duration, setDuration] = useState(0);
 
+  // Increase the scroll height to make the 10-second video feel smoother
+  // 400vh gives the user more scroll distance to cover the 10 seconds
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -57,27 +59,39 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ src }) => {
   }, [scrollYProgress, duration]);
 
   return (
-    <section ref={containerRef} className="relative h-[300vh] bg-black">
+    <section ref={containerRef} className="relative h-[400vh] bg-white dark:bg-black transition-colors duration-300">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
-        <video
-          ref={videoRef}
-          src={src}
-          className="w-full h-full object-cover opacity-80"
-          muted
-          playsInline
-          preload="auto"
-        />
-        
-        {/* Overlay Text */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-          <div className="bg-black/50 p-8 rounded-2xl backdrop-blur-sm text-center max-w-3xl mx-4">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+          
+          {/* Video Container with Mask */}
+          <div className="relative w-full lg:w-1/2 aspect-video max-w-2xl mx-auto">
+            {/* CSS Mask to blend the edges into the background */}
+            <div 
+              className="absolute inset-0 z-10 pointer-events-none"
+              style={{
+                background: 'radial-gradient(circle, transparent 50%, var(--background) 95%)'
+              }}
+            />
+            <video
+              ref={videoRef}
+              src={src}
+              className="w-full h-full object-cover rounded-2xl shadow-2xl"
+              muted
+              playsInline
+              preload="auto"
+            />
+          </div>
+          
+          {/* Text Content on the Right */}
+          <div className="w-full lg:w-1/2 text-center lg:text-left z-20">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6">
               {t('video.title') || 'See the Transformation'}
             </h2>
-            <p className="text-xl text-gray-200">
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
               {t('video.subtitle') || 'Scroll to reveal the before and after of our premium painting services.'}
             </p>
           </div>
+
         </div>
       </div>
     </section>
