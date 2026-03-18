@@ -97,6 +97,20 @@ const translations = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+const detectBrowserLanguage = (): Language => {
+  if (typeof window === 'undefined') {
+    return 'en';
+  }
+
+  const browserLanguages = navigator.languages?.length ? navigator.languages : [navigator.language];
+
+  if (browserLanguages.some((language) => language?.toLowerCase().startsWith('es'))) {
+    return 'es';
+  }
+
+  return 'en';
+};
+
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>(() => {
     if (typeof window === 'undefined') {
@@ -104,7 +118,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
 
     const savedLanguage = localStorage.getItem('language');
-    return savedLanguage === 'es' ? 'es' : 'en';
+
+    if (savedLanguage === 'en' || savedLanguage === 'es') {
+      return savedLanguage;
+    }
+
+    return detectBrowserLanguage();
   });
 
   const handleSetLanguage = (lang: Language) => {

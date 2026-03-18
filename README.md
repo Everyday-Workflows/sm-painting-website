@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Temporary site password protection
 
-This app supports a temporary browser password gate through `proxy.ts` for development-stage previews and occasional client review. It is not intended to be a permanent user authentication system.
+This app supports a temporary browser password gate through `middleware.ts` for development-stage previews and occasional client review. It is not intended to be a permanent user authentication system.
 
 Required environment variables:
 

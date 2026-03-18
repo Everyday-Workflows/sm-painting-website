@@ -1,4 +1,3 @@
-import { timingSafeEqual } from 'node:crypto';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
@@ -20,17 +19,6 @@ function isProtectedEnvironment() {
   }
 
   return railwayEnvironment === 'production';
-}
-
-function safeEquals(left: string, right: string) {
-  const leftBuffer = Buffer.from(left);
-  const rightBuffer = Buffer.from(right);
-
-  if (leftBuffer.length !== rightBuffer.length) {
-    return false;
-  }
-
-  return timingSafeEqual(leftBuffer, rightBuffer);
 }
 
 function unauthorizedResponse() {
@@ -61,7 +49,7 @@ function getProvidedCredentials(request: NextRequest) {
 
   try {
     const encodedCredentials = authorizationHeader.slice('Basic '.length);
-    const decodedCredentials = Buffer.from(encodedCredentials, 'base64').toString('utf-8');
+    const decodedCredentials = atob(encodedCredentials);
     const separatorIndex = decodedCredentials.indexOf(':');
 
     if (separatorIndex === -1) {
@@ -77,7 +65,7 @@ function getProvidedCredentials(request: NextRequest) {
   }
 }
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   if (!isProtectedEnvironment()) {
     return NextResponse.next();
   }
@@ -95,10 +83,10 @@ export function proxy(request: NextRequest) {
     return unauthorizedResponse();
   }
 
-  const usernameMatches = safeEquals(providedCredentials.username, expectedUsername);
-  const passwordMatches = safeEquals(providedCredentials.password, expectedPassword);
-
-  if (!usernameMatches || !passwordMatches) {
+  if (
+    providedCredentials.username !== expectedUsername ||
+    providedCredentials.password !== expectedPassword
+  ) {
     return unauthorizedResponse();
   }
 
@@ -106,5 +94,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 };
