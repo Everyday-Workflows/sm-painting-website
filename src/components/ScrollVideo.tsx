@@ -21,6 +21,8 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ frameCount, framePath }) => {
   const preloadCacheRef = useRef<Set<string>>(new Set());
   const { t } = useLanguage();
   const [currentFrame, setCurrentFrame] = useState(0);
+  const [isMobileViewport, setIsMobileViewport] = useState(false);
+  const [isSafariBrowser, setIsSafariBrowser] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -29,10 +31,53 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ frameCount, framePath }) => {
 
   const beforeOpacity = useTransform(scrollYProgress, [0, 0.4, 0.6, 1], [1, 1, 0, 0]);
   const afterOpacity = useTransform(scrollYProgress, [0, 0.4, 0.6, 1], [0, 0, 1, 1]);
+  const frameStride = isSafariBrowser ? 2 : 1;
+  const playbackFrameCount = Math.ceil(frameCount / frameStride);
+  const initialPreloadCount = isSafariBrowser ? 8 : INITIAL_PRELOAD_COUNT;
+  const preloadAheadCount = isSafariBrowser ? 6 : PRELOAD_AHEAD_COUNT;
+  const preloadBehindCount = isSafariBrowser ? 3 : PRELOAD_BEHIND_COUNT;
 
-  const preloadFrame = useCallback((frameIndex: number) => {
-    const boundedIndex = Math.min(frameCount - 1, Math.max(0, frameIndex));
-    const source = framePath(boundedIndex);
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+
+    const updateDeviceProfile = () => {
+      const userAgent = window.navigator.userAgent;
+      const safariMatch = /Safari/i.test(userAgent) && !/Chrome|CriOS|Edg|OPR|Android/i.test(userAgent);
+
+      setIsMobileViewport(mediaQuery.matches);
+      setIsSafariBrowser(safariMatch);
+    };
+
+    updateDeviceProfile();
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', updateDeviceProfile);
+
+      return () => {
+        mediaQuery.removeEventListener('change', updateDeviceProfile);
+      };
+    }
+
+    mediaQuery.addListener(updateDeviceProfile);
+
+    return () => {
+      mediaQuery.removeListener(updateDeviceProfile);
+    };
+  }, []);
+
+  const getFrameSource = useCallback((sequenceIndex: number) => {
+    const boundedSequenceIndex = Math.min(playbackFrameCount - 1, Math.max(0, sequenceIndex));
+    const actualFrameIndex = Math.min(frameCount - 1, boundedSequenceIndex * frameStride);
+
+    return framePath(actualFrameIndex);
+  }, [frameCount, framePath, frameStride, playbackFrameCount]);
+
+  const preloadFrame = useCallback((sequenceIndex: number) => {
+    const source = getFrameSource(sequenceIndex);
 
     if (preloadCacheRef.current.has(source)) {
       return;
@@ -43,25 +88,25 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ frameCount, framePath }) => {
     const image = new window.Image();
     image.decoding = 'async';
     image.src = source;
-  }, [frameCount, framePath]);
+  }, [getFrameSource]);
 
   useEffect(() => {
-    for (let index = 0; index < Math.min(frameCount, INITIAL_PRELOAD_COUNT); index += 1) {
+    for (let index = 0; index < Math.min(playbackFrameCount, initialPreloadCount); index += 1) {
       preloadFrame(index);
     }
-  }, [frameCount, preloadFrame]);
+  }, [initialPreloadCount, playbackFrameCount, preloadFrame]);
 
   useEffect(() => {
     preloadFrame(currentFrame);
 
-    for (let offset = 1; offset <= PRELOAD_AHEAD_COUNT; offset += 1) {
+    for (let offset = 1; offset <= preloadAheadCount; offset += 1) {
       preloadFrame(currentFrame + offset);
     }
 
-    for (let offset = 1; offset <= PRELOAD_BEHIND_COUNT; offset += 1) {
+    for (let offset = 1; offset <= preloadBehindCount; offset += 1) {
       preloadFrame(currentFrame - offset);
     }
-  }, [currentFrame, preloadFrame]);
+  }, [currentFrame, preloadAheadCount, preloadBehindCount, preloadFrame]);
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.on('change', (latest) => {
@@ -71,7 +116,7 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ frameCount, framePath }) => {
 
       rafRef.current = requestAnimationFrame(() => {
         const boundedProgress = Math.min(1, Math.max(0, latest));
-        const nextFrame = Math.min(frameCount - 1, Math.round(boundedProgress * (frameCount - 1)));
+        const nextFrame = Math.min(playbackFrameCount - 1, Math.round(boundedProgress * (playbackFrameCount - 1)));
 
         if (currentFrameRef.current !== nextFrame) {
           currentFrameRef.current = nextFrame;
@@ -89,11 +134,11 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ frameCount, framePath }) => {
         cancelAnimationFrame(rafRef.current);
       }
     };
-  }, [scrollYProgress, frameCount]);
+  }, [scrollYProgress, playbackFrameCount]);
 
   return (
-    <section ref={containerRef} className="relative h-[400vh] transition-colors duration-300">
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
+    <section ref={containerRef} className={`relative ${isMobileViewport ? 'h-[240vh]' : 'h-[400vh]'} transition-colors duration-300`}>
+      <div className="sticky top-0 h-[100svh] md:h-screen w-full overflow-hidden flex items-center justify-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20 py-10">
           <div className="relative w-full lg:w-[55%] aspect-square max-w-[820px] mx-auto flex items-center justify-center overflow-visible">
             <ScrollReveal direction="right" delay={0.1}>
@@ -111,7 +156,7 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ frameCount, framePath }) => {
               </motion.div>
 
               <img
-                src={framePath(currentFrame)}
+                src={getFrameSource(currentFrame)}
                 alt="Before and after painting transformation animation"
                 className="relative z-10 w-full h-full object-contain pointer-events-none select-none"
                 width={1080}
