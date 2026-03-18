@@ -50,14 +50,14 @@ export default function Home() {
                 </p>
               </ScrollReveal>
               <ScrollReveal direction="right" delay={0.6}>
-                <div className="mt-10 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4">
-                  <Link href="/services" className="w-full sm:w-auto block">
-                    <Button variant="primary" className="w-full text-lg px-8 py-3.5">
+                <div className="mt-10 flex flex-col items-center sm:flex-row sm:justify-center lg:justify-start gap-4">
+                  <Link href="/services" className="inline-flex w-fit">
+                    <Button variant="primary" className="text-lg px-8 py-3.5">
                       {t('hero.cta1')}
                     </Button>
                   </Link>
-                  <Link href="/gallery" className="w-full sm:w-auto block">
-                    <Button variant="secondary" className="w-full text-lg px-8 py-3.5">
+                  <Link href="/gallery" className="inline-flex w-fit">
+                    <Button variant="secondary" className="text-lg px-8 py-3.5">
                       {t('hero.cta2')}
                     </Button>
                   </Link>
@@ -106,8 +106,8 @@ export default function Home() {
               </ScrollReveal>
               <ScrollReveal direction="right" delay={0.4}>
                 <div className="mt-8">
-                  <Link href="/services" className="block w-full sm:w-auto sm:inline-block">
-                    <Button variant="tertiary" className="w-full sm:w-auto px-6 py-3 sm:py-2">
+                  <Link href="/services" className="inline-flex w-fit">
+                    <Button variant="tertiary" className="px-6 py-3 sm:py-2">
                       {t('about.cta')}
                     </Button>
                   </Link>

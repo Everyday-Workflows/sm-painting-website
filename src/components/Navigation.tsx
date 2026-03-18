@@ -114,8 +114,17 @@ const Navigation: React.FC = () => {
             <div className="flex items-center md:hidden space-x-2">
               <button
                 type="button"
+                onClick={() => setLanguage(language === 'en' ? 'es' : 'en')}
+                className="flex items-center space-x-1 rounded-full px-2.5 py-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors"
+                aria-label="Toggle language"
+              >
+                <Languages size={18} />
+                <span className="text-[11px] font-bold uppercase leading-none">{language}</span>
+              </button>
+              <button
+                type="button"
                 onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-full text-gray-500 dark:text-gray-400"
+                className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors"
                 aria-label="Toggle theme"
               >
                 {isDarkTheme ? <Sun size={20} /> : <Moon size={20} />}
@@ -123,7 +132,7 @@ const Navigation: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-brand-primary focus:outline-none"
+                className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-brand-primary hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none transition-colors"
                 aria-label="Toggle menu"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -195,23 +204,6 @@ const Navigation: React.FC = () => {
                   <Phone size={20} className="text-brand-primary" />
                   <span>(555) 123-4567</span>
                 </a>
-              </motion.div>
-              <motion.div
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.5 }}
-              >
-                <button
-                  type="button"
-                  onClick={() => {
-                    setLanguage(language === 'en' ? 'es' : 'en');
-                    setIsMenuOpen(false);
-                  }}
-                  className="w-full text-left px-3 py-3 rounded-md text-lg font-subtitle font-medium text-gray-700 dark:text-gray-300 hover:text-brand-primary hover:bg-gray-50 dark:hover:bg-gray-900 flex items-center space-x-2"
-                >
-                  <Languages size={20} />
-                  <span>{language === 'en' ? 'Español' : 'English'}</span>
-                </button>
               </motion.div>
             </div>
           </motion.div>

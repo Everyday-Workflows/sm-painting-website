@@ -91,7 +91,7 @@ const ServicesPage = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant={index % 3 === 0 ? 'primary' : index % 3 === 1 ? 'secondary' : 'tertiary'} className="w-full mt-auto shadow-lg shadow-brand-primary/10 group-hover:shadow-brand-primary/20 transition-all duration-300">
+                <Button variant={index % 3 === 0 ? 'primary' : index % 3 === 1 ? 'secondary' : 'tertiary'} className="mt-auto w-fit max-w-full self-start shadow-lg shadow-brand-primary/10 group-hover:shadow-brand-primary/20 transition-all duration-300">
                   {t('services.cta')} {service.title}
                 </Button>
               </div>
@@ -105,7 +105,7 @@ const ServicesPage = () => {
             <p className="text-lg sm:text-xl font-subtitle mb-8 opacity-90 max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
               {t('services.footer.description')}
             </p>
-            <Button variant="primary" className="w-full sm:w-auto px-8 sm:px-10 py-4 text-lg font-bold shadow-lg shadow-brand-primary/20">
+            <Button variant="primary" className="w-fit max-w-full px-8 sm:px-10 py-4 text-lg font-bold shadow-lg shadow-brand-primary/20">
               {t('services.footer.cta')}
             </Button>
           </div>
