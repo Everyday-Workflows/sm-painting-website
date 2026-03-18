@@ -39,7 +39,7 @@ export default function Home() {
           <div className="text-center lg:text-left lg:flex lg:items-center lg:justify-between lg:gap-12">
             <div className="lg:w-1/2">
               <ScrollReveal direction="right" delay={0.2}>
-                <h1 className="text-4xl font-display tracking-tight text-gray-900 dark:text-white sm:text-5xl md:text-6xl leading-tight">
+                <h1 className="text-4xl font-display tracking-tight text-brand-secondary dark:text-brand-accent-1 sm:text-5xl md:text-6xl leading-tight">
                   <span className="block">{t('hero.title1')}</span>
                   <span className="block text-brand-primary">{t('hero.title2')}</span>
                 </h1>
