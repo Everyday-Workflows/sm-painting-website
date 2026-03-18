@@ -1,5 +1,25 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Temporary site password protection
+
+This app supports a temporary browser password gate through `proxy.ts` for development-stage previews and occasional client review. It is not intended to be a permanent user authentication system.
+
+Required environment variables:
+
+```bash
+BASIC_AUTH_ENABLED=false
+BASIC_AUTH_USERNAME=your-username
+BASIC_AUTH_PASSWORD=your-password
+```
+
+Behavior:
+
+- `BASIC_AUTH_ENABLED=true` turns on browser basic auth
+- `BASIC_AUTH_ENABLED=false` turns it off immediately
+- protection only applies in `production`
+- on Railway, it only applies when `RAILWAY_ENVIRONMENT_NAME=production`
+- if auth is enabled but the username/password are missing, the app returns `503` instead of failing open
+
 ## Getting Started
 
 First, run the development server:
