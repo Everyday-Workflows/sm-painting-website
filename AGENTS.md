@@ -1,6 +1,10 @@
 # AGENTS.md
  - Refer to project brief for edits, refactors, brand guidelines, etc. 
 
+## Repo Skills
+
+- Use `$scroll-frame-sequence` when converting a video or extracted frame set into a scroll-driven image-sequence animation with background removal, WebP optimization, and frontend integration.
+
 ## Known Issues & Steering
 
 ### [ISSUE] Project Name Naming Restrictions

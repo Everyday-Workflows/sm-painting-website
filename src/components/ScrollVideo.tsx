@@ -1,97 +1,139 @@
 'use client';
 
-import React, { useRef, useEffect, useState } from 'react';
-import { useScroll } from 'framer-motion';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
+import { useScroll, useTransform, motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
+import { ScrollReveal } from '@/components/animations/ScrollReveal';
 
 interface ScrollVideoProps {
-  src: string;
+  frameCount: number;
+  framePath: (index: number) => string;
 }
 
-const ScrollVideo: React.FC<ScrollVideoProps> = ({ src }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const { t } = useLanguage();
-  const [duration, setDuration] = useState(0);
+const INITIAL_PRELOAD_COUNT = 16;
+const PRELOAD_AHEAD_COUNT = 12;
+const PRELOAD_BEHIND_COUNT = 6;
 
-  // Increase the scroll height to make the 10-second video feel smoother
-  // 400vh gives the user more scroll distance to cover the 10 seconds
+const ScrollVideo: React.FC<ScrollVideoProps> = ({ frameCount, framePath }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number | null>(null);
+  const currentFrameRef = useRef(0);
+  const preloadCacheRef = useRef<Set<string>>(new Set());
+  const { t } = useLanguage();
+  const [currentFrame, setCurrentFrame] = useState(0);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+  const beforeOpacity = useTransform(scrollYProgress, [0, 0.4, 0.6, 1], [1, 1, 0, 0]);
+  const afterOpacity = useTransform(scrollYProgress, [0, 0.4, 0.6, 1], [0, 0, 1, 1]);
 
-    const handleLoadedMetadata = () => {
-      setDuration(video.duration);
-    };
+  const preloadFrame = useCallback((frameIndex: number) => {
+    const boundedIndex = Math.min(frameCount - 1, Math.max(0, frameIndex));
+    const source = framePath(boundedIndex);
 
-    video.addEventListener('loadedmetadata', handleLoadedMetadata);
-    
-    // Fallback if metadata is already loaded
-    if (video.readyState >= 1) {
-      setDuration(video.duration);
+    if (preloadCacheRef.current.has(source)) {
+      return;
     }
 
-    return () => {
-      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
-    };
-  }, []);
+    preloadCacheRef.current.add(source);
+
+    const image = new window.Image();
+    image.decoding = 'async';
+    image.src = source;
+  }, [frameCount, framePath]);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video || duration === 0) return;
+    for (let index = 0; index < Math.min(frameCount, INITIAL_PRELOAD_COUNT); index += 1) {
+      preloadFrame(index);
+    }
+  }, [frameCount, preloadFrame]);
 
-    const unsubscribe = scrollYProgress.on("change", (latest) => {
-      // Use requestAnimationFrame to ensure smooth updates
-      requestAnimationFrame(() => {
-        if (video) {
-          // Map scroll progress (0-1) to video duration
-          video.currentTime = latest * duration;
+  useEffect(() => {
+    preloadFrame(currentFrame);
+
+    for (let offset = 1; offset <= PRELOAD_AHEAD_COUNT; offset += 1) {
+      preloadFrame(currentFrame + offset);
+    }
+
+    for (let offset = 1; offset <= PRELOAD_BEHIND_COUNT; offset += 1) {
+      preloadFrame(currentFrame - offset);
+    }
+  }, [currentFrame, preloadFrame]);
+
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on('change', (latest) => {
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+      }
+
+      rafRef.current = requestAnimationFrame(() => {
+        const boundedProgress = Math.min(1, Math.max(0, latest));
+        const nextFrame = Math.min(frameCount - 1, Math.round(boundedProgress * (frameCount - 1)));
+
+        if (currentFrameRef.current !== nextFrame) {
+          currentFrameRef.current = nextFrame;
+          setCurrentFrame(nextFrame);
         }
+
+        rafRef.current = null;
       });
     });
 
-    return () => unsubscribe();
-  }, [scrollYProgress, duration]);
+    return () => {
+      unsubscribe();
+
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, [scrollYProgress, frameCount]);
 
   return (
-    <section ref={containerRef} className="relative h-[400vh] bg-white dark:bg-black transition-colors duration-300">
+    <section ref={containerRef} className="relative h-[400vh] transition-colors duration-300">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
-          
-          {/* Video Container with Mask */}
-          <div className="relative w-full lg:w-3/5 aspect-video max-w-4xl mx-auto">
-            {/* CSS Mask to blend the edges into the background */}
-            <div 
-              className="absolute inset-0 z-10 pointer-events-none"
-              style={{
-                background: 'radial-gradient(circle, transparent 30%, var(--background) 75%)'
-              }}
-            />
-            <video
-              ref={videoRef}
-              src={src}
-              className="w-full h-full object-cover"
-              muted
-              playsInline
-              preload="auto"
-            />
-          </div>
-          
-          {/* Text Content on the Right */}
-          <div className="w-full lg:w-2/5 text-center lg:text-left z-20">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6">
-              {t('video.title') || 'See the Transformation'}
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-              {t('video.subtitle') || 'Scroll to reveal the before and after of our premium painting services.'}
-            </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20 py-10">
+          <div className="relative w-full lg:w-[55%] aspect-square max-w-[820px] mx-auto flex items-center justify-center overflow-visible">
+            <ScrollReveal direction="right" delay={0.1}>
+              <motion.div
+                style={{ opacity: beforeOpacity }}
+                className="absolute top-8 left-8 z-20 bg-gray-500/80 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-xs font-subtitle font-bold uppercase tracking-widest"
+              >
+                Before
+              </motion.div>
+              <motion.div
+                style={{ opacity: afterOpacity }}
+                className="absolute top-8 left-8 z-20 bg-brand-primary/90 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-xs font-subtitle font-bold uppercase tracking-widest"
+              >
+                After
+              </motion.div>
+
+              <img
+                src={framePath(currentFrame)}
+                alt="Before and after painting transformation animation"
+                className="relative z-10 w-full h-full object-contain pointer-events-none select-none"
+                width={1080}
+                height={1080}
+                draggable={false}
+                fetchPriority="high"
+              />
+            </ScrollReveal>
           </div>
 
+          <div className="w-full lg:w-[45%] text-center lg:text-left z-20">
+            <ScrollReveal direction="left">
+              <h2 className="text-4xl md:text-6xl font-display text-gray-900 dark:text-white mb-8 leading-[1.1]">
+                {t('video.title') || 'See the Transformation'}
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal direction="left" delay={0.2}>
+              <p className="text-xl md:text-2xl font-subtitle text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">
+                {t('video.subtitle') || 'Scroll to reveal the before and after of our premium painting services.'}
+              </p>
+            </ScrollReveal>
+          </div>
         </div>
       </div>
     </section>

@@ -1,28 +1,43 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
-import Image from "next/image";
 import { Providers } from "@/components/Providers";
 import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const glodok = localFont({
+  src: "../../public/fonts/tan-type-co-glodok-display.otf",
+  variable: "--font-glodok",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const mackinac = localFont({
+  src: "../../public/fonts/P22MackinacPro-Medium_26.otf",
+  variable: "--font-mackinac",
+});
+
+const montserrat = Montserrat({
   subsets: ["latin"],
+  variable: "--font-montserrat",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: {
     default: "S&M Painting | Professional Residential & Commercial Painting",
-    template: "%s | S&M Painting"
+    template: "%s | S&M Painting",
   },
-  description: "High-quality residential and commercial painting services by S&M Painting. Expert interior and exterior painting, cabinet refinishing, and more. Serving your local area with excellence.",
-  keywords: ["painting services", "residential painting", "commercial painting", "interior painting", "exterior painting", "cabinet painting", "S&M Painting"],
+  description:
+    "High-quality residential and commercial painting services by S&M Painting. Expert interior and exterior painting, cabinet refinishing, and more. Serving your local area with excellence.",
+  keywords: [
+    "painting services",
+    "residential painting",
+    "commercial painting",
+    "interior painting",
+    "exterior painting",
+    "cabinet painting",
+    "S&M Painting",
+  ],
   authors: [{ name: "S&M Painting" }],
   creator: "S&M Painting",
   publisher: "S&M Painting",
@@ -37,10 +52,11 @@ export const metadata: Metadata = {
     url: "https://smpainting.com", // Replace with actual URL if known
     siteName: "S&M Painting",
     title: "S&M Painting | Professional Painting Services",
-    description: "High-quality residential and commercial painting services. Transform your space with our expert touch.",
+    description:
+      "High-quality residential and commercial painting services. Transform your space with our expert touch.",
     images: [
       {
-        url: "/images/og-image.jpg", // Need to ensure this exists or use a placeholder
+        url: "/images/og-image.webp", // Need to ensure this exists or use a placeholder
         width: 1200,
         height: 630,
         alt: "S&M Painting - Professional Painting Services",
@@ -50,8 +66,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "S&M Painting | Professional Painting Services",
-    description: "High-quality residential and commercial painting services. Transform your space with our expert touch.",
-    images: ["/images/og-image.jpg"],
+    description:
+      "High-quality residential and commercial painting services. Transform your space with our expert touch.",
+    images: ["/images/og-image.webp"],
     creator: "@smpainting", // Replace with actual handle if known
   },
   robots: {
@@ -60,9 +77,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 };
@@ -75,42 +92,36 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "PaintingService",
-    "name": "S&M Painting",
-    "image": "https://smpainting.com/images/logos/Logo_Light_Mode.webp",
+    name: "S&M Painting",
+    image: "https://smpainting.com/images/logos/Logo_Light_Mode.webp",
     "@id": "https://smpainting.com",
-    "url": "https://smpainting.com",
-    "telephone": "+1-555-0123", // Placeholder
-    "address": {
+    url: "https://smpainting.com",
+    telephone: "+1-555-0123", // Placeholder
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": "123 Main St",
-      "addressLocality": "Your City",
-      "addressRegion": "ST",
-      "postalCode": "12345",
-      "addressCountry": "US"
+      streetAddress: "123 Main St",
+      addressLocality: "Your City",
+      addressRegion: "ST",
+      postalCode: "12345",
+      addressCountry: "US",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": 40.7128,
-      "longitude": -74.0060
+      latitude: 40.7128,
+      longitude: -74.006,
     },
-    "openingHoursSpecification": {
+    openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "08:00",
-      "closes": "18:00"
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "18:00",
     },
-    "sameAs": [
+    sameAs: [
       "https://www.facebook.com/smpainting",
       "https://www.instagram.com/smpainting",
-      "https://twitter.com/smpainting"
+      "https://twitter.com/smpainting",
     ],
-    "priceRange": "$$"
+    priceRange: "$$",
   };
 
   return (
@@ -122,13 +133,24 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-white dark:bg-black text-black dark:text-white transition-colors duration-300`}
+        className={`${glodok.variable} ${mackinac.variable} ${montserrat.variable} antialiased min-h-screen flex flex-col bg-white dark:bg-black text-black dark:text-white transition-colors duration-300`}
       >
         <Providers>
+          {/* Global Background Decorations */}
+          <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+            <div className="absolute top-[-10%] right-[-10%] blur-[80px] sm:blur-[150px] opacity-30 dark:opacity-20">
+              <div className="aspect-square w-[30rem] sm:w-[70rem] bg-gradient-to-tr from-brand-primary to-brand-secondary rounded-full" />
+            </div>
+            <div className="absolute bottom-[-10%] left-[-10%] blur-[80px] sm:blur-[150px] opacity-30 dark:opacity-20">
+              <div className="aspect-square w-[25rem] sm:w-[60rem] bg-gradient-to-tr from-brand-secondary to-brand-tertiary rounded-full" />
+            </div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-[100px] sm:blur-[200px] opacity-15 dark:opacity-10">
+              <div className="aspect-square w-[35rem] sm:w-[80rem] bg-gradient-to-br from-brand-tertiary to-brand-primary rounded-full" />
+            </div>
+          </div>
+
           <Navigation />
-          <main className="flex-grow">
-            {children}
-          </main>
+          <main className="flex-grow">{children}</main>
           <Footer />
         </Providers>
       </body>

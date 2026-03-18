@@ -3,6 +3,7 @@
 import React from 'react';
 import Button from '@/components/Button';
 import { useLanguage } from '@/context/LanguageContext';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/animations/ScrollReveal';
 
 const ServicesPage = () => {
   const { t } = useLanguage();
@@ -52,56 +53,63 @@ const ServicesPage = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-black py-12 sm:py-20 transition-colors duration-300">
+    <div className="py-12 sm:py-20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white lg:text-5xl">
-            {t('services.title')}
-          </h1>
-          <p className="mt-4 text-lg sm:text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-            {t('services.subtitle')}
-          </p>
+          <ScrollReveal>
+            <h1 className="text-3xl sm:text-4xl font-display text-gray-900 dark:text-white lg:text-5xl leading-tight">
+              {t('services.title')}
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <p className="mt-4 text-lg sm:text-xl font-sans text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+              {t('services.subtitle')}
+            </p>
+          </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {services.map((service, index) => (
-            <div 
-              key={service.title} 
-              className="bg-gray-50 dark:bg-zinc-950 p-6 sm:p-8 rounded-2xl border border-gray-100 dark:border-gray-900 hover:shadow-lg transition-shadow duration-300 flex flex-col h-full"
-            >
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                {service.title}
-              </h2>
-              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed flex-grow">
-                {service.description}
-              </p>
-              <ul className="space-y-3 mb-8">
-                {getFeatures(index).map((feature) => (
-                  <li key={feature} className="flex items-center text-sm sm:text-base text-gray-700 dark:text-gray-300">
-                    <svg className="h-5 w-5 text-brand-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <title>Check</title>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button variant={index % 3 === 0 ? 'primary' : index % 3 === 1 ? 'secondary' : 'tertiary'} className="w-full mt-auto">
-                {t('services.cta')} {service.title}
-              </Button>
-            </div>
+            <StaggerItem key={service.title}>
+              <div 
+                className="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-gray-200/30 dark:border-gray-800/30 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col h-full group"
+              >
+                <h2 className="text-xl sm:text-2xl font-display text-gray-900 dark:text-white mb-4 group-hover:text-brand-primary transition-colors duration-300">
+                  {service.title}
+                </h2>
+                <p className="text-base sm:text-lg font-sans text-gray-600 dark:text-gray-400 mb-6 leading-relaxed flex-grow">
+                  {service.description}
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {getFeatures(index).map((feature) => (
+                    <li key={feature} className="flex items-center text-sm sm:text-base font-sans text-gray-700 dark:text-gray-300">
+                      <svg className="h-5 w-5 text-brand-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <title>Check</title>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button variant={index % 3 === 0 ? 'primary' : index % 3 === 1 ? 'secondary' : 'tertiary'} className="w-full mt-auto shadow-lg shadow-brand-primary/10 group-hover:shadow-brand-primary/20 transition-all duration-300">
+                  {t('services.cta')} {service.title}
+                </Button>
+              </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
-        <div className="mt-16 sm:mt-20 bg-brand-secondary rounded-3xl p-8 sm:p-12 text-center text-white">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">{t('services.footer.title')}</h2>
-          <p className="text-lg sm:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            {t('services.footer.description')}
-          </p>
-          <Button variant="primary" className="w-full sm:w-auto bg-white text-brand-secondary hover:bg-gray-100 px-8 sm:px-10 py-4 text-lg font-bold shadow-md">
-            {t('services.footer.cta')}
-          </Button>
-        </div>
+        <ScrollReveal delay={0.4}>
+          <div className="mt-16 sm:mt-20 bg-brand-primary/10 dark:bg-brand-primary/5 backdrop-blur-md border border-brand-primary/20 rounded-3xl p-8 sm:p-12 text-center">
+            <h2 className="text-2xl sm:text-3xl font-display mb-4 sm:mb-6 leading-tight text-gray-900 dark:text-white">{t('services.footer.title')}</h2>
+            <p className="text-lg sm:text-xl font-subtitle mb-8 opacity-90 max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+              {t('services.footer.description')}
+            </p>
+            <Button variant="primary" className="w-full sm:w-auto px-8 sm:px-10 py-4 text-lg font-bold shadow-lg shadow-brand-primary/20">
+              {t('services.footer.cta')}
+            </Button>
+          </div>
+        </ScrollReveal>
       </div>
     </div>
   );
