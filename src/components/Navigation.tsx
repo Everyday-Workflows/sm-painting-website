@@ -22,10 +22,9 @@ const Navigation: React.FC = () => {
     };
   }, []);
 
-  if (!mounted) return null;
-
-  const logoSrc = resolvedTheme === 'dark' 
-    ? '/images/logos/Logo_Dark_Mode.webp' 
+  const isDarkTheme = mounted && resolvedTheme === 'dark';
+  const logoSrc = isDarkTheme
+    ? '/images/logos/Logo_Dark_Mode.webp'
     : '/images/logos/Logo_Light_Mode.webp';
 
   return (
@@ -107,7 +106,7 @@ const Navigation: React.FC = () => {
                 className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-500 dark:text-gray-400 transition-colors"
                 aria-label="Toggle theme"
               >
-                {resolvedTheme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                {isDarkTheme ? <Sun size={20} /> : <Moon size={20} />}
               </button>
             </div>
 
@@ -119,7 +118,7 @@ const Navigation: React.FC = () => {
                 className="p-2 rounded-full text-gray-500 dark:text-gray-400"
                 aria-label="Toggle theme"
               >
-                {resolvedTheme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                {isDarkTheme ? <Sun size={20} /> : <Moon size={20} />}
               </button>
               <button
                 type="button"

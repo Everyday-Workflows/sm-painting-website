@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Gallery | S&M Painting",
     description: "View our portfolio of residential and commercial painting projects.",
-    images: ["/images/og-gallery.jpg"],
+    images: ["/og-image.webp"],
   },
 };
 

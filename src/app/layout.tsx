@@ -23,6 +23,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://snmpainting.com"),
   title: {
     default: "S&M Painting | Professional Residential & Commercial Painting",
     template: "%s | S&M Painting",
@@ -49,14 +50,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://smpainting.com", // Replace with actual URL if known
+    url: "https://snmpainting.com",
     siteName: "S&M Painting",
     title: "S&M Painting | Professional Painting Services",
     description:
       "High-quality residential and commercial painting services. Transform your space with our expert touch.",
     images: [
       {
-        url: "/images/og-image.webp", // Need to ensure this exists or use a placeholder
+        url: "/og-image.webp",
         width: 1200,
         height: 630,
         alt: "S&M Painting - Professional Painting Services",
@@ -68,7 +69,7 @@ export const metadata: Metadata = {
     title: "S&M Painting | Professional Painting Services",
     description:
       "High-quality residential and commercial painting services. Transform your space with our expert touch.",
-    images: ["/images/og-image.webp"],
+    images: ["/og-image.webp"],
     creator: "@smpainting", // Replace with actual handle if known
   },
   robots: {
@@ -93,9 +94,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "PaintingService",
     name: "S&M Painting",
-    image: "https://smpainting.com/images/logos/Logo_Light_Mode.webp",
-    "@id": "https://smpainting.com",
-    url: "https://smpainting.com",
+    image: "https://snmpainting.com/images/logos/Logo_Light_Mode.webp",
+    "@id": "https://snmpainting.com",
+    url: "https://snmpainting.com",
     telephone: "+1-555-0123", // Placeholder
     address: {
       "@type": "PostalAddress",
