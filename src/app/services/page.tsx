@@ -53,11 +53,11 @@ const ServicesPage = () => {
   };
 
   return (
-    <div className="py-12 sm:py-20 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative py-12 sm:py-20 transition-colors duration-300 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 sm:mb-16">
           <ScrollReveal>
-            <h1 className="text-3xl sm:text-4xl font-display text-gray-900 dark:text-white lg:text-5xl leading-tight">
+            <h1 className="text-3xl sm:text-4xl font-display text-brand-secondary dark:text-brand-accent-1 lg:text-5xl leading-tight">
               {t('services.title')}
             </h1>
           </ScrollReveal>

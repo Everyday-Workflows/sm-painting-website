@@ -85,12 +85,12 @@ export default function Home() {
       <ScrollVideo frameCount={BEFORE_AFTER_FRAME_COUNT} framePath={beforeAfterFramePath} />
 
       {/* About Us Section */}
-      <section className="py-12 sm:py-24 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-12 sm:py-24 transition-colors duration-300 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:flex lg:items-center lg:gap-12">
             <div className="lg:w-1/2">
               <ScrollReveal direction="right">
-                <h2 className="text-2xl font-display text-gray-900 dark:text-white sm:text-3xl leading-tight">
+                <h2 className="text-2xl font-display text-brand-secondary dark:text-brand-accent-1 sm:text-3xl leading-tight">
                   {t('about.title')}
                 </h2>
               </ScrollReveal>
@@ -186,16 +186,19 @@ export default function Home() {
       <section className="py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <div className="bg-brand-primary/10 dark:bg-brand-primary/5 backdrop-blur-sm border border-brand-primary/20 rounded-[3rem] p-12 sm:p-20">
-              <h2 className="text-2xl font-display sm:text-3xl mb-6 sm:mb-8 leading-tight">
-                {t('cta.title')}
-              </h2>
-              <p className="text-lg font-subtitle mb-8 sm:mb-10 opacity-90 max-w-2xl mx-auto">
-                {t('cta.description')}
-              </p>
-              <Button variant="primary" className="text-lg px-10 py-4 shadow-xl shadow-brand-primary/20">
-                {t('cta.button')}
-              </Button>
+            <div className="relative bg-brand-primary/10 dark:bg-brand-primary/5 backdrop-blur-sm border border-brand-primary/20 rounded-[3rem] p-12 sm:p-20 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 via-transparent to-brand-accent-1/5 pointer-events-none" />
+              <div className="relative z-10">
+                <h2 className="text-2xl font-display text-brand-secondary dark:text-brand-accent-1 sm:text-3xl mb-6 sm:mb-8 leading-tight">
+                  {t('cta.title')}
+                </h2>
+                <p className="text-lg font-subtitle mb-8 sm:mb-10 opacity-90 max-w-2xl mx-auto">
+                  {t('cta.description')}
+                </p>
+                <Button variant="primary" className="text-lg px-10 py-4 shadow-xl shadow-brand-primary/20">
+                  {t('cta.button')}
+                </Button>
+              </div>
             </div>
           </ScrollReveal>
         </div>

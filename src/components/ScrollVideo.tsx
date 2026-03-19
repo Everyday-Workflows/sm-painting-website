@@ -169,7 +169,7 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ frameCount, framePath }) => {
 
           <div className="w-full lg:w-[45%] text-center lg:text-left z-20">
             <ScrollReveal direction="left">
-              <h2 className="text-4xl md:text-6xl font-display text-gray-900 dark:text-white mb-8 leading-[1.1]">
+              <h2 className="text-4xl md:text-6xl font-display text-brand-secondary dark:text-brand-accent-1 mb-8 leading-[1.1]">
                 {t('video.title') || 'See the Transformation'}
               </h2>
             </ScrollReveal>

@@ -5,6 +5,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import { Providers } from "@/components/Providers";
 import Footer from "@/components/Footer";
+import BackgroundBlobs from "@/components/BackgroundBlobs";
 
 const glodok = localFont({
   src: "../../public/fonts/tan-type-co-glodok-display.otf",
@@ -137,18 +138,7 @@ export default function RootLayout({
         className={`${glodok.variable} ${mackinac.variable} ${montserrat.variable} antialiased min-h-screen flex flex-col bg-white dark:bg-black text-black dark:text-white transition-colors duration-300`}
       >
         <Providers>
-          {/* Global Background Decorations */}
-          <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-            <div className="absolute top-[-10%] right-[-10%] blur-[80px] sm:blur-[150px] opacity-30 dark:opacity-20">
-              <div className="aspect-square w-[30rem] sm:w-[70rem] bg-gradient-to-tr from-brand-primary to-brand-secondary rounded-full" />
-            </div>
-            <div className="absolute bottom-[-10%] left-[-10%] blur-[80px] sm:blur-[150px] opacity-30 dark:opacity-20">
-              <div className="aspect-square w-[25rem] sm:w-[60rem] bg-gradient-to-tr from-brand-secondary to-brand-tertiary rounded-full" />
-            </div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blur-[100px] sm:blur-[200px] opacity-15 dark:opacity-10">
-              <div className="aspect-square w-[35rem] sm:w-[80rem] bg-gradient-to-br from-brand-tertiary to-brand-primary rounded-full" />
-            </div>
-          </div>
+          <BackgroundBlobs />
 
           <Navigation />
           <main className="flex-grow">{children}</main>
