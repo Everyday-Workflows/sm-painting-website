@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>S&amp;M Painting | Precision Craftsmanship</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#dadadc",
+              "outline-variant": "#c3c6d2",
+              "on-surface": "#1a1c1e",
+              "inverse-surface": "#2f3133",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e2e2e5",
+              "error-container": "#ffdad6",
+              "primary-container": "#3059a1",
+              "tertiary-fixed-dim": "#acc7ff",
+              "surface-bright": "#f9f9fc",
+              "on-primary-container": "#c0d3ff",
+              "surface": "#f9f9fc",
+              "error": "#ba1a1a",
+              "tertiary-container": "#325a9d",
+              "primary-fixed": "#d8e2ff",
+              "on-tertiary-container": "#c0d3ff",
+              "on-secondary-container": "#475481",
+              "surface-container": "#eeeef0",
+              "on-secondary-fixed-variant": "#384571",
+              "inverse-on-surface": "#f0f0f3",
+              "secondary-fixed-dim": "#b8c4f9",
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#091843",
+              "surface-container-high": "#e8e8ea",
+              "on-tertiary-fixed-variant": "#184587",
+              "secondary": "#505c8a",
+              "outline": "#737782",
+              "surface-container-highest": "#e2e2e5",
+              "on-background": "#1a1c1e",
+              "surface-tint": "#345da5",
+              "primary": "#0f4188",
+              "on-tertiary-fixed": "#001a40",
+              "surface-container-low": "#f3f3f6",
+              "on-secondary": "#ffffff",
+              "primary-fixed-dim": "#adc6ff",
+              "on-primary": "#ffffff",
+              "tertiary": "#134284",
+              "secondary-container": "#bdcaff",
+              "secondary-fixed": "#dce1ff",
+              "on-surface-variant": "#434751",
+              "tertiary-fixed": "#d7e2ff",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#001a42",
+              "inverse-primary": "#adc6ff",
+              "on-primary-fixed-variant": "#15448c",
+              "surface-container-lowest": "#ffffff",
+              "background": "#f9f9fc"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(15, 65, 136, 0.95) 0%, rgba(48, 89, 161, 0.8) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-extrabold tracking-tighter text-blue-900 font-[Manrope]">
+                S&amp;M Painting
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-blue-700 border-b-2 border-blue-700 pb-1 text-sm font-semibold tracking-tight" href="#">Our Services</a>
+<a class="text-slate-600 hover:text-blue-800 transition-colors text-sm font-semibold tracking-tight" href="#">Gallery</a>
+<a class="text-slate-600 hover:text-blue-800 transition-colors text-sm font-semibold tracking-tight" href="#">Process</a>
+<a class="text-slate-600 hover:text-blue-800 transition-colors text-sm font-semibold tracking-tight" href="#">Reviews</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-primary-container transition-all duration-300 active:scale-95">
+                Get Estimate
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Professional painter at work" class="w-full h-full object-cover" data-alt="Professional painter applying fresh white paint to a modern interior wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_VAEZ6IPQwxCu-0d9I4-dUDMlbzG1wVA3LRv8C02nOOVS5H7jlVEXSw-n3KO5q5vtwv5H9p3sbJS9woGHttlR5bvpJNBSgtQYFoQTOfChvsjzt4ja_zKQdJby_gL32fQh9sWZbWmsknhsv47sW14V9KW7A6JA91kqvSQpPzg_TqEeJ2N4UvMQ4oFkRLOYHS-sS-nza3qo-QE7CfY9QNNB24cHNu7hqrSRLWcNVMpO2tcuRA_ZemIv_rlGupfH8GxWS5-paVFRrQwO"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-primary-fixed/20 text-primary-fixed text-xs font-bold tracking-widest uppercase font-headline">
+                        Premium Residential &amp; Commercial
+                    </div>
+<h1 class="text-6xl md:text-7xl font-extrabold text-white font-headline leading-[1.1] tracking-tight">
+                        Perfect Finishes.<br/><span class="text-primary-fixed">Every Time.</span>
+</h1>
+<p class="text-xl text-on-primary-container max-w-lg leading-relaxed">
+                        Precision-driven painting services for homes and businesses that demand excellence. We combine architectural integrity with artisanal skill.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container-lowest transition-all duration-300 active:scale-95 shadow-xl shadow-black/10">
+                            Get Free Estimate
+                        </button>
+<button class="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+                            View Portfolio
+                        </button>
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="aspect-square rounded-full border border-white/10 p-12">
+<div class="w-full h-full rounded-full overflow-hidden shadow-2xl ring-8 ring-white/5">
+<img alt="Modern living room" class="w-full h-full object-cover" data-alt="Modern luxury living room with masterfully painted accent walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANWhqOHVpMtb2B1BYFZ1K78mF_g0A0lAWEAXN_nmZT36SiMsQnfZ-bEEFwlL8bP1MKLz-4FFVc4uGWXLRMUsOcGtOgy7S8cCLgZ026kKHpgst74YXZ1CcaVw9aD6Y06A4yhZ0bcZyhGueNazhbfxg1p7WMeHQe75U1DuEd1w7xZo6MAmEfunLrnJ978uFVUHlxkaU0XkCsu1_AMEwkqX0hLEh2n6_jXK4MMQ7Muw0TiaiB7g_6S8wdAueIlm7eLI0qs3y_0zUO5cRd"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Proposition -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5 space-y-6">
+<h2 class="text-4xl font-extrabold font-headline text-on-surface leading-tight">
+                            Craftsmanship That Stands The Test of Time
+                        </h2>
+<div class="w-20 h-1.5 bg-primary rounded-full"></div>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                            True quality begins long before the first coat. Our signature process focuses on meticulous surface preparation and the selection of high-performance architectural coatings.
+                        </p>
+</div>
+<div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="p-8 bg-surface-container-low rounded-xl space-y-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="architecture">architecture</span>
+<h3 class="text-xl font-bold font-headline">Professional Prep</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">We handle extensive sanding, patching, and priming to ensure a flawless canvas for every finish.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl space-y-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="brush">brush</span>
+<h3 class="text-xl font-bold font-headline">Premium Materials</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Exclusively using eco-friendly, high-pigment paints that provide superior coverage and durability.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl space-y-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="verified">verified</span>
+<h3 class="text-xl font-bold font-headline">Guaranteed Quality</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Every project undergoes a multi-point inspection to meet our rigorous standards of precision.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl space-y-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="schedule">schedule</span>
+<h3 class="text-xl font-bold font-headline">On-Time Delivery</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Respecting your space and your schedule with efficient, clean, and professional execution.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Overview (Bento-style grid) -->
+<section class="py-24 bg-surface-container">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-16 text-center space-y-4">
+<h2 class="text-4xl font-extrabold font-headline">Tailored Painting Solutions</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">From intimate residential spaces to large-scale commercial developments.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]">
+<div class="md:col-span-2 group relative overflow-hidden rounded-xl">
+<img alt="Interior painting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Luxurious kitchen interior with freshly painted custom cabinetry and walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrtD4_LxiGPZf3PLnKkYcQTFMwDVUL7j0au33TKvzz1v7fjCEYwwzLLuNg6zTyfJDTBK9VX5jAS7cnmzE-YnPs4qQr8_SBR9k-KsvkQXJBBZp3zS_P8qDNPEe86IcwhnJxromfbqlq3YK3On5f1WKIGg8GZFGwr3BxXGqSCrnwzvml2RnbmbMDrsH2LhiVreMlqZgB30AyOibXumcCLY1ZgcAX5KP_F1AfETQ0YYGA2Vcktzey5tFNA5gJ2mzouRovGo4Ss3Ut86W4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+<h3 class="text-2xl font-bold text-white font-headline">Interior Painting</h3>
+<p class="text-white/80 mt-2 max-w-md">Living spaces, kitchens, and detailed trim work executed with surgical precision.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img alt="Exterior painting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Exquisite modern house exterior with professional high-durability paint finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbGXM49KdlfKqjFqmwXfGw3X2bV-NZWLynrVJc1RvTyLDwLPxoEfdOXay0xtaXSgL9UmStUTIfJh7nYQkzaxDf_IrNxqSHx7JvmNfTiT0pAWkWnRw4NS9k-VDW_xKWZLmcWkBDSHmnYBEKsA4vRB7C6CpoOxC90KrEoEHwakooEr6nzMfQSBD6bC_xtOfn8UTBXTgMeSRbcaINv_nvWPUGeTNIx8s4rQUZ81GD_Kb-jmDGj5zjFgGVOCwvEbHgFsFZiTkizqim2egL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+<h3 class="text-2xl font-bold text-white font-headline">Exterior</h3>
+<p class="text-white/80 mt-2">Weather-resistant protection for all surfaces.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl">
+<img alt="Commercial services" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Sleek commercial office building with high-end architectural paint coatings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRx10RL1hHIKzWmTVOt0LiDggxhCo7GCEK9JfPc9V5GRTTb8czmTTLNA_edbJu3ZL0_08mUk4t73Fj4_VKT2NsMFoikUqR8Tgigadn4jEz5YNDe-_nuZoY5jlPu5CMTVD7HAw9IyYz77wWU09oExbS0zkTfEpmZVS7OqLyLNLM94VuRN1lUirvOvMbE2JI2tqKkkAVP7-sB-yzmIuBYkvUOFdb8--E9d9Kzj6vTBCACSwtqdET6t6OGzo5IBzOLuM1X0pQdU-jJf4D"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+<h3 class="text-2xl font-bold text-white font-headline">Commercial</h3>
+<p class="text-white/80 mt-2">Large-scale efficiency and professional branding.</p>
+</div>
+</div>
+<div class="md:col-span-2 group relative overflow-hidden rounded-xl">
+<img alt="Cabinet refinishing" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of factory-smooth cabinet refinishing process in a high-end kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvd-V2IDrIH3yRYEwOXXn2Px4Nj7cw11WbmON0QFcQ7ACf9FWHSr7hgdD1cSuBHD7dH7PKwbx-riEypxW3L14im6QmaQJtnQ-HamtVxxuOATg8l0qa-e9f6OaFfPTIYcCYccmOpcCqskjSeeKmdxTxGFTh4GOUSnHFdt7jiwODPTeMxX5cqt5sTYEYDgE1sZ7OQI23EnLkdv5CnTjGMJqHPYoVOpG7iynCLe0f3Flt2gDkog7X0O85BCS_uDiETIn1Qa8FJ-aEfcau"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+<h3 class="text-2xl font-bold text-white font-headline">Cabinet Refinishing</h3>
+<p class="text-white/80 mt-2 max-w-md">Giving your existing cabinetry a factory-smooth, designer update without the cost of replacement.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="space-y-4">
+<h2 class="text-4xl font-extrabold font-headline">What Our Clients Say</h2>
+<p class="text-on-surface-variant">Real stories from homeowners and businesses across the region.</p>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-primary-fixed rounded-lg text-on-primary-fixed font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9/5 Rating</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="p-8 bg-surface-container-lowest shadow-sm rounded-xl space-y-6 relative border border-outline-variant/10">
+<div class="flex text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic leading-relaxed font-medium">"The attention to detail was beyond anything I've seen. They didn't just paint our home; they transformed it. The team was punctual, tidy, and incredibly professional."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-bold font-headline text-sm">Sarah Jenkins</p>
+<p class="text-xs text-on-surface-variant">Residential Client</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="p-8 bg-surface-container-lowest shadow-sm rounded-xl space-y-6 relative border border-outline-variant/10">
+<div class="flex text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic leading-relaxed font-medium">"Managing a commercial property is hard enough, but S&amp;M Painting made the refresh effortless. Their timeline management was spot-on and the results are impeccable."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-bold font-headline text-sm">Marcus Chen</p>
+<p class="text-xs text-on-surface-variant">Property Manager</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="p-8 bg-surface-container-lowest shadow-sm rounded-xl space-y-6 relative border border-outline-variant/10">
+<div class="flex text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic leading-relaxed font-medium">"They refinished our kitchen cabinets and they look brand new. We saved thousands compared to a full renovation, and the quality of the finish is flawless."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-bold font-headline text-sm">Elena Rodriguez</p>
+<p class="text-xs text-on-surface-variant">Homeowner</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 px-6">
+<div class="max-w-7xl mx-auto relative overflow-hidden rounded-[2rem] bg-secondary text-on-primary">
+<div class="absolute inset-0 z-0">
+<img alt="Abstract paint texture" class="w-full h-full object-cover opacity-20" data-alt="Abstract deep blue oil paint texture on a high-end canvas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy5CS3aUw8nUob44W7WIVh5sR0lmvLST-8IoSUibwCurtDayMKy71iZbGHmiPAV90piA1Yt-ioK4ADFkMU2KoSR3eAzIp_65rvm3hm0jQW-m_OcgloCgH7ssuw57cXj2O2fkzSWbaJi63EYZ6h9Dqhs5dAoFy7gzSrUbK1btRjCaeRCVZJcNUGiceGBZ9LU7Ut8YLvnnlLKeKxlPrr1Eu7EbIe09DvdYe_SbabNPz05NW8OsoTWJhG2SNIF5VVFz3q3mGUzYhRYmdV"/>
+</div>
+<div class="relative z-10 p-12 md:p-24 flex flex-col items-center text-center space-y-8">
+<h2 class="text-4xl md:text-6xl font-extrabold font-headline leading-tight">
+                        Ready to transform your space?
+                    </h2>
+<p class="text-xl text-primary-fixed max-w-2xl font-light">
+                        Book your complimentary color consultation and detailed estimate today. Experience the S&amp;M difference in every brushstroke.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-6 pt-4">
+<button class="bg-white text-secondary px-10 py-5 rounded-full font-extrabold text-xl shadow-2xl hover:bg-surface-bright transition-all active:scale-95">
+                            Get My Free Estimate
+                        </button>
+<button class="border-2 border-white/40 px-10 py-5 rounded-full font-extrabold text-xl hover:bg-white/10 transition-all">
+                            Contact Us
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-8 mt-auto bg-slate-900 border-t border-slate-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-bold text-white font-headline uppercase tracking-widest">
+                    S&amp;M Painting
+                </div>
+<p class="text-slate-400 font-body font-light text-sm leading-relaxed">
+                    Precision craftsmanship and architectural finishing for premium residential and commercial projects. Built on trust, finished with excellence.
+                </p>
+</div>
+<div class="space-y-6">
+<h4 class="text-blue-400 font-headline font-bold uppercase tracking-widest text-xs">Our Services</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-400 hover:text-white transition-colors hover:underline decoration-blue-500 underline-offset-4 text-sm font-light" href="#">Residential Painting</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors hover:underline decoration-blue-500 underline-offset-4 text-sm font-light" href="#">Commercial Services</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors hover:underline decoration-blue-500 underline-offset-4 text-sm font-light" href="#">Cabinet Refinishing</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors hover:underline decoration-blue-500 underline-offset-4 text-sm font-light" href="#">Color Consultation</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="text-blue-400 font-headline font-bold uppercase tracking-widest text-xs">Company</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-400 hover:text-white transition-colors hover:underline decoration-blue-500 underline-offset-4 text-sm font-light" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors hover:underline decoration-blue-500 underline-offset-4 text-sm font-light" href="#">Contact Us</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors hover:underline decoration-blue-500 underline-offset-4 text-sm font-light" href="#">Careers</a></li>
+<li><a class="text-slate-400 hover:text-white transition-colors hover:underline decoration-blue-500 underline-offset-4 text-sm font-light" href="#">Project Gallery</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="text-blue-400 font-headline font-bold uppercase tracking-widest text-xs">Connect</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-white hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-white hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">thumb_up</span>
+</a>
+<a class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-white hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+<div class="text-white font-medium">
+                    (555) 123-4567
+                </div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-0 mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-500 text-xs font-light">
+                © 2024 S&amp;M Painting. Precision Craftsmanship.
+            </p>
+<p class="text-slate-500 text-xs font-light">
+                Crafted for Excellence.
+            </p>
+</div>
+</footer>
+</body></html>

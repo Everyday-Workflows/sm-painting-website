@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>S&amp;M Painting | MasterCraft Painters</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-container": "#eeeef0",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#d7e2ff",
+              "surface-dim": "#dadadc",
+              "surface-container-lowest": "#ffffff",
+              "inverse-surface": "#2f3133",
+              "error-container": "#ffdad6",
+              "on-surface": "#1a1c1e",
+              "surface-container-low": "#f3f3f6",
+              "on-secondary-container": "#475481",
+              "surface": "#f9f9fc",
+              "on-surface-variant": "#434751",
+              "primary-fixed": "#d8e2ff",
+              "on-tertiary-fixed-variant": "#184587",
+              "on-error": "#ffffff",
+              "surface-bright": "#f9f9fc",
+              "secondary-container": "#bdcaff",
+              "tertiary-fixed-dim": "#acc7ff",
+              "outline-variant": "#c3c6d2",
+              "primary-fixed-dim": "#adc6ff",
+              "primary-container": "#3059a1",
+              "on-primary-fixed-variant": "#15448c",
+              "on-tertiary-container": "#c0d3ff",
+              "surface-tint": "#345da5",
+              "surface-container-highest": "#e2e2e5",
+              "secondary-fixed": "#dce1ff",
+              "on-primary-fixed": "#001a42",
+              "inverse-on-surface": "#f0f0f3",
+              "surface-container-high": "#e8e8ea",
+              "on-background": "#1a1c1e",
+              "tertiary": "#134284",
+              "secondary": "#505c8a",
+              "inverse-primary": "#adc6ff",
+              "surface-variant": "#e2e2e5",
+              "on-primary-container": "#c0d3ff",
+              "outline": "#737782",
+              "secondary-fixed-dim": "#b8c4f9",
+              "primary": "#0f4188",
+              "on-tertiary-fixed": "#001a40",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed-variant": "#384571",
+              "tertiary-container": "#325a9d",
+              "on-tertiary": "#ffffff",
+              "background": "#f9f9fc",
+              "on-secondary-fixed": "#091843"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Manrope', sans-serif; }
+        .glass-nav { backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 w-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-md shadow-sm">
+<nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+<div class="flex items-center">
+<img alt="S&amp;M Painting Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpl-J6JZ7EGb0c88zJK0NnkFsYgXtF374xFnGpI0ZvlHxb7ZzGvDc7exvO0drVRcHZGv70625tb41BATBd35m44Pb0C2fOcfZTKM-RKd50vMyOo7pVDdmOBYtapmcFpsjSnmfJQ6kvCguxgNmO_UHCiN0OArWk0X_zIKDjqnFzrz9o9KHVqV1mMz58QQouRig7dTQTjPkOU4jj6c0_YUhVRbEu0dxkLY0e_Q_nufzqYkvZKICKHyGUo_M-QzPKp0fuLYDwSWZBfVqt"/>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-blue-700 dark:text-blue-400 font-bold border-b-2 border-blue-700 transition-all" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-800 dark:hover:text-blue-300 transition-all" href="#services">Services</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-800 dark:hover:text-blue-300 transition-all" href="#portfolio">Portfolio</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-800 dark:hover:text-blue-300 transition-all" href="#about">About Us</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-bold tracking-tight active:scale-95 transition-transform hover:bg-primary-container">
+                Get Estimate
+            </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[795px] flex items-center overflow-hidden bg-primary overflow-hidden">
+<div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&amp;fit=crop&amp;q=80&amp;w=2000')] bg-cover bg-center" data-alt="Close up of high quality blue wall texture"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+                        Premium Craftsmanship Guaranteed
+                    </div>
+<h1 class="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] tracking-tight">
+                        Perfect Finishes.<br/>Every Time.
+                    </h1>
+<p class="text-lg md:text-xl text-primary-fixed leading-relaxed max-w-xl">
+                        Expert painting and craftsmanship tailored for high-end residential and commercial spaces. We turn your vision into a structural masterpiece.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary-fixed transition-colors">
+                            Get a Free Estimate
+                        </button>
+<button class="flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg text-white border border-white/30 hover:bg-white/10 transition-colors">
+                            View Portfolio
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="w-full aspect-square rounded-full border-[32px] border-white/5 absolute -top-12 -right-12"></div>
+<div class="relative bg-white p-4 rounded-2xl shadow-2xl rotate-3 overflow-hidden group">
+<img alt="Professional painter at work" class="rounded-xl w-full h-[500px] object-cover" data-alt="Professional painter applying smooth finish to luxury interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhTsWo08or5i3BtDdUusR7NlHmQA07RYxQ2M8UiMd95FBoch_IPY7KjkG-ZMtd2oNjJLFyvO_Du8qFlXkcSxus1DjGltHBlSOPUl1ccwJAj1X4N-HnszD2sFgcUVq4Tk19RwSQU2LdprgyGW1cJQTIHajfMFOyB8NgBUEzQIbbYgZ0IkyNI-Hxjpd_vFMV0ZcpTGNJaG_uenzp3TrIfeiDArpZvQr27Sg092FKeQ517R0507SkvdvmFPH3-wfC5ZHubaNkR48EZMA9"/>
+<div class="absolute bottom-10 left-10 right-10 p-6 bg-white/90 backdrop-blur shadow-lg rounded-xl">
+<div class="flex items-center gap-4">
+<div class="bg-white p-1 rounded-lg shadow-sm border border-slate-100">
+<img alt="S&amp;M Logo" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpl-J6JZ7EGb0c88zJK0NnkFsYgXtF374xFnGpI0ZvlHxb7ZzGvDc7exvO0drVRcHZGv70625tb41BATBd35m44Pb0C2fOcfZTKM-RKd50vMyOo7pVDdmOBYtapmcFpsjSnmfJQ6kvCguxgNmO_UHCiN0OArWk0X_zIKDjqnFzrz9o9KHVqV1mMz58QQouRig7dTQTjPkOU4jj6c0_YUhVRbEu0dxkLY0e_Q_nufzqYkvZKICKHyGUo_M-QzPKp0fuLYDwSWZBfVqt"/>
+</div>
+<div>
+<p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Master Stroke Pro</p>
+<p class="text-lg font-bold text-on-surface">S&amp;M Master Craftsmanship</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us Section -->
+<section class="py-24 bg-surface" id="about">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<img class="rounded-xl aspect-[4/5] object-cover shadow-sm" data-alt="Detailed painting craftsmanship close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC54NlL_ok7e7DFT5LvUMVpar6_fgp_ZqfkzF7xva8qoBHruTwG2pSai2Lbl8T9fXHqQ8UsUvNX_Kx8Ot1ypELU78ya9ciGfGUmgPUbiEnhaKl-36w9PgfqjSc1y5VCs2OHomLrzZtNOJlxGB8sdIyMswp6VuYK7iawnIrpaRipJ9HDSTfymTaMCmFIm4JSC-Ijeu-Wo1AYUyZT2HxZwvxwp0R7Co7C6XYeOmmE7145yRBDvn7RZzozkDXcPBP6XIwdy_JAZ7XIeHGu"/>
+<div class="bg-primary-container text-on-primary-container p-8 rounded-xl">
+<p class="text-4xl font-extrabold mb-2">15+</p>
+<p class="text-sm font-medium">Years of excellence in the painting industry.</p>
+</div>
+</div>
+<div class="space-y-4 pt-12">
+<div class="bg-surface-container-high p-8 rounded-xl">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="handyman">handyman</span>
+<p class="mt-4 font-bold text-lg">Precision Focused</p>
+</div>
+<img class="rounded-xl aspect-[4/5] object-cover shadow-sm" data-alt="Modern house exterior with clean paint lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU_DqoyvMorvCTTz-jGMPPXLDBCvfLJwTUl4DvKkpU1dejuje0z4nt4J7yX30bKAivL-ZUCUNdlOJjOgpe98qlfoNMFEhkDZenhk49fV8lTO-I4Wv6mjK3A6bN-7e-anEPPQrIMxGqb7YGyNh6vyLasF6zPh-PLhhey_pudd33QAx4h5OUV2tZgqPcUenFB3mPTfHZ2b9dHgt2TuJqU5YZsPaarve3kKphGLk6oJla8mQi7rGIzzvIuVmbBabXDJs3HxAIvEKC8CJs"/>
+</div>
+</div>
+<div class="space-y-8">
+<p class="text-primary font-bold tracking-widest uppercase text-sm">Our Legacy</p>
+<h2 class="text-4xl md:text-5xl font-extrabold text-on-surface leading-tight">Craftsmanship That Stands The Test of Time.</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                            At S&amp;M Painting, we don't just apply color—we protect and enhance the architectural soul of your space. Our dedication to quality begins with rigorous surface preparation and ends with the finest topcoats in the industry.
+                        </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-4">
+<div class="bg-primary/10 text-primary rounded-full p-1">
+<span class="material-symbols-outlined text-lg" data-icon="check">check</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Detailed Surface Preparation</p>
+<p class="text-sm text-on-surface-variant">We ensure a smooth, lasting foundation before a drop of paint is ever applied.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="bg-primary/10 text-primary rounded-full p-1">
+<span class="material-symbols-outlined text-lg" data-icon="check">check</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Premium Material Selection</p>
+<p class="text-sm text-on-surface-variant">Exclusively using professional-grade paints for maximum durability and color depth.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section (Bento Grid) -->
+<section class="py-24 bg-surface-container-low" id="services">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<p class="text-primary font-bold tracking-widest uppercase text-sm mb-4">What We Do</p>
+<h2 class="text-4xl md:text-5xl font-extrabold text-on-surface">Professional Services</h2>
+</div>
+<p class="text-on-surface-variant max-w-sm mb-2">Tailored solutions for every surface, from luxury residences to large-scale commercial complexes.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Interior -->
+<div class="group relative overflow-hidden rounded-xl bg-white shadow-sm p-8 h-[400px] flex flex-col justify-end">
+<div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+<img class="w-full h-full object-cover" data-alt="Elegant luxury living room interior with perfect white walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD98aYT8j9_mbvAMiX4z2bvQdsUBzEqLfOdT39dclTYR57lhSgX7CjQbs0TCKW9qrlekkWmhrO-sy-oS9XTMOTxCwUhIANaDhz2TKFSGX3ErmJs4lK7A93E3fQ4P8h7wjp9V0lajJ_HpEeeFHmijJg67fHfHoZrglyD4HpWevmBhp-Z5sKtMk7Cw4mQN7soKzdDMSVJBnnbHGTt_ruvfYqDZ-oVARgbw3JVw-JQ38YGZ1cE5dW83rpge8gW_l0znlEJ8mifcH3pYNP3"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+</div>
+<div class="relative z-10 text-white">
+<span class="material-symbols-outlined text-4xl mb-4" data-icon="weekend">weekend</span>
+<h3 class="text-2xl font-bold mb-2">Interior Painting</h3>
+<p class="text-sm text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Flawless walls, ceilings, and trim work that elevate your indoor living experience.</p>
+</div>
+</div>
+<!-- Exterior -->
+<div class="group relative overflow-hidden rounded-xl bg-white shadow-sm p-8 h-[400px] flex flex-col justify-end">
+<div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+<img class="w-full h-full object-cover" data-alt="Modern house exterior with deep blue paint" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmdKr1Ih6YawvznVct53icTTQ9vkS-Y0Zix1e1LaSTRd97wkDX64BYhQTh-6ei1HlprLYQb3wE3aOl2ziRZB39rlfHS8OQtXoMye9Ja9ZfXlzVRKLl95GLClwuANwin1vB7fPmMuAwWOK21mbP75PvGQwblgiESytDhm3WPluki9Vmp4F0USr8cKqjSPganiwPrOTVgy_rdzuDhk75zQOReZcgBb3q8mJbHgKVuG_Gml0yAY8I0AhR82RG0XW3pojpMQSeA0kwlL0a"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+</div>
+<div class="relative z-10 text-white">
+<span class="material-symbols-outlined text-4xl mb-4" data-icon="home">home</span>
+<h3 class="text-2xl font-bold mb-2">Exterior Painting</h3>
+<p class="text-sm text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Weather-resistant coatings that protect your investment and boost curb appeal.</p>
+</div>
+</div>
+<!-- Commercial -->
+<div class="group relative overflow-hidden rounded-xl bg-white shadow-sm p-8 h-[400px] flex flex-col justify-end">
+<div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+<img class="w-full h-full object-cover" data-alt="Modern corporate office lobby interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDisyqyJYToWSHe77ksYYgx0VWagqL9odipT-oN5L94voWpsMB9yC3QwMuBX5CLpgeVNiS6xc3u1UJdG7FUnMcMS54fR5iBaJHpaGCvwdhRKKwXgYjWFB5BkmL-D9pYIa5anV6veuJdGK5hZokjLN0hF-JvNqAKsGRYwGpSmoU3pukJzxOBekMzBMB3QdqLP8EXezXCOTEyZyuCzzzeMkbfK7sfpeeWPrO7XYSnXMF05n2Vw4FzsAtoa_PS1zaA_-TGqbnAKnnUdSrB"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+</div>
+<div class="relative z-10 text-white">
+<span class="material-symbols-outlined text-4xl mb-4" data-icon="business">business</span>
+<h3 class="text-2xl font-bold mb-2">Commercial Services</h3>
+<p class="text-sm text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Efficient, high-impact painting for offices, retail, and industrial spaces.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-24 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16 space-y-4">
+<p class="text-primary font-bold tracking-widest uppercase text-sm">Customer Stories</p>
+<h2 class="text-4xl font-extrabold text-on-surface">What Our Clients Say</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-sm border-b-4 border-primary">
+<div class="flex gap-1 text-yellow-500 mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic leading-relaxed mb-8">"The attention to detail on our kitchen cabinetry was astounding. They didn't just paint—they transformed the space into a magazine-worthy room."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary">EJ</div>
+<div>
+<p class="font-bold text-on-surface">Eleanor Jenkins</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Homeowner</p>
+</div>
+</div>
+</div>
+<div class="bg-primary text-white p-10 rounded-xl shadow-lg transform lg:-translate-y-4">
+<div class="flex gap-1 text-white/40 mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-primary-fixed italic leading-relaxed mb-8">"Reliable, clean, and incredibly fast. S&amp;M handled our entire office renovation over a weekend so we didn't lose a single hour of productivity."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center font-bold text-white border border-white/20">MR</div>
+<div>
+<p class="font-bold">Marcus Reed</p>
+<p class="text-xs text-primary-fixed/60 uppercase tracking-widest">Tech Corp CEO</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-sm border-b-4 border-primary">
+<div class="flex gap-1 text-yellow-500 mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic leading-relaxed mb-8">"From the initial color consultation to the final walkthrough, everything was handled with absolute professionalism. Highly recommended."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary">SC</div>
+<div>
+<p class="font-bold text-on-surface">Sarah Collins</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Real Estate Agent</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24">
+<div class="max-w-5xl mx-auto px-6">
+<div class="bg-slate-900 rounded-[2rem] p-12 md:p-20 text-center space-y-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px]"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-400/10 blur-[100px]"></div>
+<h2 class="text-4xl md:text-6xl font-extrabold text-white relative z-10 leading-tight">Ready to transform your space?</h2>
+<p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto relative z-10">
+                        Contact us today for a detailed consultation and a complimentary estimate on your next project.
+                    </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10 pt-4">
+<button class="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-500 transition-colors">
+                            Get Free Estimate
+                        </button>
+<button class="bg-white/5 border border-white/10 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-colors">
+                            Call (555) 123-4567
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-900 dark:bg-black w-full pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
+<div class="space-y-6 max-w-sm">
+<div class="flex items-center">
+<img alt="S&amp;M Painting Logo" class="h-12 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpl-J6JZ7EGb0c88zJK0NnkFsYgXtF374xFnGpI0ZvlHxb7ZzGvDc7exvO0drVRcHZGv70625tb41BATBd35m44Pb0C2fOcfZTKM-RKd50vMyOo7pVDdmOBYtapmcFpsjSnmfJQ6kvCguxgNmO_UHCiN0OArWk0X_zIKDjqnFzrz9o9KHVqV1mMz58QQouRig7dTQTjPkOU4jj6c0_YUhVRbEu0dxkLY0e_Q_nufzqYkvZKICKHyGUo_M-QzPKp0fuLYDwSWZBfVqt"/>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed font-inter">
+                    Redefining spaces through master craftsmanship and architectural painting excellence. Serving the community since 2009.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="facebook">social_leaderboard</span>
+</a>
+<a class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div class="space-y-4">
+<h4 class="text-white font-bold">Services</h4>
+<ul class="space-y-2 text-slate-400 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Interior Painting</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Exterior Coating</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Cabinet Refinishing</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Commercial Scale</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-white font-bold">Company</h4>
+<ul class="space-y-2 text-slate-400 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Our Portfolio</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Reviews</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-4 col-span-2 md:col-span-1">
+<h4 class="text-white font-bold">Contact</h4>
+<ul class="space-y-2 text-slate-400 text-sm">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-400 text-sm" data-icon="mail">mail</span>
+                            hello@smpainting.com
+                        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-400 text-sm" data-icon="call">call</span>
+                            (555) 123-4567
+                        </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-400 text-sm font-inter">© 2024 S&amp;M Painting &amp; Craftsmanship. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="text-slate-400 text-sm hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-400 text-sm hover:text-white transition-colors" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+</body></html>

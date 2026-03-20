@@ -95,10 +95,11 @@ export const StaggerContainer: React.FC<StaggerContainerProps> = ({
   );
 };
 
-export const StaggerItem: React.FC<{ children: React.ReactNode; direction?: 'up' | 'down' | 'left' | 'right'; distance?: number }> = ({ 
+export const StaggerItem: React.FC<{ children: React.ReactNode; direction?: 'up' | 'down' | 'left' | 'right'; distance?: number; className?: string }> = ({ 
   children, 
   direction = 'up',
-  distance = 30 
+  distance = 30,
+  className = ''
 }) => {
   const item = {
     hidden: { 
@@ -110,7 +111,7 @@ export const StaggerItem: React.FC<{ children: React.ReactNode; direction?: 'up'
     show: { 
       opacity: 1, 
       y: 0, 
-      x: 0,
+      x: 0, 
       scale: 1,
       transition: {
         duration: 0.8,
@@ -119,5 +120,6 @@ export const StaggerItem: React.FC<{ children: React.ReactNode; direction?: 'up'
     },
   };
 
-  return <motion.div variants={item}>{children}</motion.div>;
+  return <motion.div variants={item} className={className}>{children}</motion.div>;
 };
+

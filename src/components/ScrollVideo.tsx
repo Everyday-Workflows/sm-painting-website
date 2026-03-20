@@ -137,9 +137,9 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ frameCount, framePath }) => {
   }, [scrollYProgress, playbackFrameCount]);
 
   return (
-    <section ref={containerRef} className={`relative ${isMobileViewport ? 'h-[240vh]' : 'h-[400vh]'} transition-colors duration-300`}>
+    <section ref={containerRef} className={`relative ${isMobileViewport ? 'h-[180vh]' : 'h-[400vh]'} transition-colors duration-300`}>
       <div className="sticky top-0 h-[100svh] md:h-screen w-full overflow-hidden flex items-center justify-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20 py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20 py-6 sm:py-10">
           <div className="relative w-full lg:w-[55%] aspect-square max-w-[820px] mx-auto flex items-center justify-center overflow-visible">
             <ScrollReveal direction="right" delay={0.1}>
               <motion.div
