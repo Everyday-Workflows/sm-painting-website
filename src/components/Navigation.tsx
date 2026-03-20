@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { useLanguage } from '@/context/LanguageContext';
+import { BRAND_ASSETS } from '@/lib/siteAssets';
 import { Sun, Moon, Languages, Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -24,8 +25,8 @@ const Navigation: React.FC = () => {
 
   const isDarkTheme = mounted && resolvedTheme === 'dark';
   const logoSrc = isDarkTheme
-    ? '/images/logos/Logo_Dark_Mode.webp'
-    : '/images/logos/Logo_Light_Mode.webp';
+    ? BRAND_ASSETS.logoDarkWordmark
+    : BRAND_ASSETS.logoLightWordmark;
   const logoAlt = t('common.logoAlt');
   const languageToggleLabel = language === 'en' ? 'Cambiar a español' : 'Switch to English';
   const themeToggleLabel = isDarkTheme

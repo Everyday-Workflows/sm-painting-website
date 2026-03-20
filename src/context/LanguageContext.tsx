@@ -57,6 +57,7 @@ const translations = {
     'video.after': 'After',
     'video.alt': 'Before and after painting transformation animation',
     'common.logoAlt': 'S&M Painting logo',
+    'common.sealAlt': 'S&M Painting brand seal',
   },
   es: {
     'nav.home': 'Inicio',
@@ -104,6 +105,7 @@ const translations = {
     'video.after': 'Después',
     'video.alt': 'Animación de transformación de pintura antes y después',
     'common.logoAlt': 'Logo de S&M Painting',
+    'common.sealAlt': 'Sello de marca de S&M Painting',
   }
 };
 

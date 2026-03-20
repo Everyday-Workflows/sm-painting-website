@@ -7,7 +7,6 @@ import {
   Building2,
   Clock3,
   type LucideIcon,
-  Paintbrush2,
   PhoneCall,
   ShieldCheck,
   Sparkles,
@@ -16,6 +15,7 @@ import {
 import { useLanguage } from "@/context/LanguageContext";
 import ScrollVideo from "@/components/ScrollVideo";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations/ScrollReveal";
+import { BRAND_ASSETS, FEATURED_GALLERY_ASSETS } from "@/lib/siteAssets";
 
 const BEFORE_AFTER_FRAME_COUNT = 603;
 const beforeAfterFramePath = (index: number) => `/frames/before-after/optimized/raw-${String(index + 1).padStart(4, '0')}.webp`;
@@ -37,12 +37,18 @@ type ServiceCard = {
   image: string;
   alt: string;
   className?: string;
+  titleClassName?: string;
 };
 
 type Testimonial = {
   name: string;
   role: string;
   quote: string;
+};
+
+type ProcessStep = {
+  title: string;
+  description: string;
 };
 
 type HomeCopy = {
@@ -63,6 +69,12 @@ type HomeCopy = {
     bottomCardDescription: string;
   };
   trustStrip: string[];
+  process: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    steps: ProcessStep[];
+  };
   craft: {
     eyebrow: string;
     title: string;
@@ -95,6 +107,9 @@ type HomeCopy = {
     heroShowcase: string;
     bottomCard: string;
     ctaBackground: string;
+    iconMark: string;
+    precisionArtboard: string;
+    qualityArtboard: string;
   };
 };
 
@@ -123,6 +138,26 @@ const HOME_COPY: Record<'en' | 'es', HomeCopy> = {
       bottomCardDescription: 'We help clients avoid flat tones, rushed coats, and finishes that look tired too soon.',
     },
     trustStrip: ['Interior repainting', 'Exterior protection', 'Commercial refreshes', 'Cabinet refinishing'],
+    process: {
+      eyebrow: 'What to expect',
+      title: 'A smoother project starts with a clearer plan.',
+      description:
+        'We keep projects organized from the first walkthrough to the final touchups so your home or property stays protected and the finish stays consistent.',
+      steps: [
+        {
+          title: 'Walkthrough & estimate',
+          description: 'We review surfaces, note repairs, talk color direction, and map the scope before work begins.',
+        },
+        {
+          title: 'Prep & protection',
+          description: 'Floors, furniture, fixtures, and adjacent surfaces are covered while patching, sanding, caulking, and priming happen where needed.',
+        },
+        {
+          title: 'Paint & final review',
+          description: 'We apply durable coats, keep the site tidy, and close with a walkthrough so nothing feels rushed or unfinished.',
+        },
+      ],
+    },
     craft: {
       eyebrow: 'Why clients call us back',
       title: 'Craftsmanship starts long before the first coat.',
@@ -165,28 +200,32 @@ const HOME_COPY: Record<'en' | 'es', HomeCopy> = {
         {
           title: 'Interior painting',
           description: 'Walls, ceilings, trim, and lived-in spaces that need a cleaner, brighter reset.',
-          image: '/images/gallery/c02cf30a-4ea3-4e7e-b6e6-71e96cd2cedd.jpeg',
-          alt: 'Freshly painted modern interior with a clean, bright finish.',
+          image: FEATURED_GALLERY_ASSETS.interiorService,
+          alt: 'Bright freshly painted interior with a two-story living area and crisp trim lines.',
           className: 'md:col-span-2 md:row-span-2',
+          titleClassName: 'text-2xl sm:text-3xl',
         },
         {
           title: 'Exterior painting',
           description: 'Durable protection and curb appeal for siding, trim, doors, and outdoor surfaces.',
-          image: '/images/gallery/8510a805-0725-415e-a482-d3b7fe91cfe4.jpeg',
-          alt: 'Exterior painting project completed by S&M Painting.',
+          image: FEATURED_GALLERY_ASSETS.exteriorService,
+          alt: 'Finished exterior painting project on a bright coastal-style home.',
+          titleClassName: 'max-w-[7.5ch] text-[1.08rem] sm:max-w-[8ch] sm:text-[1.55rem] lg:text-[2.05rem]',
         },
         {
           title: 'Commercial spaces',
           description: 'Offices, storefronts, and rental properties refreshed with minimal disruption.',
-          image: '/images/gallery/8cf01e68-8464-4091-bab9-69c94208c746.jpeg',
-          alt: 'Commercial painting project with crisp architectural lines.',
+          image: FEATURED_GALLERY_ASSETS.commercialService,
+          alt: 'Refreshed rental property exterior with clean lines and updated paintwork.',
+          titleClassName: 'max-w-[7.2ch] text-[1rem] sm:max-w-[8ch] sm:text-[1.5rem] lg:text-[1.95rem]',
         },
         {
           title: 'Cabinets & trim',
           description: 'Factory-smooth updates that modernize high-touch surfaces without full replacement.',
-          image: '/images/gallery/3248cf5d-16fe-4d74-b57b-a7030ff5908d.jpeg',
-          alt: 'Detailed cabinet and trim painting with a smooth finish.',
+          image: FEATURED_GALLERY_ASSETS.cabinetsService,
+          alt: 'Interior kitchen area carefully masked and prepped for cabinet and trim refinishing.',
           className: 'md:col-span-2',
+          titleClassName: 'text-[1.85rem] sm:text-[2.25rem] lg:text-[2.6rem]',
         },
       ],
       cta: 'Explore all services',
@@ -227,9 +266,12 @@ const HOME_COPY: Record<'en' | 'es', HomeCopy> = {
     },
     imageAlts: {
       logo: 'S&M Painting logo',
-      heroShowcase: 'Freshly painted interior by S&M Painting',
+      heroShowcase: 'Freshly painted open-concept living room by S&M Painting',
       bottomCard: 'Color and finish inspiration from an S&M Painting project',
-      ctaBackground: 'Painted texture and finish detail',
+      ctaBackground: 'Exterior architectural detail during painting prep',
+      iconMark: 'S&M Painting icon mark artwork',
+      precisionArtboard: 'Brand artboard reading Precision in Every Stroke',
+      qualityArtboard: 'Brand artboard reading Quality Meets Color',
     },
   },
   es: {
@@ -256,6 +298,26 @@ const HOME_COPY: Record<'en' | 'es', HomeCopy> = {
       bottomCardDescription: 'Ayudamos a evitar tonos planos, capas apuradas y acabados que se ven cansados demasiado pronto.',
     },
     trustStrip: ['Repintado interior', 'Protección exterior', 'Renovación comercial', 'Gabinetes y molduras'],
+    process: {
+      eyebrow: 'Qué puede esperar',
+      title: 'Un proyecto más fluido comienza con un plan más claro.',
+      description:
+        'Mantenemos cada proyecto organizado desde la primera visita hasta los retoques finales para proteger su hogar o propiedad y mantener un acabado consistente.',
+      steps: [
+        {
+          title: 'Recorrido y estimado',
+          description: 'Revisamos superficies, detectamos reparaciones, hablamos del color y definimos el alcance antes de comenzar.',
+        },
+        {
+          title: 'Preparación y protección',
+          description: 'Cubrimos pisos, muebles, accesorios y áreas cercanas mientras hacemos resanes, lijado, sellado e imprimación donde haga falta.',
+        },
+        {
+          title: 'Pintura y revisión final',
+          description: 'Aplicamos capas duraderas, mantenemos el área ordenada y cerramos con una revisión para que nada se sienta apresurado o incompleto.',
+        },
+      ],
+    },
     craft: {
       eyebrow: 'Por qué los clientes nos vuelven a llamar',
       title: 'La artesanía empieza mucho antes de la primera capa.',
@@ -298,28 +360,32 @@ const HOME_COPY: Record<'en' | 'es', HomeCopy> = {
         {
           title: 'Pintura interior',
           description: 'Paredes, techos, molduras y espacios vividos que necesitan un reinicio más limpio y luminoso.',
-          image: '/images/gallery/c02cf30a-4ea3-4e7e-b6e6-71e96cd2cedd.jpeg',
-          alt: 'Interior moderno recién pintado con un acabado limpio y luminoso.',
+          image: FEATURED_GALLERY_ASSETS.interiorService,
+          alt: 'Interior recién pintado y luminoso con doble altura y líneas limpias.',
           className: 'md:col-span-2 md:row-span-2',
+          titleClassName: 'text-2xl sm:text-3xl',
         },
         {
           title: 'Pintura exterior',
           description: 'Protección duradera y mejor presencia para siding, molduras, puertas y superficies exteriores.',
-          image: '/images/gallery/8510a805-0725-415e-a482-d3b7fe91cfe4.jpeg',
-          alt: 'Proyecto de pintura exterior terminado por S&M Painting.',
+          image: FEATURED_GALLERY_ASSETS.exteriorService,
+          alt: 'Proyecto exterior terminado en una vivienda de estilo costero con acabado renovado.',
+          titleClassName: 'max-w-[7.5ch] text-[1.08rem] sm:max-w-[8ch] sm:text-[1.55rem] lg:text-[2.05rem]',
         },
         {
           title: 'Espacios comerciales',
           description: 'Oficinas, locales y propiedades de renta renovadas con mínima interrupción.',
-          image: '/images/gallery/8cf01e68-8464-4091-bab9-69c94208c746.jpeg',
-          alt: 'Proyecto comercial con líneas arquitectónicas definidas.',
+          image: FEATURED_GALLERY_ASSETS.commercialService,
+          alt: 'Propiedad de renta renovada con líneas limpias y pintura exterior actualizada.',
+          titleClassName: 'max-w-[7.2ch] text-[1rem] sm:max-w-[8ch] sm:text-[1.5rem] lg:text-[1.95rem]',
         },
         {
           title: 'Gabinetes y molduras',
           description: 'Actualizaciones suaves tipo fábrica para modernizar superficies de alto uso sin reemplazar todo.',
-          image: '/images/gallery/3248cf5d-16fe-4d74-b57b-a7030ff5908d.jpeg',
-          alt: 'Pintura detallada de gabinetes y molduras con acabado suave.',
+          image: FEATURED_GALLERY_ASSETS.cabinetsService,
+          alt: 'Área de cocina protegida y preparada para renovar gabinetes y molduras.',
           className: 'md:col-span-2',
+          titleClassName: 'text-[1.85rem] sm:text-[2.25rem] lg:text-[2.6rem]',
         },
       ],
       cta: 'Explorar todos los servicios',
@@ -360,15 +426,18 @@ const HOME_COPY: Record<'en' | 'es', HomeCopy> = {
     },
     imageAlts: {
       logo: 'Logo de S&M Painting',
-      heroShowcase: 'Interior recién pintado por S&M Painting',
+      heroShowcase: 'Sala de concepto abierto recién pintada por S&M Painting',
       bottomCard: 'Inspiración de color y acabado de un proyecto de S&M Painting',
-      ctaBackground: 'Detalle de textura y acabado pintado',
+      ctaBackground: 'Detalle exterior en preparación para pintura',
+      iconMark: 'Isotipo artístico de S&M Painting',
+      precisionArtboard: 'Arte de marca con el lema Precision in Every Stroke',
+      qualityArtboard: 'Arte de marca con el lema Quality Meets Color',
     },
   },
 };
 
 export default function Home() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const copy = HOME_COPY[language];
 
   return (
@@ -382,22 +451,23 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-7xl gap-16 px-4 pb-20 pt-24 sm:px-6 sm:pb-24 sm:pt-28 lg:grid-cols-[minmax(0,1.1fr)_minmax(360px,0.9fr)] lg:px-8 lg:pb-28 lg:pt-32">
           <div className="flex flex-col justify-center text-center lg:text-left">
             <ScrollReveal direction="right" delay={0.05} className="mx-auto lg:mx-0">
-              <div className="mb-6 inline-flex w-fit items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-md">
+              <div className="mb-6 w-28 sm:w-32">
                 <Image
-                  src="/images/logos/Logo_White.webp"
-                  alt={copy.imageAlts.logo}
-                  width={34}
-                  height={34}
-                  className="h-8 w-8 object-contain"
+                  src={BRAND_ASSETS.anniversarySealArtboard}
+                  alt={t('common.sealAlt')}
+                  width={160}
+                  height={160}
+                  className="h-auto w-full object-contain"
                   priority
                 />
-                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-white/80">
-                  {copy.hero.eyebrow}
-                </span>
               </div>
             </ScrollReveal>
 
-            <ScrollReveal direction="right" delay={0.12}>
+            <ScrollReveal direction="right" delay={0.08}>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/75">{copy.hero.eyebrow}</p>
+            </ScrollReveal>
+
+            <ScrollReveal direction="right" delay={0.14}>
               <h1 className="max-w-3xl text-4xl font-display leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl lg:leading-[0.98] lg:tracking-[-0.04em]">
                 <span className="block">{copy.hero.title1}</span>
                 <span className="mt-2 block text-brand-accent-1">{copy.hero.title2}</span>
@@ -433,7 +503,7 @@ export default function Home() {
             <div className="relative mx-auto w-full max-w-xl pb-16 lg:pb-20">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_35px_90px_-40px_rgba(12,10,30,0.85)]">
                 <Image
-                  src="/images/gallery/03f36018-e2da-49ff-a7d3-ce16ebcd2127.jpeg"
+                  src={FEATURED_GALLERY_ASSETS.heroShowcase}
                   alt={copy.imageAlts.heroShowcase}
                   fill
                   sizes="(min-width: 1024px) 38vw, 90vw"
@@ -455,12 +525,9 @@ export default function Home() {
               </div>
 
               <div className="absolute -right-3 top-7 hidden max-w-[14rem] rounded-[1.35rem] border border-white/10 bg-white/15 p-5 backdrop-blur-md sm:block lg:-right-8">
-                <div className="mb-3 flex items-center gap-2 text-brand-accent-1">
-                  <Paintbrush2 className="h-4 w-4" />
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70">
-                    S&amp;M Painting
-                  </span>
-                </div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70">
+                  S&amp;M Painting
+                </p>
                 <p className="text-sm font-medium leading-6 text-white">{copy.hero.floatingCard}</p>
                 <p className="mt-3 text-xs leading-6 text-white/70">{copy.hero.floatingDetail}</p>
               </div>
@@ -468,7 +535,7 @@ export default function Home() {
               <div className="absolute -bottom-3 left-4 right-4 rounded-[1.5rem] border border-white/10 bg-brand-tertiary/80 p-4 shadow-xl shadow-black/20 backdrop-blur-sm sm:left-8 sm:right-auto sm:w-[18rem]">
                 <div className="relative h-24 overflow-hidden rounded-[1rem] border border-white/10">
                   <Image
-                    src="/images/gallery/589deba1-7a7b-496e-b8be-3ba64166a15e.jpeg"
+                    src={FEATURED_GALLERY_ASSETS.colorInspiration}
                     alt={copy.imageAlts.bottomCard}
                     fill
                     sizes="18rem"
@@ -496,6 +563,41 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="relative overflow-hidden py-16 sm:py-24">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-primary/15 to-transparent" />
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:px-8">
+          <div>
+            <ScrollReveal direction="right">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-primary">
+                {copy.process.eyebrow}
+              </p>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.08}>
+              <h2 className="mt-4 max-w-3xl text-4xl font-display text-brand-secondary dark:text-brand-accent-1 sm:text-5xl">
+                {copy.process.title}
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.16}>
+              <p className="mt-6 max-w-3xl text-base leading-8 text-foreground/70 dark:text-white/70 sm:text-lg">
+                {copy.process.description}
+              </p>
+            </ScrollReveal>
+          </div>
+        </div>
+
+        <StaggerContainer className="mx-auto mt-12 grid max-w-7xl gap-5 px-4 sm:px-6 md:grid-cols-3 lg:px-8" delay={0.1} staggerDelay={0.08}>
+          {copy.process.steps.map((step, index) => (
+            <StaggerItem key={step.title}>
+              <div className="h-full rounded-[1.8rem] border border-brand-secondary/10 bg-white p-6 shadow-[0_22px_50px_-40px_rgba(26,20,58,0.35)] dark:border-white/10 dark:bg-white/[0.03]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-primary">0{index + 1}</p>
+                <h3 className="mt-4 text-2xl font-display text-brand-secondary dark:text-white">{step.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-foreground/70 dark:text-white/65">{step.description}</p>
+              </div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
       </section>
 
       <section className="relative overflow-hidden py-16 sm:py-24">
@@ -556,6 +658,16 @@ export default function Home() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-primary/15 to-transparent" />
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:px-8">
           <div>
+            <ScrollReveal direction="right" delay={0.04}>
+              <Image
+                src={BRAND_ASSETS.qualityColorArtboard}
+                alt={copy.imageAlts.qualityArtboard}
+                width={260}
+                height={260}
+                sizes="(min-width: 1024px) 14rem, 40vw"
+                className="mb-8 h-auto w-full max-w-[11rem] object-contain opacity-95 sm:max-w-[13rem]"
+              />
+            </ScrollReveal>
             <ScrollReveal direction="right">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-primary">
                 {copy.services.eyebrow}
@@ -571,6 +683,7 @@ export default function Home() {
                 {copy.services.description}
               </p>
             </ScrollReveal>
+
           </div>
 
           <StaggerContainer className="mt-12 grid gap-5 md:grid-cols-3 md:auto-rows-[300px]" delay={0.12} staggerDelay={0.08}>
@@ -587,7 +700,9 @@ export default function Home() {
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,14,40,0.12)_0%,rgba(17,14,40,0.8)_100%)]" />
                   <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/65 sm:text-xs">S&amp;M Painting</p>
-                    <h3 className="mt-2 text-2xl font-display text-white sm:mt-3 sm:text-3xl">{card.title}</h3>
+                    <h3 className={`mt-2 font-display leading-[0.92] text-balance text-white sm:mt-3 ${card.titleClassName ?? 'text-2xl sm:text-3xl'}`}>
+                      {card.title}
+                    </h3>
                     <p className="mt-2 max-w-md text-xs leading-6 text-white/75 sm:mt-3 sm:text-sm sm:leading-7">{card.description}</p>
                   </div>
                 </div>
@@ -612,7 +727,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-brand-secondary/[0.04] py-20 dark:bg-white/[0.03] sm:py-24">
         <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-brand-accent-1/10 blur-3xl" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1fr)] lg:items-start lg:gap-14">
             <div>
               <ScrollReveal>
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-primary">
@@ -624,20 +739,31 @@ export default function Home() {
                   {copy.testimonials.title}
                 </h2>
               </ScrollReveal>
+              <ScrollReveal delay={0.12}>
+                <p className="mt-6 max-w-3xl text-base leading-8 text-foreground/70 dark:text-white/70 sm:text-lg">
+                  {copy.testimonials.description}
+                </p>
+              </ScrollReveal>
             </div>
 
-            <ScrollReveal delay={0.16}>
-              <div className="rounded-full border border-brand-secondary/10 bg-white/80 px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-brand-secondary shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-white/75">
-                {copy.testimonials.badge}
-              </div>
-            </ScrollReveal>
+            <div className="flex flex-col gap-5 lg:pt-6">
+              <ScrollReveal delay={0.08}>
+                <Image
+                  src={BRAND_ASSETS.precisionStrokeArtboard}
+                  alt={copy.imageAlts.precisionArtboard}
+                  width={720}
+                  height={250}
+                  sizes="(min-width: 1024px) 38vw, 90vw"
+                  className="h-auto w-full object-contain opacity-95"
+                />
+              </ScrollReveal>
+              <ScrollReveal delay={0.16}>
+                <div className="rounded-full border border-brand-secondary/10 bg-white/80 px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-brand-secondary shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-white/75">
+                  {copy.testimonials.badge}
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
-
-          <ScrollReveal delay={0.12}>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-foreground/70 dark:text-white/70 sm:text-lg">
-              {copy.testimonials.description}
-            </p>
-          </ScrollReveal>
 
           <StaggerContainer className="mt-12 grid gap-6 md:grid-cols-3" delay={0.16} staggerDelay={0.08}>
             {copy.testimonials.items.map((item) => (
@@ -670,7 +796,7 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-[2.4rem] bg-brand-secondary text-white shadow-[0_40px_100px_-50px_rgba(23,16,49,0.9)]">
               <div className="absolute inset-0 opacity-20">
                 <Image
-                  src="/images/gallery/7b51ddca-47a8-4380-80b4-d3189b80b6af.jpeg"
+                  src={FEATURED_GALLERY_ASSETS.ctaTexture}
                   alt={copy.imageAlts.ctaBackground}
                   fill
                   sizes="100vw"
