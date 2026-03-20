@@ -1,14 +1,14 @@
-import type { NextRequest } from 'next/server';
-import { NextResponse } from 'next/server';
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
-const PROTECTED_REALM = 'S&M Painting Preview';
+const PROTECTED_REALM = "S&H Painting Preview";
 
 function isProtectedEnvironment() {
-  if (process.env.BASIC_AUTH_ENABLED !== 'true') {
+  if (process.env.BASIC_AUTH_ENABLED !== "true") {
     return false;
   }
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV !== "production") {
     return false;
   }
 
@@ -18,39 +18,42 @@ function isProtectedEnvironment() {
     return true;
   }
 
-  return railwayEnvironment === 'production';
+  return railwayEnvironment === "production";
 }
 
 function unauthorizedResponse() {
-  return new NextResponse('Authentication required.', {
+  return new NextResponse("Authentication required.", {
     status: 401,
     headers: {
-      'WWW-Authenticate': `Basic realm="${PROTECTED_REALM}", charset="UTF-8"`,
-      'Cache-Control': 'no-store',
+      "WWW-Authenticate": `Basic realm="${PROTECTED_REALM}", charset="UTF-8"`,
+      "Cache-Control": "no-store",
     },
   });
 }
 
 function misconfiguredResponse() {
-  return new NextResponse('Basic auth is enabled but credentials are not configured.', {
-    status: 503,
-    headers: {
-      'Cache-Control': 'no-store',
+  return new NextResponse(
+    "Basic auth is enabled but credentials are not configured.",
+    {
+      status: 503,
+      headers: {
+        "Cache-Control": "no-store",
+      },
     },
-  });
+  );
 }
 
 function getProvidedCredentials(request: NextRequest) {
-  const authorizationHeader = request.headers.get('authorization');
+  const authorizationHeader = request.headers.get("authorization");
 
-  if (!authorizationHeader?.startsWith('Basic ')) {
+  if (!authorizationHeader?.startsWith("Basic ")) {
     return null;
   }
 
   try {
-    const encodedCredentials = authorizationHeader.slice('Basic '.length);
+    const encodedCredentials = authorizationHeader.slice("Basic ".length);
     const decodedCredentials = atob(encodedCredentials);
-    const separatorIndex = decodedCredentials.indexOf(':');
+    const separatorIndex = decodedCredentials.indexOf(":");
 
     if (separatorIndex === -1) {
       return null;
@@ -94,5 +97,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)'],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)"],
 };
