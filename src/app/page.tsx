@@ -494,8 +494,8 @@ export default function Home() {
   const copy = HOME_COPY[language];
   const heroPanelTitleClassName =
     language === "es"
-      ? "max-w-[9ch] text-[1.8rem] leading-[0.9] text-balance sm:max-w-[8ch] sm:text-[2.15rem] lg:max-w-[6.4ch] lg:text-[2.2rem]"
-      : "max-w-[11ch] text-[1.95rem] leading-[0.9] text-balance sm:text-[2.45rem] lg:text-[2.7rem]";
+      ? "max-w-[8.75ch] text-[1.65rem] leading-[0.88] text-balance sm:max-w-[8.6ch] sm:text-[1.95rem] lg:max-w-[7ch] lg:text-[2rem]"
+      : "max-w-[9.8ch] text-[1.7rem] leading-[0.9] text-balance sm:max-w-[10.2ch] sm:text-[2.05rem] lg:max-w-[8.8ch] lg:text-[2.25rem]";
 
   return (
     <div className="flex flex-col bg-background text-foreground">
@@ -512,13 +512,13 @@ export default function Home() {
               delay={0.05}
               className="mx-auto lg:mx-0"
             >
-              <div className="mb-6 w-28 sm:w-32">
+              <div className="mx-auto mb-6 w-28 sm:w-32 lg:mx-0">
                 <Image
                   src={BRAND_ASSETS.anniversarySealArtboard}
                   alt={t("common.sealAlt")}
                   width={160}
                   height={160}
-                  className="h-auto w-full object-contain"
+                  className="mx-auto h-auto w-full object-contain lg:mx-0"
                   priority
                 />
               </div>
@@ -580,16 +580,16 @@ export default function Home() {
                   priority
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,12,45,0.12)_0%,rgba(18,12,45,0.7)_100%)]" />
-                <div className="absolute inset-x-0 bottom-0 p-6 pb-40 sm:p-8 sm:pb-44 lg:pr-[17rem]">
-                  <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm">
+                <div className="absolute inset-x-0 bottom-0 z-10 p-6 pb-40 sm:p-8 sm:pb-44 lg:pr-[17rem]">
+                  <div className="relative z-10 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm">
                     {copy.hero.panelTag}
                   </div>
                   <h2
-                    className={`mt-4 font-display text-white ${heroPanelTitleClassName}`}
+                    className={`mt-3 font-display text-white ${heroPanelTitleClassName}`}
                   >
                     {copy.hero.panelTitle}
                   </h2>
-                  <p className="mt-3 max-w-md text-sm leading-7 text-white/75 sm:text-base">
+                  <p className="mt-2 max-w-md text-sm leading-6 text-white/75 sm:text-[0.95rem] sm:leading-7">
                     {copy.hero.panelDescription}
                   </p>
                 </div>

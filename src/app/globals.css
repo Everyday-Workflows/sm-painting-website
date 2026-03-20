@@ -25,28 +25,28 @@
   --color-brand-tertiary: var(--brand-tertiary);
   --color-brand-accent-1: var(--brand-accent-1);
   --color-brand-accent-2: var(--brand-accent-2);
-  --font-sans: var(--font-montserrat);
-  --font-display: var(--font-glodok);
-  --font-subtitle: var(--font-mackinac);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-fraunces);
+  --font-subtitle: var(--font-cormorant);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-montserrat), sans-serif;
+  font-family: var(--font-manrope), sans-serif;
   font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-glodok), serif;
-  line-height: 1.1;
+  font-family: var(--font-fraunces), serif;
+  line-height: 1.04;
 }
 
 .subtitle {
-  font-family: var(--font-mackinac), serif;
+  font-family: var(--font-cormorant), serif;
 }
 
 button, .btn {
-  font-family: var(--font-mackinac), serif;
+  font-family: var(--font-manrope), sans-serif;
 }

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
-import localFont from "next/font/local";
+import { Cormorant_Garamond, Fraunces, Manrope } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
@@ -10,20 +9,22 @@ import BackgroundBlobs from "@/components/BackgroundBlobs";
 import { BRAND_ASSETS, FEATURED_GALLERY_ASSETS } from "@/lib/siteAssets";
 import { resolvePublicSiteUrl } from "@/lib/siteUrl";
 
-const glodok = localFont({
-  src: "../../public/fonts/tan-type-co-glodok-display.otf",
-  variable: "--font-glodok",
-});
-
-const mackinac = localFont({
-  src: "../../public/fonts/P22MackinacPro-Medium_26.otf",
-  variable: "--font-mackinac",
-});
-
-const montserrat = Montserrat({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-montserrat",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-fraunces",
+  weight: ["500", "600", "700", "800", "900"],
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+  weight: ["400", "500", "600", "700"],
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const SITE_URL = resolvePublicSiteUrl();
@@ -168,7 +169,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${glodok.variable} ${mackinac.variable} ${montserrat.variable} antialiased min-h-screen flex flex-col bg-white dark:bg-black text-black dark:text-white transition-colors duration-300`}
+        className={`${fraunces.variable} ${cormorant.variable} ${manrope.variable} antialiased min-h-screen flex flex-col bg-white dark:bg-black text-black dark:text-white transition-colors duration-300`}
       >
         <Providers>
           <BackgroundBlobs />

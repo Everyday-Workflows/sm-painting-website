@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
           </div>
           <div>
             <h3 className="text-lg font-display mb-4">{t("footer.links")}</h3>
-            <ul className="space-y-2 text-gray-400 text-sm font-subtitle">
+            <ul className="space-y-2 text-gray-400 text-sm font-sans">
               <li>
                 <Link
                   href="/"

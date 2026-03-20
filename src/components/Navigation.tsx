@@ -71,19 +71,19 @@ const Navigation: React.FC = () => {
           <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-8">
             <Link 
               href="/" 
-              className="border-transparent text-gray-500 dark:text-gray-400 hover:border-brand-primary hover:text-brand-primary dark:hover:text-brand-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-subtitle font-medium transition-all duration-200"
+              className="border-transparent text-gray-500 dark:text-gray-400 hover:border-brand-primary hover:text-brand-primary dark:hover:text-brand-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-sans font-medium transition-all duration-200"
             >
               {t('nav.home')}
             </Link>
             <Link 
               href="/gallery" 
-              className="border-transparent text-gray-500 dark:text-gray-400 hover:border-brand-primary hover:text-brand-primary dark:hover:text-brand-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-subtitle font-medium transition-all duration-200"
+              className="border-transparent text-gray-500 dark:text-gray-400 hover:border-brand-primary hover:text-brand-primary dark:hover:text-brand-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-sans font-medium transition-all duration-200"
             >
               {t('nav.gallery')}
             </Link>
             <Link 
               href="/services" 
-              className="border-transparent text-gray-500 dark:text-gray-400 hover:border-brand-primary hover:text-brand-primary dark:hover:text-brand-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-subtitle font-medium transition-all duration-200"
+              className="border-transparent text-gray-500 dark:text-gray-400 hover:border-brand-primary hover:text-brand-primary dark:hover:text-brand-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-sans font-medium transition-all duration-200"
             >
               {t('nav.services')}
             </Link>
@@ -95,7 +95,7 @@ const Navigation: React.FC = () => {
               {/* Phone Number */}
               <a 
                 href="tel:+15551234567" 
-                className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors font-subtitle font-bold text-sm mr-2"
+                className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors font-sans font-semibold text-sm mr-2"
               >
                 <Phone size={16} className="text-brand-primary" />
                 <span className="hidden lg:inline">(555) 123-4567</span>
@@ -177,7 +177,7 @@ const Navigation: React.FC = () => {
               >
                 <Link
                   href="/"
-                  className="block px-3 py-3 rounded-md text-lg font-subtitle font-medium text-gray-700 dark:text-gray-300 hover:text-brand-primary hover:bg-gray-50 dark:hover:bg-gray-900"
+                  className="block px-3 py-3 rounded-md text-lg font-sans font-medium text-gray-700 dark:text-gray-300 hover:text-brand-primary hover:bg-gray-50 dark:hover:bg-gray-900"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t('nav.home')}
@@ -190,7 +190,7 @@ const Navigation: React.FC = () => {
               >
                 <Link
                   href="/gallery"
-                  className="block px-3 py-3 rounded-md text-lg font-subtitle font-medium text-gray-700 dark:text-gray-300 hover:text-brand-primary hover:bg-gray-50 dark:hover:bg-gray-900"
+                  className="block px-3 py-3 rounded-md text-lg font-sans font-medium text-gray-700 dark:text-gray-300 hover:text-brand-primary hover:bg-gray-50 dark:hover:bg-gray-900"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t('nav.gallery')}
@@ -203,7 +203,7 @@ const Navigation: React.FC = () => {
               >
                 <Link
                   href="/services"
-                  className="block px-3 py-3 rounded-md text-lg font-subtitle font-medium text-gray-700 dark:text-gray-300 hover:text-brand-primary hover:bg-gray-50 dark:hover:bg-gray-900"
+                  className="block px-3 py-3 rounded-md text-lg font-sans font-medium text-gray-700 dark:text-gray-300 hover:text-brand-primary hover:bg-gray-50 dark:hover:bg-gray-900"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t('nav.services')}
@@ -216,7 +216,7 @@ const Navigation: React.FC = () => {
               >
                 <a
                   href="tel:+15551234567"
-                  className="flex items-center space-x-3 px-3 py-3 rounded-md text-lg font-subtitle font-bold text-gray-700 dark:text-gray-300 hover:text-brand-primary hover:bg-gray-50 dark:hover:bg-gray-900"
+                  className="flex items-center space-x-3 px-3 py-3 rounded-md text-lg font-sans font-semibold text-gray-700 dark:text-gray-300 hover:text-brand-primary hover:bg-gray-50 dark:hover:bg-gray-900"
                 >
                   <Phone size={20} className="text-brand-primary" />
                   <span>(555) 123-4567</span>
