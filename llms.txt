@@ -1,0 +1,30 @@
+# S&M Painting
+
+> Professional residential and commercial painting services.
+
+S&M Painting provides high-quality interior and exterior painting, cabinet refinishing, and commercial painting services. We focus on meticulous preparation, clean execution, and lasting results.
+
+## Services
+
+- **Interior Painting**: Wall & ceiling painting, trim & door refinishing, cabinet painting, color consultation.
+- **Exterior Painting**: Siding & stucco painting, deck & fence staining, pressure washing, surface preparation.
+- **Commercial Painting**: Office spaces, retail stores, industrial facilities, maintenance painting.
+- **Specialty Finishes**: Faux finishes, texture application, wallpaper removal, drywall repair.
+
+## Contact Information
+
+- **Email**: info@smpainting.com
+- **Phone**: (555) 123-4567
+- **Address**: 123 Main St, Your City, ST 12345, US
+
+## Key Pages
+
+- [Home](/)
+- [Services](/services)
+- [Gallery](/gallery)
+
+## Brand Values
+
+- **Prep-Driven Process**: Clean lines and thorough preparation.
+- **Low-Disruption Workdays**: Respectful crews that minimize impact on your daily life.
+- **Nothing Left Unfinished**: A final walkthrough ensures complete satisfaction.

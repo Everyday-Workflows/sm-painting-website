@@ -7,6 +7,9 @@ import { useLanguage } from '@/context/LanguageContext';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://snmpainting.com";
+  const domain = siteUrl.replace(/^https?:\/\/(www\.)?/, "");
+  const email = `info@${domain}`;
 
   return (
     <footer className="bg-gray-900 dark:bg-zinc-950 text-white py-12 relative z-10">
@@ -35,7 +38,7 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-display mb-4">{t('footer.contact')}</h3>
             <p className="text-gray-400 text-sm font-sans">
-              Email: info@smpainting.com<br />
+              Email: {email}<br />
               Phone: (555) 123-4567
             </p>
           </div>

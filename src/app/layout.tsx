@@ -23,8 +23,10 @@ const montserrat = Montserrat({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://snmpainting.com";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://snmpainting.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "S&M Painting | Professional Residential & Commercial Painting",
     template: "%s | S&M Painting",
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://snmpainting.com",
+    url: SITE_URL,
     siteName: "S&M Painting",
     title: "S&M Painting | Professional Painting Services",
     description:
@@ -84,6 +86,13 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  alternates: {
+    canonical: SITE_URL,
+    languages: {
+      'en-US': `${SITE_URL}/en`,
+      'es-ES': `${SITE_URL}/es`,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -91,13 +100,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://snmpainting.com";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "PaintingService",
     name: "S&M Painting",
-    image: "https://snmpainting.com/images/logos/Logo_Light_Mode.webp",
-    "@id": "https://snmpainting.com",
-    url: "https://snmpainting.com",
+    image: `${SITE_URL}/images/logos/Logo_Light_Mode.webp`,
+    "@id": SITE_URL,
+    url: SITE_URL,
     telephone: "+1-555-0123", // Placeholder
     address: {
       "@type": "PostalAddress",
@@ -112,6 +122,16 @@ export default function RootLayout({
       latitude: 40.7128,
       longitude: -74.006,
     },
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Your City"
+      },
+      {
+        "@type": "City",
+        name: "Surrounding Area"
+      }
+    ],
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
