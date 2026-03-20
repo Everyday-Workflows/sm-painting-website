@@ -31,11 +31,12 @@ const SITE_URL = resolvePublicSiteUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "S&M Painting | Professional Residential & Commercial Painting | Pintura Residencial y Comercial",
-    template: "%s | S&M Painting",
+    default:
+      "S&H Painting | Professional Residential & Commercial Painting | Pintura Residencial y Comercial",
+    template: "%s | S&H Painting",
   },
   description:
-    "High-quality residential and commercial painting services by S&M Painting. / Servicios de pintura residencial y comercial de alta calidad por S&M Painting.",
+    "High-quality residential and commercial painting services by S&H Painting. / Servicios de pintura residencial y comercial de alta calidad por S&H Painting.",
   keywords: [
     "painting services",
     "residential painting",
@@ -43,11 +44,11 @@ export const metadata: Metadata = {
     "interior painting",
     "exterior painting",
     "cabinet painting",
-    "S&M Painting",
+    "S&H Painting",
   ],
-  authors: [{ name: "S&M Painting" }],
-  creator: "S&M Painting",
-  publisher: "S&M Painting",
+  authors: [{ name: "S&H Painting" }],
+  creator: "S&H Painting",
+  publisher: "S&H Painting",
   formatDetection: {
     email: false,
     address: false,
@@ -62,8 +63,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: SITE_URL,
-    siteName: "S&M Painting",
-    title: "S&M Painting | Professional Painting Services | Servicios Profesionales de Pintura",
+    siteName: "S&H Painting",
+    title:
+      "S&H Painting | Professional Painting Services | Servicios Profesionales de Pintura",
     description:
       "High-quality residential and commercial painting services. / Servicios de pintura residencial y comercial de alta calidad.",
     images: [
@@ -71,13 +73,14 @@ export const metadata: Metadata = {
         url: FEATURED_GALLERY_ASSETS.heroShowcase,
         width: 1200,
         height: 630,
-        alt: "S&M Painting finished interior project / Proyecto interior terminado de S&M Painting",
+        alt: "S&H Painting finished interior project / Proyecto interior terminado de S&H Painting",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "S&M Painting | Professional Painting Services | Servicios Profesionales de Pintura",
+    title:
+      "S&H Painting | Professional Painting Services | Servicios Profesionales de Pintura",
     description:
       "High-quality residential and commercial painting services. / Servicios de pintura residencial y comercial de alta calidad.",
     images: [FEATURED_GALLERY_ASSETS.heroShowcase],
@@ -97,8 +100,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
     languages: {
-      'en-US': `${SITE_URL}/en`,
-      'es-ES': `${SITE_URL}/es`,
+      "en-US": `${SITE_URL}/en`,
+      "es-ES": `${SITE_URL}/es`,
     },
   },
 };
@@ -111,7 +114,7 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "PaintingService",
-    name: "S&M Painting",
+    name: "S&H Painting",
     image: `${SITE_URL}${BRAND_ASSETS.logoLightWordmark}`,
     "@id": SITE_URL,
     url: SITE_URL,
@@ -132,12 +135,12 @@ export default function RootLayout({
     areaServed: [
       {
         "@type": "City",
-        name: "Your City"
+        name: "Your City",
       },
       {
         "@type": "City",
-        name: "Surrounding Area"
-      }
+        name: "Surrounding Area",
+      },
     ],
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",

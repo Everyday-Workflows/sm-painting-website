@@ -1,10 +1,10 @@
-# S&M Painting Website — Project Brief
+# S&H Painting Website — Project Brief
 
 ## Overview
-S&M Painting is a professional painting business seeking a modern, scalable, and visually distinctive web presence. The website will serve as a digital showcase for services, completed work, and customer testimonials, while reinforcing the brand’s unique identity.
+S&H Painting is a professional painting business seeking a modern, scalable, and visually distinctive web presence. The website will serve as a digital showcase for services, completed work, and customer testimonials, while reinforcing the brand’s unique identity.
 
 ## Goals
-- Establish a trustworthy, memorable online brand for S&M Painting.
+- Establish a trustworthy, memorable online brand for S&H Painting.
 - Make it easy for potential clients to learn about services, view past work, and contact the business.
 - Ensure the site is scalable, accessible, and easy to maintain or extend.
 
