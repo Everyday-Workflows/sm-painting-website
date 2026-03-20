@@ -5,52 +5,42 @@ import Button from '@/components/Button';
 import { useLanguage } from '@/context/LanguageContext';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/animations/ScrollReveal';
 
+const SERVICE_FEATURES: Record<'en' | 'es', string[][]> = {
+  en: [
+    ['Wall & ceiling painting', 'Trim & door refinishing', 'Cabinet painting', 'Color consultation'],
+    ['Siding & stucco painting', 'Deck & fence staining', 'Pressure washing', 'Surface preparation'],
+    ['Office spaces', 'Retail stores', 'Industrial facilities', 'Maintenance painting'],
+    ['Faux finishes', 'Texture application', 'Wallpaper removal', 'Drywall repair'],
+  ],
+  es: [
+    ['Pintura de paredes y techos', 'Renovación de molduras y puertas', 'Pintura de gabinetes', 'Asesoría de color'],
+    ['Pintura de siding y estuco', 'Teñido de terrazas y cercas', 'Lavado a presión', 'Preparación de superficies'],
+    ['Espacios de oficina', 'Tiendas', 'Instalaciones industriales', 'Pintura de mantenimiento'],
+    ['Acabados decorativos', 'Aplicación de textura', 'Retiro de papel tapiz', 'Reparación de paneles de yeso'],
+  ],
+};
+
 const ServicesPage = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   const services = [
     {
       title: t('service.interior.title'),
       description: t('service.interior.desc'),
-      features: [t('service.interior.title'), t('service.interior.desc').split('.')[0], t('service.interior.desc').split('.')[1]] // Simplified for demo
     },
     {
       title: t('service.exterior.title'),
       description: t('service.exterior.desc'),
-      features: [t('service.exterior.title'), t('service.exterior.desc').split('.')[0]]
     },
     {
       title: t('service.commercial.title'),
       description: t('service.commercial.desc'),
-      features: [t('service.commercial.title'), t('service.commercial.desc').split('.')[0]]
     },
     {
       title: t('service.specialty.title'),
       description: t('service.specialty.desc'),
-      features: [t('service.specialty.title'), t('service.specialty.desc').split('.')[0]]
     }
   ];
-
-  // Better feature lists for each language
-  const getFeatures = (index: number) => {
-    const allFeatures = {
-      en: [
-        ["Wall & Ceiling Painting", "Trim & Door Refinishing", "Cabinet Painting", "Color Consultation"],
-        ["Siding & Stucco Painting", "Deck & Fence Staining", "Pressure Washing", "Surface Preparation"],
-        ["Office Spaces", "Retail Stores", "Industrial Facilities", "Maintenance Painting"],
-        ["Faux Finishes", "Texture Application", "Wallpaper Removal", "Drywall Repair"]
-      ],
-      es: [
-        ["Pintura de Paredes y Techos", "Refinado de Molduras y Puertas", "Pintura de Gabinetes", "Consulta de Color"],
-        ["Pintura de Revestimiento y Estuco", "Teñido de Terrazas y Cercas", "Lavado a Presión", "Preparación de Superficies"],
-        ["Espacios de Oficina", "Tiendas Minoristas", "Instalaciones Industriales", "Pintura de Mantenimiento"],
-        ["Acabados de Imitación", "Aplicación de Textura", "Eliminación de Papel Tapiz", "Reparación de Paneles de Yeso"]
-      ]
-    };
-    
-    const lang = t('nav.home') === 'Home' ? 'en' : 'es';
-    return allFeatures[lang][index];
-  };
 
   return (
     <div className="relative py-12 sm:py-20 transition-colors duration-300 overflow-hidden">
@@ -81,10 +71,9 @@ const ServicesPage = () => {
                   {service.description}
                 </p>
                 <ul className="space-y-3 mb-8">
-                  {getFeatures(index).map((feature) => (
+                  {SERVICE_FEATURES[language][index].map((feature) => (
                     <li key={feature} className="flex items-center text-sm sm:text-base font-sans text-gray-700 dark:text-gray-300">
-                      <svg className="h-5 w-5 text-brand-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <title>Check</title>
+                      <svg aria-hidden="true" className="h-5 w-5 text-brand-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>{feature}</span>

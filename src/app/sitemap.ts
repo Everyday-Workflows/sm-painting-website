@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
+import { resolvePublicSiteUrl } from '@/lib/siteUrl'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://smpainting.com'
+  const baseUrl = resolvePublicSiteUrl()
   
   return [
     {

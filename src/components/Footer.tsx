@@ -4,11 +4,12 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
+import { BRAND_ASSETS } from '@/lib/siteAssets';
+import { resolvePublicSiteHostname } from '@/lib/siteUrl';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://snmpainting.com";
-  const domain = siteUrl.replace(/^https?:\/\/(www\.)?/, "");
+  const domain = resolvePublicSiteHostname();
   const email = `info@${domain}`;
 
   return (
@@ -17,11 +18,11 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <Image
-              src="/images/logos/Logo_White.webp"
-              alt="S&M Painting Logo"
-              width={120}
-              height={40}
-              className="h-10 w-auto mb-4"
+              src={BRAND_ASSETS.logoWhiteWordmark}
+              alt={t('common.logoAlt')}
+              width={144}
+              height={48}
+              className="mb-4 h-11 w-auto"
             />
             <p className="text-gray-400 text-sm font-sans">
               {t('footer.description')}
@@ -38,8 +39,8 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-display mb-4">{t('footer.contact')}</h3>
             <p className="text-gray-400 text-sm font-sans">
-              Email: {email}<br />
-              Phone: (555) 123-4567
+              {t('footer.email')}: {email}<br />
+              {t('footer.phone')}: (555) 123-4567
             </p>
           </div>
         </div>

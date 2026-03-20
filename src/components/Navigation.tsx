@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { useLanguage } from '@/context/LanguageContext';
+import { BRAND_ASSETS } from '@/lib/siteAssets';
 import { Sun, Moon, Languages, Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -24,8 +25,24 @@ const Navigation: React.FC = () => {
 
   const isDarkTheme = mounted && resolvedTheme === 'dark';
   const logoSrc = isDarkTheme
-    ? '/images/logos/Logo_Dark_Mode.webp'
-    : '/images/logos/Logo_Light_Mode.webp';
+    ? BRAND_ASSETS.logoDarkWordmark
+    : BRAND_ASSETS.logoLightWordmark;
+  const logoAlt = t('common.logoAlt');
+  const languageToggleLabel = language === 'en' ? 'Cambiar a español' : 'Switch to English';
+  const themeToggleLabel = isDarkTheme
+    ? language === 'en'
+      ? 'Switch to light theme'
+      : 'Cambiar a tema claro'
+    : language === 'en'
+      ? 'Switch to dark theme'
+      : 'Cambiar a tema oscuro';
+  const menuToggleLabel = isMenuOpen
+    ? language === 'en'
+      ? 'Close menu'
+      : 'Cerrar menú'
+    : language === 'en'
+      ? 'Open menu'
+      : 'Abrir menú';
 
   return (
     <motion.nav 
@@ -41,7 +58,7 @@ const Navigation: React.FC = () => {
             <Link href="/" className="flex items-center">
               <Image 
                 src={logoSrc} 
-                alt="S&M Painting - Professional Painting Services Logo" 
+                alt={logoAlt}
                 width={150} 
                 height={50} 
                 className="h-12 w-auto"
@@ -91,7 +108,7 @@ const Navigation: React.FC = () => {
                 type="button"
                 onClick={() => setLanguage(language === 'en' ? 'es' : 'en')}
                 className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-500 dark:text-gray-400 transition-colors"
-                aria-label="Toggle language"
+                aria-label={languageToggleLabel}
               >
                 <div className="flex items-center space-x-1">
                   <Languages size={20} />
@@ -104,7 +121,7 @@ const Navigation: React.FC = () => {
                 type="button"
                 onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
                 className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-500 dark:text-gray-400 transition-colors"
-                aria-label="Toggle theme"
+                aria-label={themeToggleLabel}
               >
                 {isDarkTheme ? <Sun size={20} /> : <Moon size={20} />}
               </button>
@@ -116,7 +133,7 @@ const Navigation: React.FC = () => {
                 type="button"
                 onClick={() => setLanguage(language === 'en' ? 'es' : 'en')}
                 className="flex items-center space-x-1 rounded-full px-2.5 py-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors"
-                aria-label="Toggle language"
+                aria-label={languageToggleLabel}
               >
                 <Languages size={18} />
                 <span className="text-[11px] font-bold uppercase leading-none">{language}</span>
@@ -125,7 +142,7 @@ const Navigation: React.FC = () => {
                 type="button"
                 onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
                 className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors"
-                aria-label="Toggle theme"
+                aria-label={themeToggleLabel}
               >
                 {isDarkTheme ? <Sun size={20} /> : <Moon size={20} />}
               </button>
@@ -133,7 +150,7 @@ const Navigation: React.FC = () => {
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-brand-primary hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none transition-colors"
-                aria-label="Toggle menu"
+                aria-label={menuToggleLabel}
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>

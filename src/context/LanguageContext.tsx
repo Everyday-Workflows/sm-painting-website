@@ -1,8 +1,8 @@
 'use client';
 
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Language = 'en' | 'es';
+export type Language = 'en' | 'es';
 
 interface LanguageContextType {
   language: Language;
@@ -32,6 +32,8 @@ const translations = {
     'footer.description': 'Professional painting services for residential and commercial properties. Quality you can trust.',
     'footer.links': 'Quick Links',
     'footer.contact': 'Contact Us',
+    'footer.email': 'Email',
+    'footer.phone': 'Phone',
     'footer.rights': 'All rights reserved.',
     'gallery.title': 'Our Work Gallery',
     'gallery.subtitle': 'A showcase of our recent painting projects. From interior transformations to exterior revivals, we take pride in every stroke.',
@@ -51,6 +53,11 @@ const translations = {
     'service.specialty.desc': 'Add a unique touch to your space with our specialty painting techniques and finishes.',
     'video.title': 'See the Transformation',
     'video.subtitle': 'Scroll to reveal the before and after of our premium painting services.',
+    'video.before': 'Before',
+    'video.after': 'After',
+    'video.alt': 'Before and after painting transformation animation',
+    'common.logoAlt': 'S&M Painting logo',
+    'common.sealAlt': 'S&M Painting brand seal',
   },
   es: {
     'nav.home': 'Inicio',
@@ -73,6 +80,8 @@ const translations = {
     'footer.description': 'Servicios de pintura profesional para propiedades residenciales y comerciales. Calidad en la que puede confiar.',
     'footer.links': 'Enlaces Rápidos',
     'footer.contact': 'Contáctenos',
+    'footer.email': 'Correo',
+    'footer.phone': 'Teléfono',
     'footer.rights': 'Todos los derechos reservados.',
     'gallery.title': 'Nuestra Galería de Trabajo',
     'gallery.subtitle': 'Una muestra de nuestros proyectos de pintura recientes. Desde transformaciones interiores hasta renovaciones exteriores, nos enorgullecemos de cada trazo.',
@@ -92,6 +101,11 @@ const translations = {
     'service.specialty.desc': 'Agregue un toque único a su espacio con nuestras técnicas y acabados de pintura especializados.',
     'video.title': 'Vea la Transformación',
     'video.subtitle': 'Desplácese para revelar el antes y el después de nuestros servicios de pintura premium.',
+    'video.before': 'Antes',
+    'video.after': 'Después',
+    'video.alt': 'Animación de transformación de pintura antes y después',
+    'common.logoAlt': 'Logo de S&M Painting',
+    'common.sealAlt': 'Sello de marca de S&M Painting',
   }
 };
 
@@ -130,6 +144,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setLanguage(lang);
     localStorage.setItem('language', lang);
   };
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   const t = (key: string) => {
     return translations[language][key as keyof typeof translations['en']] || key;

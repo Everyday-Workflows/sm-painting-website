@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
+import { resolvePublicSiteUrl } from '@/lib/siteUrl'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://smpainting.com'
+  const baseUrl = resolvePublicSiteUrl()
   return {
     rules: {
       userAgent: '*',
