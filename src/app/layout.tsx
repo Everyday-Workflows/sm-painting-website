@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import { Providers } from "@/components/Providers";
@@ -28,11 +29,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://snmpainting.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "S&M Painting | Professional Residential & Commercial Painting",
+    default: "S&M Painting | Professional Residential & Commercial Painting | Pintura Residencial y Comercial",
     template: "%s | S&M Painting",
   },
   description:
-    "High-quality residential and commercial painting services by S&M Painting. Expert interior and exterior painting, cabinet refinishing, and more. Serving your local area with excellence.",
+    "High-quality residential and commercial painting services by S&M Painting. / Servicios de pintura residencial y comercial de alta calidad por S&M Painting.",
   keywords: [
     "painting services",
     "residential painting",
@@ -55,23 +56,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "S&M Painting",
-    title: "S&M Painting | Professional Painting Services",
+    title: "S&M Painting | Professional Painting Services | Servicios Profesionales de Pintura",
     description:
-      "High-quality residential and commercial painting services. Transform your space with our expert touch.",
+      "High-quality residential and commercial painting services. / Servicios de pintura residencial y comercial de alta calidad.",
     images: [
       {
         url: "/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "S&M Painting - Professional Painting Services",
+        alt: "S&M Painting - Professional Painting Services / Servicios Profesionales de Pintura",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "S&M Painting | Professional Painting Services",
+    title: "S&M Painting | Professional Painting Services | Servicios Profesionales de Pintura",
     description:
-      "High-quality residential and commercial painting services. Transform your space with our expert touch.",
+      "High-quality residential and commercial painting services. / Servicios de pintura residencial y comercial de alta calidad.",
     images: ["/og-image.webp"],
     creator: "@smpainting", // Replace with actual handle if known
   },
@@ -149,10 +150,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script
+        <Script
+          id="painting-service-schema"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+          strategy="afterInteractive"
+        >
+          {JSON.stringify(jsonLd)}
+        </Script>
       </head>
       <body
         className={`${glodok.variable} ${mackinac.variable} ${montserrat.variable} antialiased min-h-screen flex flex-col bg-white dark:bg-black text-black dark:text-white transition-colors duration-300`}

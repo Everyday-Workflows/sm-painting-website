@@ -90,6 +90,12 @@ type HomeCopy = {
     primary: string;
     secondary: string;
   };
+  imageAlts: {
+    logo: string;
+    heroShowcase: string;
+    bottomCard: string;
+    ctaBackground: string;
+  };
 };
 
 const HOME_COPY: Record<'en' | 'es', HomeCopy> = {
@@ -187,37 +193,43 @@ const HOME_COPY: Record<'en' | 'es', HomeCopy> = {
     },
     testimonials: {
       eyebrow: 'Client perspective',
-      title: 'Un proceso tranquilo. Un resultado nítido. Un espacio que se siente completo.',
+      title: 'A calm process. A crisp result. A space that feels complete.',
       description:
-        'Nos enfocamos en lo que la gente recuerda: comunicación clara, áreas de trabajo más limpias y un acabado que sigue viéndose intencional después de que el equipo se va.',
-      badge: 'Preparación cuidadosa. Ejecución limpia. Acabado sólido.',
+        'We focus on what people remember: clear communication, cleaner work areas, and a finish that still feels intentional after the crew packs up.',
+      badge: 'Careful prep. Clean execution. Lasting finish.',
       items: [
         {
           name: 'Sarah Jenkins',
-          role: 'Cliente residencial',
+          role: 'Homeowner',
           quote:
-            'Trataron nuestra casa con cuidado desde el primer día. Las paredes se ven más definidas, la moldura más limpia y todo el lugar finalmente se siente resuelto.',
+            'They treated our home with care from day one. The walls look sharper, the trim looks cleaner, and the whole place finally feels finished.',
         },
         {
           name: 'Marcus Chen',
-          role: 'Administrador de propiedades',
+          role: 'Property manager',
           quote:
-            'El cronograma fue claro, el equipo estuvo organizado y la revisión final fue muy completa. Se sintió como trabajar con personas que valoran los detalles tanto como nosotros.',
+            'The schedule was clear, the crew stayed organized, and the final walkthrough was thorough. It felt like working with people who value details as much as we do.',
         },
         {
           name: 'Elena Rodriguez',
-          role: 'Propietaria',
+          role: 'Owner',
           quote:
-            'Renovamos gabinetes y varios cuartos al mismo tiempo. El acabado se siente de alta gama y el proceso nunca fue caótico ni apresurado.',
+            'We refreshed cabinets and multiple rooms at the same time. The finish feels high-end, and the process never felt chaotic or rushed.',
         },
       ],
     },
     finalCta: {
-      title: '¿Listo para darle al espacio un mejor acabado?',
+      title: 'Ready to give your space a better finish?',
       description:
-        'Cuéntenos qué habitaciones, superficies o propiedad quiere renovar. Le ayudaremos a definir alcance, tiempos y el mejor siguiente paso.',
-      primary: 'Solicitar estimado',
-      secondary: 'Llamar ahora',
+        'Tell us which rooms, surfaces, or property you want to refresh. We will help you define scope, timing, and the best next step.',
+      primary: 'Request estimate',
+      secondary: 'Call now',
+    },
+    imageAlts: {
+      logo: 'S&M Painting logo',
+      heroShowcase: 'Freshly painted interior by S&M Painting',
+      bottomCard: 'Color and finish inspiration from an S&M Painting project',
+      ctaBackground: 'Painted texture and finish detail',
     },
   },
   es: {
@@ -346,6 +358,12 @@ const HOME_COPY: Record<'en' | 'es', HomeCopy> = {
       primary: 'Solicitar estimado',
       secondary: 'Llamar ahora',
     },
+    imageAlts: {
+      logo: 'Logo de S&M Painting',
+      heroShowcase: 'Interior recién pintado por S&M Painting',
+      bottomCard: 'Inspiración de color y acabado de un proyecto de S&M Painting',
+      ctaBackground: 'Detalle de textura y acabado pintado',
+    },
   },
 };
 
@@ -367,7 +385,7 @@ export default function Home() {
               <div className="mb-6 inline-flex w-fit items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-md">
                 <Image
                   src="/images/logos/Logo_White.webp"
-                  alt="S&M Painting logo"
+                  alt={copy.imageAlts.logo}
                   width={34}
                   height={34}
                   className="h-8 w-8 object-contain"
@@ -416,7 +434,7 @@ export default function Home() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_35px_90px_-40px_rgba(12,10,30,0.85)]">
                 <Image
                   src="/images/gallery/03f36018-e2da-49ff-a7d3-ce16ebcd2127.jpeg"
-                  alt="Freshly painted interior by S&M Painting"
+                  alt={copy.imageAlts.heroShowcase}
                   fill
                   sizes="(min-width: 1024px) 38vw, 90vw"
                   className="object-cover"
@@ -451,7 +469,7 @@ export default function Home() {
                 <div className="relative h-24 overflow-hidden rounded-[1rem] border border-white/10">
                   <Image
                     src="/images/gallery/589deba1-7a7b-496e-b8be-3ba64166a15e.jpeg"
-                    alt="Color and finish inspiration from an S&M Painting project"
+                    alt={copy.imageAlts.bottomCard}
                     fill
                     sizes="18rem"
                     className="object-cover"
@@ -627,7 +645,7 @@ export default function Home() {
                 <div className="flex h-full flex-col rounded-[1.8rem] border border-brand-secondary/10 bg-white p-7 shadow-[0_24px_60px_-42px_rgba(26,20,58,0.45)] dark:border-white/10 dark:bg-brand-accent-2/20">
                   <div className="flex items-center gap-1 text-brand-primary">
                     {Array.from({ length: 5 }).map((_, index) => (
-                      <Star key={index} className="h-4 w-4 fill-current" />
+                      <Star key={`${item.name}-star-${index}`} className="h-4 w-4 fill-current" />
                     ))}
                   </div>
                   <p className="mt-5 flex-1 text-base leading-8 text-foreground/80 dark:text-white/75">
@@ -653,7 +671,7 @@ export default function Home() {
               <div className="absolute inset-0 opacity-20">
                 <Image
                   src="/images/gallery/7b51ddca-47a8-4380-80b4-d3189b80b6af.jpeg"
-                  alt="Painted texture and finish detail"
+                  alt={copy.imageAlts.ctaBackground}
                   fill
                   sizes="100vw"
                   className="object-cover"

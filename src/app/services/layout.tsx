@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Services | S&M Painting",
-  description: "Professional interior and exterior painting, commercial painting, cabinet refinishing, and specialty finishes. Discover how we can transform your space.",
+  title: "Our Services / Servicios | S&M Painting",
+  description: "Professional interior and exterior painting, commercial painting, cabinet refinishing, and specialty finishes. / Pintura interior y exterior, pintura comercial, gabinetes y acabados especiales.",
   openGraph: {
-    title: "Our Services | S&M Painting",
-    description: "Professional interior and exterior painting, commercial painting, and more.",
+    title: "Our Services / Servicios | S&M Painting",
+    description: "Professional interior and exterior painting, commercial painting, and more. / Pintura interior, exterior, comercial y más.",
     images: ["/og-image.webp"],
   },
 };

@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
           <div>
             <Image
               src="/images/logos/Logo_White.webp"
-              alt="S&M Painting Logo"
+              alt={t('common.logoAlt')}
               width={120}
               height={40}
               className="h-10 w-auto mb-4"
@@ -38,8 +38,8 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-display mb-4">{t('footer.contact')}</h3>
             <p className="text-gray-400 text-sm font-sans">
-              Email: {email}<br />
-              Phone: (555) 123-4567
+              {t('footer.email')}: {email}<br />
+              {t('footer.phone')}: (555) 123-4567
             </p>
           </div>
         </div>

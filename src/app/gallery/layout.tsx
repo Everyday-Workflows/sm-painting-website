@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Gallery | S&M Painting",
-  description: "View our portfolio of residential and commercial painting projects. See the quality of our work and get inspiration for your next project.",
+  title: "Gallery / Galería | S&M Painting",
+  description: "View our portfolio of residential and commercial painting projects. / Vea nuestro portafolio de proyectos de pintura residencial y comercial.",
   openGraph: {
-    title: "Gallery | S&M Painting",
-    description: "View our portfolio of residential and commercial painting projects.",
+    title: "Gallery / Galería | S&M Painting",
+    description: "View our portfolio of residential and commercial painting projects. / Vea nuestro portafolio de proyectos de pintura residencial y comercial.",
     images: ["/og-image.webp"],
   },
 };

@@ -21,7 +21,7 @@ const galleryImages = [
 ];
 
 const GalleryPage = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   return (
     <div className="relative py-12 sm:py-20 transition-colors duration-300 overflow-hidden">
@@ -47,14 +47,14 @@ const GalleryPage = () => {
               >
                 <Image 
                   src={`/images/gallery/${image}`} 
-                  alt={`Professional painting project by S&M Painting - Showcase Image ${index + 1}`} 
+                  alt={language === 'es' ? `Proyecto de pintura profesional de S&M Painting - Imagen ${index + 1}` : `Professional painting project by S&M Painting - Showcase image ${index + 1}`}
                   fill 
                   className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                   <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center scale-0 group-hover:scale-100 transition-transform duration-500 delay-100">
-                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg aria-hidden="true" className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                     </svg>
                   </div>

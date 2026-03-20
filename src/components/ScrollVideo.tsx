@@ -146,18 +146,19 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ frameCount, framePath }) => {
                 style={{ opacity: beforeOpacity }}
                 className="absolute top-8 left-8 z-20 bg-gray-500/80 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-xs font-subtitle font-bold uppercase tracking-widest"
               >
-                Before
+                {t('video.before')}
               </motion.div>
               <motion.div
                 style={{ opacity: afterOpacity }}
                 className="absolute top-8 left-8 z-20 bg-brand-primary/90 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-xs font-subtitle font-bold uppercase tracking-widest"
               >
-                After
+                {t('video.after')}
               </motion.div>
 
+              {/* eslint-disable-next-line @next/next/no-img-element -- frame-sequence playback swaps pre-rendered images directly for scroll performance */}
               <img
                 src={getFrameSource(currentFrame)}
-                alt="Before and after painting transformation animation"
+                alt={t('video.alt')}
                 className="relative z-10 w-full h-full object-contain pointer-events-none select-none"
                 width={1080}
                 height={1080}
@@ -170,12 +171,12 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ frameCount, framePath }) => {
           <div className="w-full lg:w-[45%] text-center lg:text-left z-20">
             <ScrollReveal direction="left">
               <h2 className="text-4xl md:text-6xl font-display text-brand-secondary dark:text-brand-accent-1 mb-8 leading-[1.1]">
-                {t('video.title') || 'See the Transformation'}
+                {t('video.title')}
               </h2>
             </ScrollReveal>
             <ScrollReveal direction="left" delay={0.2}>
               <p className="text-xl md:text-2xl font-subtitle text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">
-                {t('video.subtitle') || 'Scroll to reveal the before and after of our premium painting services.'}
+                {t('video.subtitle')}
               </p>
             </ScrollReveal>
           </div>
