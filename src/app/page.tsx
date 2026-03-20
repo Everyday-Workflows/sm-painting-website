@@ -439,6 +439,10 @@ const HOME_COPY: Record<'en' | 'es', HomeCopy> = {
 export default function Home() {
   const { language, t } = useLanguage();
   const copy = HOME_COPY[language];
+  const heroPanelTitleClassName =
+    language === 'es'
+      ? 'max-w-[10.5ch] text-[1.95rem] leading-[0.9] text-balance sm:max-w-[11ch] sm:text-[2.4rem] lg:text-[2.65rem]'
+      : 'max-w-[11ch] text-[1.95rem] leading-[0.9] text-balance sm:text-[2.45rem] lg:text-[2.7rem]';
 
   return (
     <div className="flex flex-col bg-background text-foreground">
@@ -515,7 +519,7 @@ export default function Home() {
                   <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm">
                     {copy.hero.panelTag}
                   </div>
-                  <h2 className="mt-4 max-w-md text-2xl font-display text-white sm:text-3xl">
+                  <h2 className={`mt-4 font-display text-white ${heroPanelTitleClassName}`}>
                     {copy.hero.panelTitle}
                   </h2>
                   <p className="mt-3 max-w-md text-sm leading-7 text-white/75 sm:text-base">
@@ -524,12 +528,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute -right-3 top-7 hidden max-w-[14rem] rounded-[1.35rem] border border-white/10 bg-white/15 p-5 backdrop-blur-md sm:block lg:-right-8">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70">
+              <div className="absolute -right-3 top-7 hidden max-w-[14.5rem] rounded-[1.35rem] border border-white/18 bg-[linear-gradient(180deg,rgba(24,18,56,0.72)_0%,rgba(41,35,88,0.56)_100%)] p-5 shadow-[0_28px_70px_-42px_rgba(8,6,24,0.95)] backdrop-blur-xl sm:block lg:-right-8">
+                <div className="absolute inset-0 rounded-[1.35rem] bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_38%)] opacity-80" />
+                <p className="relative text-[11px] font-semibold uppercase tracking-[0.18em] text-white/82">
                   S&amp;M Painting
                 </p>
-                <p className="text-sm font-medium leading-6 text-white">{copy.hero.floatingCard}</p>
-                <p className="mt-3 text-xs leading-6 text-white/70">{copy.hero.floatingDetail}</p>
+                <p className="relative mt-4 text-[1.05rem] font-medium leading-7 text-white/96">{copy.hero.floatingCard}</p>
+                <p className="relative mt-3 text-[0.92rem] leading-7 text-white/80">{copy.hero.floatingDetail}</p>
               </div>
 
               <div className="absolute -bottom-3 left-4 right-4 rounded-[1.5rem] border border-white/10 bg-brand-tertiary/80 p-4 shadow-xl shadow-black/20 backdrop-blur-sm sm:left-8 sm:right-auto sm:w-[18rem]">
