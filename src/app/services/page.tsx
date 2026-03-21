@@ -1,9 +1,18 @@
 'use client';
 
 import React from 'react';
-import Button from '@/components/Button';
+import { Mail, PhoneCall } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/animations/ScrollReveal';
+import { buildMailtoUrl, CONTACT_INFO, CONTACT_LINKS } from '@/lib/contact';
+
+type EstimateFormData = {
+  name: string;
+  email: string;
+  phone: string;
+  projectType: string;
+  details: string;
+};
 
 const SERVICE_FEATURES: Record<'en' | 'es', string[][]> = {
   en: [
@@ -22,6 +31,114 @@ const SERVICE_FEATURES: Record<'en' | 'es', string[][]> = {
 
 const ServicesPage = () => {
   const { language, t } = useLanguage();
+  const [estimateForm, setEstimateForm] = React.useState<EstimateFormData>({
+    name: '',
+    email: '',
+    phone: '',
+    projectType: '',
+    details: '',
+  });
+  const [formStatus, setFormStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
+
+  const formCopy = language === 'en'
+    ? {
+        title: 'Request an estimate',
+        description: 'Fill this out and we will open an email draft addressed to us with your project details already included.',
+        name: 'Name',
+        email: 'Email',
+        phone: 'Phone',
+        projectType: 'Project type',
+        details: 'Project details',
+        placeholders: {
+          name: 'Your name',
+          email: 'you@example.com',
+          phone: '(813) 325-3931',
+          projectType: 'Interior repaint, exterior refresh, cabinets...',
+          details: 'Tell us about the rooms, surfaces, timing, and anything else you want quoted.',
+        },
+        submit: 'Send email',
+        success: `If an email draft did not open, email us directly at ${CONTACT_INFO.email}.`,
+        error: 'Please add your name, email, and project details before submitting.',
+        directEmail: 'Email us directly',
+        directCall: 'Call now',
+      }
+    : {
+        title: 'Solicitar un estimado',
+        description: 'Complete este formulario y abriremos un borrador de correo dirigido a nosotros con los detalles de su proyecto ya incluidos.',
+        name: 'Nombre',
+        email: 'Correo',
+        phone: 'Teléfono',
+        projectType: 'Tipo de proyecto',
+        details: 'Detalles del proyecto',
+        placeholders: {
+          name: 'Su nombre',
+          email: 'usted@ejemplo.com',
+          phone: '(813) 325-3931',
+          projectType: 'Interior, exterior, gabinetes...',
+          details: 'Cuéntenos sobre los espacios, superficies, tiempos y cualquier detalle que quiera incluir en el estimado.',
+        },
+        submit: 'Enviar correo',
+        success: `Si no se abrió un borrador, escríbanos directamente a ${CONTACT_INFO.email}.`,
+        error: 'Agregue su nombre, correo y detalles del proyecto antes de enviar.',
+        directEmail: 'Escribir por correo',
+        directCall: 'Llamar ahora',
+      };
+
+  const handleEstimateChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = event.target;
+
+    setEstimateForm((current) => ({ ...current, [name]: value }));
+    if (formStatus !== 'idle') {
+      setFormStatus('idle');
+    }
+  };
+
+  const scrollToEstimateForm = (projectType?: string) => {
+    if (projectType) {
+      setEstimateForm((current) => ({ ...current, projectType }));
+    }
+
+    requestAnimationFrame(() => {
+      document.getElementById('estimate-form')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    });
+  };
+
+  const handleEstimateSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (!estimateForm.name.trim() || !estimateForm.email.trim() || !estimateForm.details.trim()) {
+      setFormStatus('error');
+      return;
+    }
+
+    const subject = language === 'en'
+      ? `Estimate request${estimateForm.projectType ? ` - ${estimateForm.projectType}` : ''}`
+      : `Solicitud de estimado${estimateForm.projectType ? ` - ${estimateForm.projectType}` : ''}`;
+    const body = [
+      language === 'en' ? 'Name' : 'Nombre',
+      estimateForm.name,
+      '',
+      language === 'en' ? 'Email' : 'Correo',
+      estimateForm.email,
+      '',
+      language === 'en' ? 'Phone' : 'Teléfono',
+      estimateForm.phone || '-',
+      '',
+      language === 'en' ? 'Project type' : 'Tipo de proyecto',
+      estimateForm.projectType || '-',
+      '',
+      language === 'en' ? 'Project details' : 'Detalles del proyecto',
+      estimateForm.details,
+    ].join('\n');
+
+    setFormStatus('success');
+    window.location.href = buildMailtoUrl(subject, body);
+  };
 
   const services = [
     {
@@ -80,23 +197,134 @@ const ServicesPage = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant={index % 3 === 0 ? 'primary' : index % 3 === 1 ? 'secondary' : 'tertiary'} className="mt-auto w-fit max-w-full self-start shadow-lg shadow-brand-primary/10 group-hover:shadow-brand-primary/20 transition-all duration-300">
+                <button
+                  type="button"
+                  onClick={() => scrollToEstimateForm(service.title)}
+                  className="mt-auto inline-flex w-fit max-w-full items-center rounded-md bg-brand-primary px-6 py-2 text-sm font-semibold text-white shadow-lg shadow-brand-primary/10 transition-all duration-300 hover:bg-brand-secondary hover:shadow-brand-primary/20"
+                >
                   {t('services.cta')} {service.title}
-                </Button>
+                </button>
               </div>
             </StaggerItem>
           ))}
         </StaggerContainer>
 
         <ScrollReveal delay={0.4}>
-          <div className="mt-16 sm:mt-20 bg-brand-primary/10 dark:bg-brand-primary/5 backdrop-blur-md border border-brand-primary/20 rounded-3xl p-8 sm:p-12 text-center">
-            <h2 className="text-2xl sm:text-3xl font-display mb-4 sm:mb-6 leading-tight text-gray-900 dark:text-white">{t('services.footer.title')}</h2>
-            <p className="text-lg sm:text-xl font-subtitle mb-8 opacity-90 max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
-              {t('services.footer.description')}
-            </p>
-            <Button variant="primary" className="w-fit max-w-full px-8 sm:px-10 py-4 text-lg font-bold shadow-lg shadow-brand-primary/20">
-              {t('services.footer.cta')}
-            </Button>
+          <div className="mt-16 sm:mt-20 rounded-3xl border border-brand-primary/20 bg-brand-primary/10 p-8 backdrop-blur-md sm:p-12">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.85fr)] lg:items-start">
+              <div className="text-center lg:text-left">
+                <h2 className="text-2xl sm:text-3xl font-display mb-4 sm:mb-6 leading-tight text-gray-900 dark:text-white">{t('services.footer.title')}</h2>
+                <p className="text-lg sm:text-xl font-sans mb-8 opacity-90 max-w-2xl mx-auto lg:mx-0 text-gray-600 dark:text-gray-300">
+                  {t('services.footer.description')}
+                </p>
+                <div className="flex flex-col items-center gap-4 lg:items-start">
+                  <a
+                    href={CONTACT_LINKS.email}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-brand-secondary transition-colors hover:text-brand-primary dark:text-white dark:hover:text-brand-accent-1"
+                  >
+                    <Mail className="h-4 w-4" />
+                    {CONTACT_INFO.email}
+                  </a>
+                  <a
+                    href={CONTACT_LINKS.phone}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-brand-secondary transition-colors hover:text-brand-primary dark:text-white dark:hover:text-brand-accent-1"
+                  >
+                    <PhoneCall className="h-4 w-4" />
+                    {CONTACT_INFO.phoneDisplay}
+                  </a>
+                </div>
+              </div>
+
+              <form
+                id="estimate-form"
+                onSubmit={handleEstimateSubmit}
+                className="rounded-[1.75rem] border border-white/40 bg-white/75 p-6 text-left shadow-[0_24px_60px_-42px_rgba(26,20,58,0.45)] dark:border-white/10 dark:bg-zinc-950/65"
+              >
+                <h3 className="text-2xl font-display text-gray-900 dark:text-white">{formCopy.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-gray-600 dark:text-gray-300">{formCopy.description}</p>
+
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                    <span>{formCopy.name}</span>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      value={estimateForm.name}
+                      onChange={handleEstimateChange}
+                      placeholder={formCopy.placeholders.name}
+                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                    />
+                  </label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                    <span>{formCopy.email}</span>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      value={estimateForm.email}
+                      onChange={handleEstimateChange}
+                      placeholder={formCopy.placeholders.email}
+                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                    />
+                  </label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                    <span>{formCopy.phone}</span>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={estimateForm.phone}
+                      onChange={handleEstimateChange}
+                      placeholder={formCopy.placeholders.phone}
+                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                    />
+                  </label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                    <span>{formCopy.projectType}</span>
+                    <input
+                      type="text"
+                      name="projectType"
+                      value={estimateForm.projectType}
+                      onChange={handleEstimateChange}
+                      placeholder={formCopy.placeholders.projectType}
+                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                    />
+                  </label>
+                </div>
+
+                <label className="mt-4 block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  <span>{formCopy.details}</span>
+                  <textarea
+                    name="details"
+                    required
+                    rows={5}
+                    value={estimateForm.details}
+                    onChange={handleEstimateChange}
+                    placeholder={formCopy.placeholders.details}
+                    className="mt-2 w-full rounded-[1.5rem] border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                  />
+                </label>
+
+                <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <button
+                    type="submit"
+                    className="inline-flex items-center justify-center rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-secondary"
+                  >
+                    {formCopy.submit}
+                  </button>
+                  <div className="flex flex-wrap gap-3 text-sm font-medium">
+                    <a href={CONTACT_LINKS.email} className="text-brand-secondary hover:text-brand-primary dark:text-white dark:hover:text-brand-accent-1">{formCopy.directEmail}</a>
+                    <a href={CONTACT_LINKS.phone} className="text-brand-secondary hover:text-brand-primary dark:text-white dark:hover:text-brand-accent-1">{formCopy.directCall}</a>
+                  </div>
+                </div>
+                {formStatus === 'error' && (
+                  <p className="mt-3 text-sm font-medium text-red-600 dark:text-red-400">{formCopy.error}</p>
+                )}
+                {formStatus === 'success' && (
+                  <p className="mt-3 text-sm font-medium text-brand-primary dark:text-brand-accent-1">{formCopy.success}</p>
+                )}
+              </form>
+            </div>
           </div>
         </ScrollReveal>
       </div>

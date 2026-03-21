@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { useLanguage } from '@/context/LanguageContext';
+import { CONTACT_INFO, CONTACT_LINKS } from '@/lib/contact';
 import { BRAND_ASSETS } from '@/lib/siteAssets';
 import { Sun, Moon, Languages, Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -94,11 +95,11 @@ const Navigation: React.FC = () => {
             <div className="hidden md:flex md:items-center md:space-x-4">
               {/* Phone Number */}
               <a 
-                href="tel:+15551234567" 
+                href={CONTACT_LINKS.phone}
                 className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors font-sans font-semibold text-sm mr-2"
               >
                 <Phone size={16} className="text-brand-primary" />
-                <span className="hidden lg:inline">(555) 123-4567</span>
+                <span className="hidden lg:inline">{CONTACT_INFO.phoneDisplay}</span>
               </a>
 
               <div className="h-6 w-px bg-gray-200 dark:bg-gray-800 mx-2" />
@@ -215,11 +216,11 @@ const Navigation: React.FC = () => {
                 transition={{ delay: 0.4 }}
               >
                 <a
-                  href="tel:+15551234567"
+                  href={CONTACT_LINKS.phone}
                   className="flex items-center space-x-3 px-3 py-3 rounded-md text-lg font-sans font-semibold text-gray-700 dark:text-gray-300 hover:text-brand-primary hover:bg-gray-50 dark:hover:bg-gray-900"
                 >
                   <Phone size={20} className="text-brand-primary" />
-                  <span>(555) 123-4567</span>
+                  <span>{CONTACT_INFO.phoneDisplay}</span>
                 </a>
               </motion.div>
             </div>

@@ -3,14 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { CONTACT_INFO, CONTACT_LINKS } from "@/lib/contact";
 import { useLanguage } from "@/context/LanguageContext";
 import { BRAND_ASSETS } from "@/lib/siteAssets";
-import { resolvePublicSiteHostname } from "@/lib/siteUrl";
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
-  const domain = resolvePublicSiteHostname();
-  const email = `info@${domain}`;
 
   return (
     <footer className="bg-gray-900 dark:bg-zinc-950 text-white py-12 relative z-10">
@@ -60,9 +58,21 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-display mb-4">{t("footer.contact")}</h3>
             <p className="text-gray-400 text-sm font-sans">
-              {t("footer.email")}: {email}
+              {t("footer.email")}: {" "}
+              <a
+                href={CONTACT_LINKS.email}
+                className="hover:text-brand-primary transition-colors"
+              >
+                {CONTACT_INFO.email}
+              </a>
               <br />
-              {t("footer.phone")}: (555) 123-4567
+              {t("footer.phone")}: {" "}
+              <a
+                href={CONTACT_LINKS.phone}
+                className="hover:text-brand-primary transition-colors"
+              >
+                {CONTACT_INFO.phoneDisplay}
+              </a>
             </p>
           </div>
         </div>

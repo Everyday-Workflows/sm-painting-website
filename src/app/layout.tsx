@@ -6,6 +6,7 @@ import Navigation from "@/components/Navigation";
 import { Providers } from "@/components/Providers";
 import Footer from "@/components/Footer";
 import BackgroundBlobs from "@/components/BackgroundBlobs";
+import { CONTACT_INFO } from "@/lib/contact";
 import { BRAND_ASSETS, FEATURED_GALLERY_ASSETS } from "@/lib/siteAssets";
 import { resolvePublicSiteUrl } from "@/lib/siteUrl";
 
@@ -119,7 +120,14 @@ export default function RootLayout({
     image: `${SITE_URL}${BRAND_ASSETS.logoLightWordmark}`,
     "@id": SITE_URL,
     url: SITE_URL,
-    telephone: "+1-555-0123", // Placeholder
+    email: CONTACT_INFO.email,
+    telephone: CONTACT_INFO.phoneE164,
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      email: CONTACT_INFO.email,
+      telephone: CONTACT_INFO.phoneE164,
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: "123 Main St",

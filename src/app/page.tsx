@@ -19,6 +19,7 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/animations/ScrollReveal";
+import { CONTACT_LINKS } from "@/lib/contact";
 import { BRAND_ASSETS, FEATURED_GALLERY_ASSETS } from "@/lib/siteAssets";
 
 const BEFORE_AFTER_FRAME_COUNT = 603;
@@ -548,7 +549,7 @@ export default function Home() {
             <ScrollReveal direction="right" delay={0.28}>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
                 <Link
-                  href="/services"
+                  href="/services#estimate-form"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-semibold text-brand-secondary transition-transform duration-300 hover:-translate-y-0.5"
                 >
                   {copy.hero.primaryCta}
@@ -947,14 +948,14 @@ export default function Home() {
 
                 <div className="flex flex-col gap-4 sm:flex-row lg:flex-col lg:items-end">
                   <Link
-                    href="/services"
+                    href="/services#estimate-form"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-semibold text-brand-secondary transition-transform duration-300 hover:-translate-y-0.5"
                   >
                     {copy.finalCta.primary}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
-                    href="tel:5551234567"
+                    href={CONTACT_LINKS.phone}
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-300 hover:bg-white/15"
                   >
                     <PhoneCall className="h-4 w-4" />
