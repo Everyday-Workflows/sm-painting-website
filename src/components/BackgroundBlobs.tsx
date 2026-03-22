@@ -1,11 +1,49 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+
+const DESKTOP_MEDIA_QUERY = '(min-width: 768px)';
 
 const BackgroundBlobs: React.FC = () => {
+  const prefersReducedMotion = useReducedMotion();
+  const [isDesktopViewport, setIsDesktopViewport] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia(DESKTOP_MEDIA_QUERY);
+
+    const updateViewportState = () => {
+      setIsDesktopViewport(mediaQuery.matches);
+    };
+
+    updateViewportState();
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', updateViewportState);
+
+      return () => {
+        mediaQuery.removeEventListener('change', updateViewportState);
+      };
+    }
+
+    mediaQuery.addListener(updateViewportState);
+
+    return () => {
+      mediaQuery.removeListener(updateViewportState);
+    };
+  }, []);
+
+  if (prefersReducedMotion || !isDesktopViewport) {
+    return null;
+  }
+
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10 select-none">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10 select-none" aria-hidden="true">
       {/* Top Right Blob */}
       <motion.div
         animate={{
@@ -16,7 +54,7 @@ const BackgroundBlobs: React.FC = () => {
         transition={{
           duration: 20,
           repeat: Infinity,
-          ease: "linear"
+          ease: 'linear'
         }}
         className="absolute -top-[10%] -right-[10%] w-[40rem] h-[40rem] sm:w-[70rem] sm:h-[70rem] bg-brand-primary/30 dark:bg-brand-primary/20 rounded-full blur-[100px] sm:blur-[150px]"
       />
@@ -31,7 +69,7 @@ const BackgroundBlobs: React.FC = () => {
         transition={{
           duration: 25,
           repeat: Infinity,
-          ease: "linear"
+          ease: 'linear'
         }}
         className="absolute -bottom-[10%] -left-[10%] w-[35rem] h-[35rem] sm:w-[60rem] sm:h-[60rem] bg-brand-secondary/30 dark:bg-brand-secondary/20 rounded-full blur-[100px] sm:blur-[150px]"
       />
@@ -46,7 +84,7 @@ const BackgroundBlobs: React.FC = () => {
         transition={{
           duration: 18,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: 'easeInOut'
         }}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] sm:w-[50rem] sm:h-[50rem] bg-brand-accent-1/25 dark:bg-brand-accent-1/15 rounded-full blur-[120px] sm:blur-[180px]"
       />
@@ -60,7 +98,7 @@ const BackgroundBlobs: React.FC = () => {
         transition={{
           duration: 30,
           repeat: Infinity,
-          ease: "linear"
+          ease: 'linear'
         }}
         className="absolute top-1/4 left-1/4 w-[20rem] h-[20rem] bg-brand-tertiary/20 dark:bg-brand-tertiary/10 rounded-full blur-[80px] sm:blur-[120px]"
       />
