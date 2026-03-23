@@ -4,6 +4,7 @@
 ## Repo Skills
 
 - Use `$scroll-frame-sequence` when converting a video or extracted frame set into a scroll-driven image-sequence animation with background removal, WebP optimization, and frontend integration.
+- Must use OKLCH color space for all color-related tasks.
 
 ## Known Issues & Steering
 

@@ -5,7 +5,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import { Providers } from "@/components/Providers";
 import Footer from "@/components/Footer";
-import BackgroundBlobs from "@/components/BackgroundBlobs";
+// BackgroundBlobs removed — keeping backgrounds clean and consistent across all pages
 import { CONTACT_INFO } from "@/lib/contact";
 import { BRAND_ASSETS } from "@/lib/siteAssets";
 import { resolvePublicSiteUrl } from "@/lib/siteUrl";
@@ -177,11 +177,9 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${fraunces.variable} ${cormorant.variable} ${manrope.variable} antialiased min-h-screen flex flex-col bg-white dark:bg-black text-black dark:text-white transition-colors duration-300`}
+        className={`${fraunces.variable} ${cormorant.variable} ${manrope.variable} min-h-screen flex flex-col bg-background text-foreground antialiased transition-colors duration-300`}
       >
         <Providers>
-          <BackgroundBlobs />
-
           <Navigation />
           <main className="flex-grow">{children}</main>
           <Footer />

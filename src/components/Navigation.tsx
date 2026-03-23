@@ -50,7 +50,7 @@ const Navigation: React.FC = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="bg-white/70 dark:bg-black/70 backdrop-blur-xl shadow-sm sticky top-0 z-50 transition-colors duration-300 border-b border-gray-200/20 dark:border-gray-800/20"
+      className="sticky top-0 z-50 border-b border-brand-tertiary/12 bg-brand-cloud/72 shadow-sm backdrop-blur-xl transition-colors duration-300 dark:border-border dark:bg-surface"
     >
       <div className="max-w-full mx-auto px-6 sm:px-10 lg:px-12">
         <div className="flex justify-between h-20 items-center relative">
@@ -72,19 +72,19 @@ const Navigation: React.FC = () => {
           <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-8">
             <Link 
               href="/" 
-              className="border-transparent text-gray-500 dark:text-gray-400 hover:border-brand-highlight hover:text-brand-highlight dark:hover:text-brand-highlight inline-flex items-center px-1 pt-1 border-b-2 text-sm font-sans font-medium transition-all duration-200"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-sans font-medium text-brand-tertiary/74 transition-all duration-200 hover:border-brand-highlight hover:text-brand-highlight dark:text-brand-cloud/68 dark:hover:text-brand-accent-1"
             >
               {t('nav.home')}
             </Link>
             <Link 
               href="/gallery" 
-              className="border-transparent text-gray-500 dark:text-gray-400 hover:border-brand-highlight hover:text-brand-highlight dark:hover:text-brand-highlight inline-flex items-center px-1 pt-1 border-b-2 text-sm font-sans font-medium transition-all duration-200"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-sans font-medium text-brand-tertiary/74 transition-all duration-200 hover:border-brand-highlight hover:text-brand-highlight dark:text-brand-cloud/68 dark:hover:text-brand-accent-1"
             >
               {t('nav.gallery')}
             </Link>
             <Link 
               href="/services" 
-              className="border-transparent text-gray-500 dark:text-gray-400 hover:border-brand-highlight hover:text-brand-highlight dark:hover:text-brand-highlight inline-flex items-center px-1 pt-1 border-b-2 text-sm font-sans font-medium transition-all duration-200"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-sans font-medium text-brand-tertiary/74 transition-all duration-200 hover:border-brand-highlight hover:text-brand-highlight dark:text-brand-cloud/68 dark:hover:text-brand-accent-1"
             >
               {t('nav.services')}
             </Link>
@@ -96,19 +96,19 @@ const Navigation: React.FC = () => {
               {/* Phone Number */}
               <a 
                 href={CONTACT_LINKS.phone}
-                className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-brand-highlight transition-colors font-sans font-semibold text-sm mr-2"
+                className="mr-2 flex items-center space-x-2 text-sm font-sans font-semibold text-brand-accent-2 transition-colors hover:text-brand-highlight dark:text-brand-cloud dark:hover:text-brand-accent-1"
               >
                 <Phone size={16} className="text-brand-highlight" />
                 <span className="hidden lg:inline">{CONTACT_INFO.phoneDisplay}</span>
               </a>
 
-              <div className="h-6 w-px bg-gray-200 dark:bg-gray-800 mx-2" />
+              <div className="mx-2 h-6 w-px bg-brand-tertiary/15 dark:bg-brand-accent-1/18" />
 
               {/* Language Toggle */}
               <button
                 type="button"
                 onClick={() => setLanguage(language === 'en' ? 'es' : 'en')}
-                className="p-2 rounded-full hover:bg-brand-highlight/10 dark:hover:bg-brand-highlight/10 text-gray-500 dark:text-gray-400 hover:text-brand-highlight transition-colors"
+                className="rounded-full p-2 text-brand-tertiary/74 transition-colors hover:bg-brand-highlight/10 hover:text-brand-highlight dark:text-brand-cloud/68 dark:hover:bg-brand-accent-1/10 dark:hover:text-brand-accent-1"
                 aria-label={languageToggleLabel}
               >
                 <div className="flex items-center space-x-1">
@@ -121,7 +121,7 @@ const Navigation: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-full hover:bg-brand-highlight/10 dark:hover:bg-brand-highlight/10 text-gray-500 dark:text-gray-400 hover:text-brand-highlight transition-colors"
+                className="rounded-full p-2 text-brand-tertiary/74 transition-colors hover:bg-brand-highlight/10 hover:text-brand-highlight dark:text-brand-cloud/68 dark:hover:bg-brand-accent-1/10 dark:hover:text-brand-accent-1"
                 aria-label={themeToggleLabel}
               >
                 {isDarkTheme ? <Sun size={20} /> : <Moon size={20} />}
@@ -133,7 +133,7 @@ const Navigation: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setLanguage(language === 'en' ? 'es' : 'en')}
-                className="flex items-center space-x-1 rounded-full px-2.5 py-2 text-gray-500 dark:text-gray-400 hover:bg-brand-highlight/10 hover:text-brand-highlight dark:hover:bg-brand-highlight/10 transition-colors"
+                className="flex items-center space-x-1 rounded-full px-2.5 py-2 text-brand-tertiary/74 transition-colors hover:bg-brand-highlight/10 hover:text-brand-highlight dark:text-brand-cloud/68 dark:hover:bg-brand-accent-1/10 dark:hover:text-brand-accent-1"
                 aria-label={languageToggleLabel}
               >
                 <Languages size={18} />
@@ -142,7 +142,7 @@ const Navigation: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-brand-highlight/10 hover:text-brand-highlight dark:hover:bg-brand-highlight/10 transition-colors"
+                className="rounded-full p-2 text-brand-tertiary/74 transition-colors hover:bg-brand-highlight/10 hover:text-brand-highlight dark:text-brand-cloud/68 dark:hover:bg-brand-accent-1/10 dark:hover:text-brand-accent-1"
                 aria-label={themeToggleLabel}
               >
                 {isDarkTheme ? <Sun size={20} /> : <Moon size={20} />}
@@ -150,7 +150,7 @@ const Navigation: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-brand-highlight hover:bg-brand-highlight/10 dark:hover:bg-brand-highlight/10 focus:outline-none transition-colors"
+                className="rounded-md p-2 text-brand-tertiary/74 transition-colors hover:bg-brand-highlight/10 hover:text-brand-highlight focus:outline-none dark:text-brand-cloud/68 dark:hover:bg-brand-accent-1/10 dark:hover:text-brand-accent-1"
                 aria-label={menuToggleLabel}
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -168,7 +168,7 @@ const Navigation: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="md:hidden absolute top-20 left-0 w-full bg-white/90 dark:bg-black/90 backdrop-blur-2xl border-b border-gray-100 dark:border-gray-900 shadow-lg overflow-hidden"
+            className="absolute left-0 top-20 w-full overflow-hidden border-b border-brand-tertiary/12 bg-brand-cloud/94 shadow-lg backdrop-blur-2xl dark:border-border dark:bg-surface md:hidden"
           >
             <div className="px-6 pt-4 pb-8 space-y-4">
               <motion.div
@@ -178,7 +178,7 @@ const Navigation: React.FC = () => {
               >
                 <Link
                   href="/"
-                  className="block px-3 py-3 rounded-md text-lg font-sans font-medium text-gray-700 dark:text-gray-300 hover:text-brand-highlight hover:bg-brand-highlight/8 dark:hover:bg-brand-highlight/10"
+                   className="block rounded-md px-3 py-3 text-lg font-sans font-medium text-brand-accent-2 transition-colors hover:bg-brand-highlight/8 hover:text-brand-highlight dark:text-brand-cloud dark:hover:bg-brand-accent-1/10 dark:hover:text-brand-accent-1"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t('nav.home')}
@@ -191,7 +191,7 @@ const Navigation: React.FC = () => {
               >
                 <Link
                   href="/gallery"
-                  className="block px-3 py-3 rounded-md text-lg font-sans font-medium text-gray-700 dark:text-gray-300 hover:text-brand-highlight hover:bg-brand-highlight/8 dark:hover:bg-brand-highlight/10"
+                   className="block rounded-md px-3 py-3 text-lg font-sans font-medium text-brand-accent-2 transition-colors hover:bg-brand-highlight/8 hover:text-brand-highlight dark:text-brand-cloud dark:hover:bg-brand-accent-1/10 dark:hover:text-brand-accent-1"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t('nav.gallery')}
@@ -204,7 +204,7 @@ const Navigation: React.FC = () => {
               >
                 <Link
                   href="/services"
-                  className="block px-3 py-3 rounded-md text-lg font-sans font-medium text-gray-700 dark:text-gray-300 hover:text-brand-highlight hover:bg-brand-highlight/8 dark:hover:bg-brand-highlight/10"
+                   className="block rounded-md px-3 py-3 text-lg font-sans font-medium text-brand-accent-2 transition-colors hover:bg-brand-highlight/8 hover:text-brand-highlight dark:text-brand-cloud dark:hover:bg-brand-accent-1/10 dark:hover:text-brand-accent-1"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t('nav.services')}
@@ -217,7 +217,7 @@ const Navigation: React.FC = () => {
               >
                 <a
                   href={CONTACT_LINKS.phone}
-                  className="flex items-center space-x-3 px-3 py-3 rounded-md text-lg font-sans font-semibold text-gray-700 dark:text-gray-300 hover:text-brand-highlight hover:bg-brand-highlight/8 dark:hover:bg-brand-highlight/10"
+                   className="flex items-center space-x-3 rounded-md px-3 py-3 text-lg font-sans font-semibold text-brand-accent-2 transition-colors hover:bg-brand-highlight/8 hover:text-brand-highlight dark:text-brand-cloud dark:hover:bg-brand-accent-1/10 dark:hover:text-brand-accent-1"
                 >
                   <Phone size={20} className="text-brand-highlight" />
                   <span>{CONTACT_INFO.phoneDisplay}</span>

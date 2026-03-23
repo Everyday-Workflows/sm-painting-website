@@ -13,14 +13,14 @@ export const BRAND_ASSETS = {
 export const FEATURED_GALLERY_ASSETS = {
   heroShowcase: '/images/gallery/011.jpeg',
   colorInspiration: '/images/gallery/006.jpeg',
-  ctaTexture: '/images/gallery/001.jpeg',
+  ctaTexture: '/images/gallery/015.jpeg',
   interiorService: '/images/gallery/012.jpeg',
   exteriorService: '/images/gallery/015.jpeg',
   commercialService: '/images/gallery/009.jpeg',
   cabinetsService: '/images/gallery/002.jpeg',
 } as const;
 
-export type PortfolioCategory = 'interior' | 'exterior' | 'commercial' | 'specialty';
+export type PortfolioCategory = 'interior' | 'exterior';
 export type PortfolioRelationship = 'before' | 'after' | 'same-project';
 
 export type PortfolioItem = {
@@ -39,58 +39,58 @@ export type PortfolioItem = {
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     src: '/images/gallery/001.jpeg',
-    category: 'interior',
+    category: 'exterior',
     alt: {
-      en: 'Interior living space with a smooth, even wall and trim finish',
-      es: 'Espacio interior con un acabado uniforme y limpio en paredes y molduras',
+      en: 'Exterior painting prep on a two-story stucco home with masked windows, trim, and entry details',
+      es: 'Preparación de pintura exterior en una casa de dos pisos con estuco, ventanas protegidas, molduras y detalles de entrada cubiertos',
     },
   },
   {
     src: '/images/gallery/002.jpeg',
     category: 'interior',
     alt: {
-      en: 'Detailed interior painting work with crisp cabinetry and trim finish',
-      es: 'Trabajo detallado de pintura interior con un acabado preciso en gabinetes y molduras',
+      en: 'Interior room carefully masked and protected before painting walls, trim, and cabinets',
+      es: 'Habitación interior cuidadosamente protegida y cubierta antes de pintar paredes, molduras y gabinetes',
     },
   },
   {
     src: '/images/gallery/003.jpeg',
     category: 'interior',
     alt: {
-      en: 'Interior painting showcase with a clean, durable finish',
-      es: 'Muestra de pintura interior con un acabado limpio y duradero',
+      en: 'Painter applying a fresh coat in a fully protected living space during interior repainting',
+      es: 'Pintor aplicando una capa nueva en una sala completamente protegida durante un repintado interior',
     },
   },
   {
     src: '/images/gallery/004.jpeg',
     category: 'interior',
     alt: {
-      en: 'Interior project highlighting smooth walls and refined trim work',
-      es: 'Proyecto interior que destaca paredes lisas y molduras refinadas',
+      en: 'Interior repaint prep with furniture wrapped, floors covered, and surfaces ready for a clean finish',
+      es: 'Preparación para repintado interior con muebles cubiertos, pisos protegidos y superficies listas para un acabado limpio',
     },
   },
   {
-    src: '/images/gallery/005.JPG',
+    src: '/images/gallery/005.jpeg',
     category: 'interior',
     alt: {
-      en: 'Fresh white bedroom repaint with finished doors, trim, and closet panels',
-      es: 'Repintado fresco de dormitorio en blanco con puertas, molduras y paneles de clóset terminados',
+      en: 'Finished bedroom repaint with bright white walls, doors, trim, and a clean modern look',
+      es: 'Dormitorio terminado con paredes, puertas y molduras blancas y una apariencia limpia y moderna',
     },
   },
   {
     src: '/images/gallery/006.jpeg',
     category: 'interior',
     alt: {
-      en: 'Interior color project showing balanced tones and polished finishing',
-      es: 'Proyecto interior de color que muestra tonos equilibrados y un acabado pulido',
+      en: 'Open living area repaint with warm neutral walls, clean lines, and updated flooring',
+      es: 'Repintado de sala abierta con paredes en tonos neutros cálidos, líneas limpias y piso renovado',
     },
   },
   {
     src: '/images/gallery/007.jpeg',
     category: 'exterior',
     alt: {
-      en: 'Exterior painting showcase with a refreshed curb-appeal finish',
-      es: 'Muestra de pintura exterior con un acabado renovado que mejora la fachada',
+      en: 'Before photo of a two-story exterior repaint showing original yellow siding and active prep work',
+      es: 'Foto de antes de un repintado exterior de dos pisos con siding amarillo original y preparación en proceso',
     },
     relationship: {
       type: 'before',
@@ -98,19 +98,19 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     },
   },
   {
-    src: '/images/gallery/008.JPG',
+    src: '/images/gallery/008.jpeg',
     category: 'interior',
     alt: {
-      en: 'Moody blue-green interior repaint with paneled walls, trim, and stair detail',
-      es: 'Repintado interior en azul verdoso intenso con paneles, molduras y detalle de escalera',
+      en: 'Interior repaint with rich blue-green paneling, matching doors, and crisp white upper walls',
+      es: 'Repintado interior con paneles azul verdoso intenso, puertas a juego y paredes superiores blancas bien definidas',
     },
   },
   {
     src: '/images/gallery/009.jpeg',
     category: 'exterior',
     alt: {
-      en: 'Finished exterior repaint with bright siding, dark trim, and a stronger front-entry contrast',
-      es: 'Repintado exterior terminado con revestimiento claro, molduras oscuras y un contraste más marcado en la entrada principal',
+      en: 'Finished exterior transformation with white siding, black trim, and a refreshed front deck',
+      es: 'Transformación exterior terminada con siding blanco, molduras negras y una terraza frontal renovada',
     },
     relationship: {
       type: 'after',
@@ -118,19 +118,19 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     },
   },
   {
-    src: '/images/gallery/010.JPG',
+    src: '/images/gallery/010.jpeg',
     category: 'exterior',
     alt: {
-      en: 'Two-story exterior repaint featuring gray walls, white trim, and dark shutters',
-      es: 'Repintado exterior de dos pisos con paredes grises, molduras blancas y contraventanas oscuras',
+      en: 'Two-story stucco exterior repaint in a soft gray tone with bright trim and dark shutters',
+      es: 'Repintado exterior de casa de dos pisos con estuco en tono gris suave, molduras claras y contraventanas oscuras',
     },
   },
   {
     src: '/images/gallery/011.jpeg',
     category: 'interior',
     alt: {
-      en: 'Finished interior painting project with clean lines and bright natural light',
-      es: 'Proyecto de pintura interior terminado con líneas limpias y luz natural brillante',
+      en: 'Bright open-concept interior with fresh white walls and a clean finished look across the main living space',
+      es: 'Interior abierto y luminoso con paredes blancas recién pintadas y un acabado limpio en la sala principal',
     },
     relationship: {
       type: 'same-project',
@@ -141,8 +141,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     src: '/images/gallery/012.jpeg',
     category: 'interior',
     alt: {
-      en: 'Interior service showcase featuring neat trim work and a modern finish',
-      es: 'Muestra de servicio interior con molduras precisas y un acabado moderno',
+      en: 'Double-height stair hall repaint with bright walls, dark rails, and a crisp modern contrast',
+      es: 'Repintado de área de escalera de doble altura con paredes claras, barandales oscuros y un contraste moderno definido',
     },
     relationship: {
       type: 'same-project',
@@ -151,10 +151,10 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     src: '/images/gallery/013.jpeg',
-    category: 'commercial',
+    category: 'interior',
     alt: {
-      en: 'Commercial-style painting project with durable, high-traffic finishes',
-      es: 'Proyecto de pintura estilo comercial con acabados duraderos para alto tránsito',
+      en: 'Interior staircase finish with dark wood treads, white risers, and freshly painted surrounding walls',
+      es: 'Acabado de escalera interior con peldaños oscuros, contrahuellas blancas y paredes recién pintadas alrededor',
     },
     relationship: {
       type: 'same-project',
@@ -165,8 +165,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     src: '/images/gallery/014.jpeg',
     category: 'exterior',
     alt: {
-      en: 'Exterior view before repaint with muted siding, lighter trim, and an unfinished front presentation',
-      es: 'Vista exterior antes del repintado con revestimiento apagado, molduras más claras y una presentación frontal menos terminada',
+      en: 'Before photo of a small home exterior with green siding and natural wood deck rails before repainting',
+      es: 'Foto de antes de una casa pequeña con siding verde y barandales de madera natural antes del repintado',
     },
     relationship: {
       type: 'before',
@@ -177,8 +177,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     src: '/images/gallery/015.jpeg',
     category: 'exterior',
     alt: {
-      en: 'Exterior house painting project with refreshed siding and trim',
-      es: 'Proyecto de pintura exterior de vivienda con revestimiento y molduras renovadas',
+      en: 'Finished two-story exterior repaint with bright siding, white columns, and a cleaner curb-facing presentation',
+      es: 'Repintado exterior terminado de casa de dos pisos con siding claro, columnas blancas y una fachada más limpia y definida',
     },
     relationship: {
       type: 'after',
@@ -186,27 +186,27 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     },
   },
   {
-    src: '/images/gallery/016.JPG',
+    src: '/images/gallery/016.jpeg',
     category: 'interior',
     alt: {
-      en: 'Open-plan interior renovation with clean white walls, trim, and newly finished surfaces',
-      es: 'Renovación interior de concepto abierto con paredes blancas limpias, molduras y superficies recién terminadas',
+      en: 'Finished open-plan interior with fresh white walls, tile flooring, and a bright updated kitchen-living area',
+      es: 'Interior de concepto abierto terminado con paredes blancas frescas, piso de loseta y una cocina-sala renovada y luminosa',
     },
   },
   {
-    src: '/images/gallery/017.jpg',
-    category: 'commercial',
+    src: '/images/gallery/017.jpeg',
+    category: 'exterior',
     alt: {
-      en: 'Room repaint with a bright blue accent wall and refreshed white side walls',
-      es: 'Repintado de habitación con pared de acento azul brillante y paredes laterales blancas renovadas',
+      en: 'Exterior repaint in progress on a two-story stucco home with ladders, masking, and active prep work',
+      es: 'Repintado exterior en proceso en una casa de dos pisos con estuco, escaleras, enmascarado y preparación activa',
     },
   },
   {
-    src: '/images/gallery/019.jpg',
-    category: 'specialty',
+    src: '/images/gallery/019.jpeg',
+    category: 'interior',
     alt: {
-      en: 'Fresh red and white shed repaint highlighting durable specialty exterior work',
-      es: 'Repintado fresco de cobertizo en rojo y blanco que destaca un trabajo exterior especial y duradero',
+      en: 'Finished bedroom repaint in a soft neutral tone with white trim and updated flooring',
+      es: 'Dormitorio terminado en un tono neutro suave con molduras blancas y piso renovado',
     },
   },
 ];

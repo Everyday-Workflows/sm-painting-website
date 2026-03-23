@@ -216,7 +216,7 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
       eyebrow: "Where we do our best work",
       title: "Tailored painting solutions for every surface and schedule.",
       description:
-        "From lived-in family rooms to customer-facing commercial spaces, we bring the same discipline, protection, and finish quality to every project type.",
+        "From lived-in family rooms to exterior facades and rental-ready refreshes, we bring the same discipline, protection, and finish quality to every project type.",
       cards: [
         {
           title: "Interior painting",
@@ -237,19 +237,19 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
             "max-w-[7.5ch] text-[1.08rem] sm:max-w-[8ch] sm:text-[1.55rem] lg:text-[2.05rem]",
         },
         {
-          title: "Commercial spaces",
+          title: "Home refreshes",
           description:
-            "Offices, storefronts, and rental properties refreshed with minimal disruption.",
+            "Lived-in homes and rental-ready properties refreshed with clean prep and dependable finishes.",
           image: FEATURED_GALLERY_ASSETS.commercialService,
-          alt: "Refreshed rental property exterior with clean lines and updated paintwork.",
+          alt: "Residential exterior refresh with clean lines, updated paintwork, and a more finished presentation.",
           titleClassName:
-            "max-w-[7.2ch] text-[1rem] sm:max-w-[8ch] sm:text-[1.5rem] lg:text-[1.95rem]",
+            "max-w-[8.5ch] text-[1rem] sm:text-[1.5rem] lg:text-[1.95rem]",
         },
         {
           title: "Cabinets & trim",
           description:
             "Factory-smooth updates that modernize high-touch surfaces without full replacement.",
-          image: FEATURED_GALLERY_ASSETS.cabinetsService,
+          image: FEATURED_GALLERY_ASSETS.commercialService,
           alt: "Interior kitchen area carefully masked and prepped for cabinet and trim refinishing.",
           className: "md:col-span-2",
           titleClassName: "text-[1.85rem] sm:text-[2.25rem] lg:text-[2.6rem]",
@@ -422,19 +422,19 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
             "max-w-[7.5ch] text-[1.08rem] sm:max-w-[8ch] sm:text-[1.55rem] lg:text-[2.05rem]",
         },
         {
-          title: "Espacios comerciales",
+          title: "Renovación del hogar",
           description:
-            "Oficinas, locales y propiedades de renta renovadas con mínima interrupción.",
+            "Hogares habitados y propiedades listas para renta renovados con preparación cuidadosa y acabados confiables.",
           image: FEATURED_GALLERY_ASSETS.commercialService,
-          alt: "Propiedad de renta renovada con líneas limpias y pintura exterior actualizada.",
+          alt: "Renovación exterior residencial con líneas limpias, pintura actualizada y una presentación más terminada.",
           titleClassName:
-            "max-w-[7.2ch] text-[1rem] sm:max-w-[8ch] sm:text-[1.5rem] lg:text-[1.95rem]",
+            "max-w-[9ch] text-[0.98rem] sm:text-[1.5rem] lg:text-[1.95rem]",
         },
         {
           title: "Gabinetes y molduras",
           description:
             "Actualizaciones suaves tipo fábrica para modernizar superficies de alto uso sin reemplazar todo.",
-          image: FEATURED_GALLERY_ASSETS.cabinetsService,
+          image: FEATURED_GALLERY_ASSETS.commercialService,
           alt: "Área de cocina protegida y preparada para renovar gabinetes y molduras.",
           className: "md:col-span-2",
           titleClassName: "text-[1.85rem] sm:text-[2.25rem] lg:text-[2.6rem]",
@@ -496,7 +496,7 @@ export default function Home() {
   const heroPanelTitleClassName =
     language === "es"
       ? "max-w-[8.75ch] text-[1.65rem] leading-[0.88] text-balance sm:max-w-[8.6ch] sm:text-[1.95rem] lg:max-w-[7ch] lg:text-[2rem]"
-      : "max-w-[9.8ch] text-[1.7rem] leading-[0.9] text-balance sm:max-w-[10.2ch] sm:text-[2.05rem] lg:max-w-[8.8ch] lg:text-[2.25rem]";
+      : "max-w-[9.8ch] text-[1.7rem] leading-[0.9] text-balance sm:max-w-[10.2ch] sm:text-[1.55rem] sm:leading-8 lg:text-[2.05rem]";
 
   return (
     <div className="flex flex-col bg-background text-foreground">
@@ -526,13 +526,13 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" delay={0.08}>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/75">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white">
                 {copy.hero.eyebrow}
               </p>
             </ScrollReveal>
 
             <ScrollReveal direction="right" delay={0.14}>
-              <h1 className="max-w-3xl text-4xl font-display leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl lg:leading-[0.98] lg:tracking-[-0.04em]">
+              <h1 className="max-w-3xl text-4xl font-display leading-[1.1] tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] sm:text-6xl lg:text-7xl lg:leading-[0.98] lg:tracking-[-0.04em]">
                 <span className="block">{copy.hero.title1}</span>
                 <span className="mt-2 block text-brand-highlight">
                   {copy.hero.title2}
@@ -541,7 +541,7 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" delay={0.2}>
-              <p className="mt-6 mx-auto lg:mx-0 max-w-2xl text-base leading-7 text-white/75 sm:text-lg sm:leading-8">
+              <p className="mt-6 mx-auto lg:mx-0 max-w-2xl text-base leading-7 text-white sm:text-lg sm:leading-8">
                 {copy.hero.description}
               </p>
             </ScrollReveal>
@@ -596,10 +596,10 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute -right-3 top-7 hidden max-w-[13.25rem] rounded-[1.35rem] border border-brand-highlight/30 bg-[linear-gradient(180deg,rgba(72,28,20,0.72)_0%,rgba(94,35,28,0.58)_100%)] p-5 shadow-[0_28px_70px_-42px_rgba(73,21,16,0.95)] backdrop-blur-xl sm:block lg:-right-14">
-                <div className="absolute inset-0 rounded-[1.35rem] bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_38%)] opacity-80" />
-                <p className="relative text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-highlight/90">
-                  S&amp;M Painting
+              <div className="absolute -right-3 top-7 hidden max-w-[13.25rem] rounded-[1.35rem] border border-brand-accent-1/24 bg-[linear-gradient(180deg,rgba(39,35,97,0.88)_0%,rgba(34,51,101,0.82)_100%)] p-5 shadow-[0_28px_70px_-42px_rgba(28,23,79,0.78)] backdrop-blur-xl sm:block lg:-right-14">
+                <div className="absolute inset-0 rounded-[1.35rem] bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_38%)] opacity-80" />
+                <p className="relative text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-cloud/78">
+                  S&amp;H Painting
                 </p>
                 <p className="relative mt-4 text-[1.05rem] font-medium leading-7 text-white/96">
                   {copy.hero.floatingCard}
@@ -609,8 +609,8 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="absolute -bottom-3 left-4 right-4 rounded-[1.5rem] border border-brand-highlight/20 bg-[color-mix(in_oklch,var(--brand-tertiary)_82%,var(--brand-highlight)_18%)] p-4 shadow-xl shadow-black/20 backdrop-blur-sm sm:left-8 sm:right-auto sm:w-[18rem]">
-                <div className="relative h-24 overflow-hidden rounded-[1rem] border border-white/10">
+              <div className="absolute -bottom-3 left-4 right-4 rounded-[1.5rem] border border-brand-accent-1/18 bg-[color-mix(in_oklch,var(--brand-tertiary)_86%,var(--brand-accent-1)_14%)] p-4 shadow-[0_24px_60px_-36px_rgba(28,23,79,0.55)] backdrop-blur-sm sm:left-8 sm:right-auto sm:w-[18rem]">
+                <div className="relative h-24 overflow-hidden rounded-[1rem] border border-white/12">
                   <Image
                     src={FEATURED_GALLERY_ASSETS.colorInspiration}
                     alt={copy.imageAlts.bottomCard}
@@ -618,7 +618,7 @@ export default function Home() {
                     sizes="18rem"
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,12,36,0.1)_0%,rgba(17,12,36,0.48)_100%)]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,12,36,0.12)_0%,rgba(17,12,36,0.52)_100%)]" />
                 </div>
                 <p className="mt-4 text-sm font-semibold text-white">
                   {copy.hero.bottomCardTitle}
@@ -632,8 +632,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-brand-secondary/10 bg-brand-secondary/[0.04] py-6 dark:bg-brand-accent-1/[0.06]">
-        <div className="mx-auto flex flex-wrap justify-center gap-x-8 gap-y-4 px-4 sm:grid sm:grid-cols-2 sm:gap-3 sm:px-6 lg:grid-cols-4 lg:px-8">
+      <section className="border-y border-brand-secondary/10 bg-brand-secondary/[0.04] py-6 dark:bg-surface-muted">
+        <div className="mx-auto flex flex-wrap justify-center gap-x-8 gap-y-4 px-4 sm:px-6 lg:px-8">
           {copy.trustStrip.map((item) => (
             <div
               key={item}
@@ -797,13 +797,13 @@ export default function Home() {
           </div>
 
           <StaggerContainer
-            className="mt-12 grid gap-5 md:grid-cols-3 md:auto-rows-[300px]"
+            className="grid gap-5 md:grid-cols-3 md:auto-rows-[340px]"
             delay={0.12}
             staggerDelay={0.08}
           >
             {copy.services.cards.map((card) => (
               <StaggerItem key={card.title} className={card.className}>
-                <div className="group relative h-[300px] md:h-full overflow-hidden rounded-[1.9rem]">
+                <div className="group relative h-[340px] sm:h-[380px] md:h-full overflow-hidden rounded-[1.9rem]">
                   <Image
                     src={card.image}
                     alt={card.alt}
@@ -811,10 +811,10 @@ export default function Home() {
                     sizes="(min-width: 768px) 33vw, 100vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,14,40,0.12)_0%,rgba(17,14,40,0.8)_100%)]" />
-                  <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,12,40,0.12)_0%,rgba(17,12,40,0.8)_100%)]" />
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-7">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/65 sm:text-xs">
-                      S&amp;M Painting
+                      S&amp;H Painting
                     </p>
                     <h3
                       className={`mt-2 font-display leading-[0.92] text-balance text-white sm:mt-3 ${card.titleClassName ?? "text-2xl sm:text-3xl"}`}
@@ -844,7 +844,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-brand-secondary/[0.04] py-20 dark:bg-white/[0.03] sm:py-24">
+      <section className="relative overflow-hidden bg-brand-secondary/[0.04] py-20 dark:bg-surface sm:py-24">
         <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-brand-highlight/12 blur-3xl" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1fr)] lg:items-start lg:gap-14">
@@ -892,7 +892,7 @@ export default function Home() {
           >
             {copy.testimonials.items.map((item) => (
               <StaggerItem key={`${item.name}-${item.role}`}>
-                <div className="flex h-full flex-col rounded-[1.8rem] border border-brand-secondary/10 bg-white p-7 shadow-[0_24px_60px_-42px_rgba(26,20,58,0.45)] dark:border-white/10 dark:bg-brand-accent-2/20">
+                <div className="flex h-full flex-col rounded-[1.8rem] border border-brand-secondary/10 bg-white p-7 shadow-[0_24px_60px_-42px_rgba(26,20,58,0.45)] dark:border-border dark:bg-surface">
                   <div className="flex items-center gap-1 text-brand-highlight">
                     {Array.from({ length: 5 }).map((_, index) => (
                       <Star
@@ -932,11 +932,11 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(23,16,49,0.82)_0%,rgba(52,30,104,0.86)_55%,rgba(166,77,52,0.72)_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0)_24%,rgba(113,100,204,0.12)_100%)]" />
               <div className="relative z-10 grid gap-10 px-6 py-12 sm:px-10 sm:py-16 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:px-14">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-highlight">
-                    S&amp;M Painting
+                    S&amp;H Painting
                   </p>
                   <h2 className="mt-4 max-w-3xl text-4xl font-display text-white sm:text-5xl lg:text-6xl">
                     {copy.finalCta.title}

@@ -43,7 +43,7 @@ const translations = {
     "footer.rights": "All rights reserved.",
     "gallery.title": "Our Work Gallery",
     "gallery.subtitle":
-      "A showcase of our recent painting projects. From interior transformations to exterior revivals, we take pride in every stroke.",
+      "A look at our recent residential painting work, from carefully prepped interiors to refreshed exterior finishes.",
     "services.title": "Our Professional Services",
     "services.subtitle":
       "We offer a comprehensive range of painting services tailored to meet your specific needs. Quality and customer satisfaction are our top priorities.",
@@ -61,6 +61,9 @@ const translations = {
     "service.commercial.title": "Commercial Painting",
     "service.commercial.desc":
       "Professional painting solutions for businesses. We work around your schedule to minimize disruption while delivering high-quality results.",
+    "service.refresh.title": "Home Refreshes",
+    "service.refresh.desc":
+      "Refresh lived-in homes and rental-ready properties with organized prep, dependable finishes, and a schedule that respects the space.",
     "service.specialty.title": "Specialty Finishes",
     "service.specialty.desc":
       "Add a unique touch to your space with our specialty painting techniques and finishes.",
@@ -105,7 +108,7 @@ const translations = {
     "footer.rights": "Todos los derechos reservados.",
     "gallery.title": "Nuestra Galería de Trabajo",
     "gallery.subtitle":
-      "Una muestra de nuestros proyectos de pintura recientes. Desde transformaciones interiores hasta renovaciones exteriores, nos enorgullecemos de cada trazo.",
+      "Una muestra de nuestro trabajo residencial reciente, desde interiores cuidadosamente preparados hasta acabados exteriores renovados.",
     "services.title": "Nuestros Servicios Profesionales",
     "services.subtitle":
       "Ofrecemos una amplia gama de servicios de pintura adaptados a sus necesidades específicas. La calidad y la satisfacción del cliente son nuestras prioridades.",
@@ -123,6 +126,9 @@ const translations = {
     "service.commercial.title": "Pintura Comercial",
     "service.commercial.desc":
       "Soluciones de pintura profesional para empresas. Trabajamos según su horario para minimizar las interrupciones mientras brindamos resultados de alta calidad.",
+    "service.refresh.title": "Renovación del hogar",
+    "service.refresh.desc":
+      "Renueve hogares habitados y propiedades listas para renta con preparación organizada, acabados confiables y un cronograma que respeta el espacio.",
     "service.specialty.title": "Acabados Especiales",
     "service.specialty.desc":
       "Agregue un toque único a su espacio con nuestras técnicas y acabados de pintura especializados.",

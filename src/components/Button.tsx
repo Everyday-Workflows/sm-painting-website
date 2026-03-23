@@ -12,12 +12,12 @@ const Button: React.FC<ButtonProps> = ({
   children, 
   ...props 
 }) => {
-  const baseStyles = 'px-6 py-2 rounded-md font-subtitle font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const baseStyles = 'px-6 py-2 rounded-md font-subtitle font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background';
   
   const variantStyles = {
-    primary: 'bg-brand-highlight text-white hover:bg-brand-primary focus:ring-brand-highlight',
-    secondary: 'bg-brand-secondary text-white hover:bg-brand-tertiary focus:ring-brand-secondary',
-    tertiary: 'bg-brand-highlight/10 text-brand-highlight hover:bg-brand-highlight hover:text-white focus:ring-brand-highlight',
+    primary: 'bg-brand-highlight text-white hover:bg-brand-accent-1 focus:ring-brand-highlight',
+    secondary: 'bg-brand-secondary text-white hover:bg-brand-primary focus:ring-brand-secondary',
+    tertiary: 'bg-brand-cloud/80 text-brand-secondary hover:bg-brand-highlight hover:text-white focus:ring-brand-highlight dark:bg-brand-secondary/70 dark:text-brand-cloud dark:hover:bg-brand-accent-1 dark:hover:text-brand-accent-2',
   };
 
   return (

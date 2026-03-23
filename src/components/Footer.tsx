@@ -11,24 +11,31 @@ const Footer: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-gray-900 dark:bg-zinc-950 text-white py-12 relative z-10">
+    <footer className="relative z-10 bg-surface-muted py-12 text-brand-secondary dark:bg-surface-muted dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
+            <Image
+              src={BRAND_ASSETS.logoDarkWordmark}
+              alt={t("common.logoAlt")}
+              width={144}
+              height={48}
+              className="mb-4 h-11 w-auto dark:hidden"
+            />
             <Image
               src={BRAND_ASSETS.logoWhiteWordmark}
               alt={t("common.logoAlt")}
               width={144}
               height={48}
-              className="mb-4 h-11 w-auto"
+              className="mb-4 hidden h-11 w-auto dark:block"
             />
-            <p className="text-gray-400 text-sm font-sans">
+            <p className="text-sm font-sans text-foreground/74 dark:text-brand-cloud/74">
               {t("footer.description")}
             </p>
           </div>
           <div>
             <h3 className="text-lg font-display mb-4">{t("footer.links")}</h3>
-            <ul className="space-y-2 text-gray-400 text-sm font-sans">
+            <ul className="space-y-2 text-sm font-sans text-foreground/74 dark:text-brand-cloud/74">
               <li>
                 <Link
                   href="/"
@@ -57,7 +64,7 @@ const Footer: React.FC = () => {
           </div>
           <div>
             <h3 className="text-lg font-display mb-4">{t("footer.contact")}</h3>
-            <p className="text-gray-400 text-sm font-sans">
+            <p className="text-sm font-sans text-foreground/74 dark:text-brand-cloud/74">
               {t("footer.email")}: {" "}
               <a
                 href={CONTACT_LINKS.email}
@@ -76,7 +83,7 @@ const Footer: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-xs font-sans">
+        <div className="mt-12 border-t border-brand-primary/20 pt-8 text-center text-xs font-sans text-foreground/55 dark:text-brand-cloud/55">
           &copy; {new Date().getFullYear()} S&H Painting. {t("footer.rights")}
         </div>
       </div>

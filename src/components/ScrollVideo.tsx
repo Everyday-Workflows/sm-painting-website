@@ -144,13 +144,13 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ frameCount, framePath }) => {
             <ScrollReveal direction="right" delay={0.1}>
               <motion.div
                 style={{ opacity: beforeOpacity }}
-                className="absolute top-8 left-8 z-20 bg-gray-500/80 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-xs font-sans font-bold uppercase tracking-widest"
+                className="absolute left-8 top-8 z-20 rounded-full bg-brand-tertiary/85 px-4 py-1.5 text-xs font-sans font-bold uppercase tracking-widest text-brand-cloud backdrop-blur-sm"
               >
                 {t('video.before')}
               </motion.div>
               <motion.div
                 style={{ opacity: afterOpacity }}
-                className="absolute top-8 left-8 z-20 bg-brand-highlight/90 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-xs font-sans font-bold uppercase tracking-widest"
+                className="absolute left-8 top-8 z-20 rounded-full bg-brand-highlight/90 px-4 py-1.5 text-xs font-sans font-bold uppercase tracking-widest text-white backdrop-blur-sm"
               >
                 {t('video.after')}
               </motion.div>
@@ -175,7 +175,7 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ frameCount, framePath }) => {
               </h2>
             </ScrollReveal>
             <ScrollReveal direction="left" delay={0.2}>
-              <p className="text-xl md:text-2xl font-subtitle text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">
+              <p className="max-w-xl text-xl font-subtitle leading-relaxed text-brand-tertiary/76 dark:text-brand-cloud/72 md:text-2xl">
                 {t('video.subtitle')}
               </p>
             </ScrollReveal>

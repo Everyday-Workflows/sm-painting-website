@@ -17,8 +17,6 @@ import {
 const GALLERY_CATEGORY_LABELS: Record<PortfolioCategory, { en: string; es: string }> = {
   interior: { en: "Interior", es: "Interior" },
   exterior: { en: "Exterior", es: "Exterior" },
-  commercial: { en: "Commercial", es: "Comercial" },
-  specialty: { en: "Specialty", es: "Especial" },
 };
 
 const FEATURED_TRANSFORMATION_GROUPS = [
@@ -77,29 +75,15 @@ const CATEGORY_SECTION_COPY: Record<
   interior: {
     title: { en: "Interior finishes", es: "Acabados interiores" },
     description: {
-      en: "Clean lines, balanced color, and durable finishes across bedrooms, living spaces, and detailed trim work.",
-      es: "Líneas limpias, color equilibrado y acabados duraderos en dormitorios, salas y trabajos detallados de molduras.",
+      en: "Fresh walls, clean trim lines, and updated rooms that feel brighter, sharper, and more complete.",
+      es: "Paredes frescas, molduras limpias y espacios renovados que se sienten más luminosos, definidos y terminados.",
     },
   },
   exterior: {
     title: { en: "Exterior painting", es: "Pintura exterior" },
     description: {
-      en: "Projects focused on curb appeal, weather-ready coatings, and clean trim transitions.",
-      es: "Proyectos enfocados en la fachada, recubrimientos preparados para el clima y transiciones limpias en molduras.",
-    },
-  },
-  commercial: {
-    title: { en: "Commercial spaces", es: "Espacios comerciales" },
-    description: {
-      en: "High-visibility spaces finished with dependable coverage and a polished presentation.",
-      es: "Espacios de alta visibilidad terminados con cobertura confiable y una presentación pulida.",
-    },
-  },
-  specialty: {
-    title: { en: "Specialty projects", es: "Proyectos especiales" },
-    description: {
-      en: "Unique structures and custom paint work that still demand the same precision and durability.",
-      es: "Estructuras únicas y trabajos de pintura especiales que igual exigen la misma precisión y durabilidad.",
+      en: "Prep, protection, and durable finish work across full-home repaints and curb-facing updates.",
+      es: "Preparación, protección y acabados duraderos en repintados completos y mejoras visibles desde la fachada.",
     },
   },
 };
@@ -107,8 +91,6 @@ const CATEGORY_SECTION_COPY: Record<
 const CATEGORY_ORDER: PortfolioCategory[] = [
   "interior",
   "exterior",
-  "commercial",
-  "specialty",
 ];
 
 const getPortfolioId = (src: string) => {
@@ -130,7 +112,7 @@ const GalleryImageCard = ({
   const categoryLabel = GALLERY_CATEGORY_LABELS[item.category][locale];
 
   return (
-    <figure className="group overflow-hidden rounded-[1.75rem] border border-white/60 bg-white/80 shadow-[0_24px_60px_rgba(15,23,42,0.08)] backdrop-blur-sm transition-transform duration-500 hover:-translate-y-1 dark:border-white/10 dark:bg-brand-secondary/45 dark:shadow-[0_24px_60px_rgba(2,6,23,0.28)]">
+    <figure className="group overflow-hidden rounded-[1.75rem] border border-brand-tertiary/12 bg-surface shadow-[0_24px_60px_rgba(15,23,42,0.08)] backdrop-blur-sm transition-transform duration-500 hover:-translate-y-1 dark:border-border dark:bg-surface-muted dark:shadow-[0_24px_60px_rgba(2,6,23,0.28)]">
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={item.src}
@@ -152,7 +134,7 @@ const GalleryImageCard = ({
             </span>
           )}
         </div>
-        <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">
+          <p className="text-sm leading-6 text-brand-tertiary/76 dark:text-brand-cloud/74">
           {item.alt[locale]}
         </p>
       </figcaption>
@@ -208,7 +190,7 @@ const GalleryPage = () => {
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <p className="mt-4 text-lg font-sans text-gray-500 dark:text-gray-400 sm:text-xl">
+            <p className="mt-4 text-lg font-sans text-brand-tertiary/72 dark:text-brand-cloud/68 sm:text-xl">
               {t("gallery.subtitle")}
             </p>
           </ScrollReveal>
@@ -226,7 +208,7 @@ const GalleryPage = () => {
                     ? "Resultados claros, no una cuadrícula aleatoria"
                     : "Clear project stories, not a random grid"}
                 </h2>
-                <p className="text-base leading-7 text-slate-600 dark:text-slate-300">
+                  <p className="text-base leading-7 text-brand-tertiary/76 dark:text-brand-cloud/72">
                   {locale === "es"
                     ? "Agrupamos las transformaciones conocidas para que el trabajo se vea intencional y fácil de entender de un vistazo."
                     : "Known related work is grouped together so the gallery feels intentional and easy to understand at a glance."}
@@ -247,13 +229,13 @@ const GalleryPage = () => {
 
                 return (
                   <ScrollReveal key={group.id} delay={index * 0.08}>
-                    <article className="rounded-[2rem] border border-brand-highlight/12 bg-gradient-to-br from-white via-white to-brand-highlight/5 p-6 shadow-[0_32px_80px_rgba(15,23,42,0.08)] dark:border-brand-highlight/15 dark:from-brand-secondary/70 dark:via-brand-secondary/55 dark:to-brand-highlight/8 sm:p-8">
+                    <article className="rounded-[2rem] border border-brand-primary/12 bg-gradient-to-br from-surface via-surface to-brand-accent-1/8 p-6 shadow-[0_32px_80px_rgba(15,23,42,0.08)] dark:border-brand-highlight/15 dark:from-brand-secondary/70 dark:via-brand-secondary/55 dark:to-brand-accent-1/12 sm:p-8">
                       <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                         <div className="max-w-2xl space-y-2">
                           <h3 className="text-xl font-display text-brand-secondary dark:text-white sm:text-2xl">
                             {group.title[locale]}
                           </h3>
-                          <p className="text-sm leading-6 text-slate-600 dark:text-slate-300 sm:text-base">
+                          <p className="text-sm leading-6 text-brand-tertiary/76 dark:text-brand-cloud/72 sm:text-base">
                             {group.description[locale]}
                           </p>
                         </div>
@@ -289,7 +271,7 @@ const GalleryPage = () => {
                 <h2 className="text-2xl font-display text-brand-secondary dark:text-brand-accent-1 sm:text-3xl">
                   {PROJECT_SPOTLIGHT.title[locale]}
                 </h2>
-                <p className="text-base leading-7 text-slate-600 dark:text-slate-300">
+                <p className="text-base leading-7 text-brand-tertiary/76 dark:text-brand-cloud/72">
                   {PROJECT_SPOTLIGHT.description[locale]}
                 </p>
               </div>
@@ -322,10 +304,10 @@ const GalleryPage = () => {
                     ? "Organizado por tipo de proyecto"
                     : "Organized by project type"}
                 </h2>
-                <p className="text-base leading-7 text-slate-600 dark:text-slate-300">
+                <p className="text-base leading-7 text-brand-tertiary/76 dark:text-brand-cloud/72">
                   {locale === "es"
-                    ? "El resto del portafolio permanece agrupado en secciones limpias para que sea fácil escanear interiores, exteriores y trabajos especiales."
-                    : "The rest of the portfolio stays grouped into clean sections so it is easy to scan interiors, exteriors, and specialty work."}
+                    ? "El resto del portafolio permanece agrupado en secciones limpias para que sea fácil escanear interiores y exteriores residenciales."
+                    : "The rest of the portfolio stays grouped into clean sections so it is easy to scan residential interiors and exteriors."}
                 </p>
               </div>
             </ScrollReveal>
@@ -340,12 +322,12 @@ const GalleryPage = () => {
 
                 return (
                   <ScrollReveal key={category} delay={index * 0.06}>
-                    <section className="space-y-5 rounded-[2rem] border border-slate-200/70 bg-white/70 p-6 shadow-[0_24px_70px_rgba(15,23,42,0.06)] backdrop-blur-sm dark:border-white/10 dark:bg-brand-secondary/35 sm:p-8">
+                    <section className="space-y-5 rounded-[2rem] border border-brand-tertiary/12 bg-surface p-6 shadow-[0_24px_70px_rgba(15,23,42,0.06)] backdrop-blur-sm dark:border-border dark:bg-surface-muted sm:p-8">
                       <div className="max-w-2xl space-y-2">
                         <h3 className="text-xl font-display text-brand-secondary dark:text-white sm:text-2xl">
                           {CATEGORY_SECTION_COPY[category].title[locale]}
                         </h3>
-                        <p className="text-sm leading-6 text-slate-600 dark:text-slate-300 sm:text-base">
+                        <p className="text-sm leading-6 text-brand-tertiary/76 dark:text-brand-cloud/72 sm:text-base">
                           {CATEGORY_SECTION_COPY[category].description[locale]}
                         </p>
                       </div>

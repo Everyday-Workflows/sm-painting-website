@@ -169,7 +169,7 @@ const ServicesPage = () => {
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <p className="mt-4 text-lg sm:text-xl font-sans text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="mx-auto mt-4 max-w-2xl text-lg font-sans text-brand-tertiary/72 dark:text-brand-cloud/68 sm:text-xl">
               {t('services.subtitle')}
             </p>
           </ScrollReveal>
@@ -179,17 +179,17 @@ const ServicesPage = () => {
           {services.map((service, index) => (
             <StaggerItem key={service.title}>
               <div 
-                className="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-gray-200/30 dark:border-gray-800/30 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col h-full group"
+                className="group flex h-full flex-col rounded-2xl border border-brand-tertiary/12 bg-brand-cloud/54 p-6 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl dark:border-border dark:bg-surface-muted sm:p-8"
               >
-                <h2 className="text-xl sm:text-2xl font-display text-gray-900 dark:text-white mb-4 group-hover:text-brand-highlight transition-colors duration-300">
+                <h2 className="mb-4 text-xl font-display text-brand-accent-2 transition-colors duration-300 group-hover:text-brand-highlight dark:text-white sm:text-2xl">
                   {service.title}
                 </h2>
-                <p className="text-base sm:text-lg font-sans text-gray-600 dark:text-gray-400 mb-6 leading-relaxed flex-grow">
+                <p className="mb-6 flex-grow text-base font-sans leading-relaxed text-brand-tertiary/78 dark:text-brand-cloud/70 sm:text-lg">
                   {service.description}
                 </p>
                 <ul className="space-y-3 mb-8">
                   {SERVICE_FEATURES[language][index].map((feature) => (
-                    <li key={feature} className="flex items-center text-sm sm:text-base font-sans text-gray-700 dark:text-gray-300">
+                    <li key={feature} className="flex items-center text-sm font-sans text-brand-accent-2 dark:text-brand-cloud/84 sm:text-base">
                       <svg aria-hidden="true" className="h-5 w-5 text-brand-highlight mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
@@ -210,11 +210,11 @@ const ServicesPage = () => {
         </StaggerContainer>
 
         <ScrollReveal delay={0.4}>
-          <div className="mt-16 sm:mt-20 rounded-3xl border border-brand-highlight/20 bg-brand-highlight/8 p-8 backdrop-blur-md sm:p-12">
+          <div className="mt-16 rounded-3xl border border-brand-primary/14 bg-surface-muted p-8 backdrop-blur-md sm:mt-20 sm:p-12">
             <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.85fr)] lg:items-start">
               <div className="text-center lg:text-left">
-                <h2 className="text-2xl sm:text-3xl font-display mb-4 sm:mb-6 leading-tight text-gray-900 dark:text-white">{t('services.footer.title')}</h2>
-                <p className="text-lg sm:text-xl font-sans mb-8 opacity-90 max-w-2xl mx-auto lg:mx-0 text-gray-600 dark:text-gray-300">
+                <h2 className="mb-4 text-2xl font-display leading-tight text-brand-accent-2 dark:text-white sm:mb-6 sm:text-3xl">{t('services.footer.title')}</h2>
+                <p className="mx-auto mb-8 max-w-2xl text-lg font-sans text-brand-tertiary/78 opacity-90 dark:text-brand-cloud/72 lg:mx-0 sm:text-xl">
                   {t('services.footer.description')}
                 </p>
                 <div className="flex flex-col items-center gap-4 lg:items-start">
@@ -238,13 +238,13 @@ const ServicesPage = () => {
               <form
                 id="estimate-form"
                 onSubmit={handleEstimateSubmit}
-                className="rounded-[1.75rem] border border-brand-highlight/12 bg-white/75 p-6 text-left shadow-[0_24px_60px_-42px_rgba(26,20,58,0.45)] dark:border-white/10 dark:bg-zinc-950/65"
+                className="rounded-[1.75rem] border border-brand-primary/12 bg-surface p-6 text-left shadow-[0_24px_60px_-42px_rgba(26,20,58,0.45)] dark:border-border dark:bg-surface"
               >
-                <h3 className="text-2xl font-display text-gray-900 dark:text-white">{formCopy.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-gray-600 dark:text-gray-300">{formCopy.description}</p>
+                <h3 className="text-2xl font-display text-brand-accent-2 dark:text-white">{formCopy.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-brand-tertiary/78 dark:text-brand-cloud/72">{formCopy.description}</p>
 
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  <label className="block text-sm font-medium text-brand-accent-2 dark:text-brand-cloud/90">
                     <span>{formCopy.name}</span>
                     <input
                       type="text"
@@ -253,10 +253,10 @@ const ServicesPage = () => {
                       value={estimateForm.name}
                       onChange={handleEstimateChange}
                       placeholder={formCopy.placeholders.name}
-                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                      className="mt-2 w-full rounded-2xl border border-brand-tertiary/12 bg-brand-cloud/82 px-4 py-3 text-sm text-brand-accent-2 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-border dark:bg-surface dark:text-white"
                     />
                   </label>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  <label className="block text-sm font-medium text-brand-accent-2 dark:text-brand-cloud/90">
                     <span>{formCopy.email}</span>
                     <input
                       type="email"
@@ -265,10 +265,10 @@ const ServicesPage = () => {
                       value={estimateForm.email}
                       onChange={handleEstimateChange}
                       placeholder={formCopy.placeholders.email}
-                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                      className="mt-2 w-full rounded-2xl border border-brand-tertiary/12 bg-brand-cloud/82 px-4 py-3 text-sm text-brand-accent-2 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-border dark:bg-surface dark:text-white"
                     />
                   </label>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  <label className="block text-sm font-medium text-brand-accent-2 dark:text-brand-cloud/90">
                     <span>{formCopy.phone}</span>
                     <input
                       type="tel"
@@ -276,10 +276,10 @@ const ServicesPage = () => {
                       value={estimateForm.phone}
                       onChange={handleEstimateChange}
                       placeholder={formCopy.placeholders.phone}
-                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                      className="mt-2 w-full rounded-2xl border border-brand-tertiary/12 bg-brand-cloud/82 px-4 py-3 text-sm text-brand-accent-2 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-border dark:bg-surface dark:text-white"
                     />
                   </label>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  <label className="block text-sm font-medium text-brand-accent-2 dark:text-brand-cloud/90">
                     <span>{formCopy.projectType}</span>
                     <input
                       type="text"
@@ -287,12 +287,12 @@ const ServicesPage = () => {
                       value={estimateForm.projectType}
                       onChange={handleEstimateChange}
                       placeholder={formCopy.placeholders.projectType}
-                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                      className="mt-2 w-full rounded-2xl border border-brand-tertiary/12 bg-brand-cloud/82 px-4 py-3 text-sm text-brand-accent-2 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-border dark:bg-surface dark:text-white"
                     />
                   </label>
                 </div>
 
-                <label className="mt-4 block text-sm font-medium text-gray-700 dark:text-gray-200">
+                <label className="mt-4 block text-sm font-medium text-brand-accent-2 dark:text-brand-cloud/90">
                   <span>{formCopy.details}</span>
                   <textarea
                     name="details"
@@ -301,7 +301,7 @@ const ServicesPage = () => {
                     value={estimateForm.details}
                     onChange={handleEstimateChange}
                     placeholder={formCopy.placeholders.details}
-                    className="mt-2 w-full rounded-[1.5rem] border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                    className="mt-2 w-full rounded-[1.5rem] border border-brand-tertiary/12 bg-brand-cloud/82 px-4 py-3 text-sm text-brand-accent-2 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-border dark:bg-surface dark:text-white"
                   />
                 </label>
 

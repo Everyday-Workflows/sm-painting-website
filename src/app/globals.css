@@ -3,19 +3,33 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
   --brand-primary: oklch(0.4662 0.1341 267.6);
   --brand-secondary: oklch(0.3012 0.1062 280.8);
   --brand-tertiary: oklch(0.3347 0.0889 267.14);
   --brand-accent-1: oklch(0.5672 0.1111 267.72);
   --brand-accent-2: oklch(0.2513 0.0987 280.61);
-  --brand-highlight: oklch(0.6032 0.2319 26.79);
+  --brand-cloud: oklch(0.9177 0.0134 262.38);
+  --brand-highlight: var(--brand-primary);
+  --background: var(--brand-cloud);
+  --background-elevated: color-mix(in oklch, var(--background) 88%, white 12%);
+  --foreground: color-mix(in oklch, var(--brand-tertiary) 72%, var(--brand-accent-2) 28%);
+  --foreground-strong: var(--brand-accent-2);
+  --surface: color-mix(in oklch, white 74%, var(--brand-cloud) 26%);
+  --surface-muted: color-mix(in oklch, var(--brand-cloud) 86%, var(--brand-accent-1) 14%);
+  --surface-emphasis: color-mix(in oklch, var(--brand-primary) 86%, var(--brand-accent-2) 14%);
+  --border: color-mix(in oklch, var(--brand-tertiary) 18%, var(--brand-cloud) 82%);
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --brand-accent-1: oklch(0.72 0.102 267.72);
+  --background: oklch(0.16 0.010 272);
+  --background-elevated: color-mix(in oklch, var(--background) 92%, var(--brand-secondary) 8%);
+  --foreground: oklch(0.92 0.006 250);
+  --foreground-strong: oklch(0.97 0.005 250);
+  --surface: oklch(0.20 0.010 272);
+  --surface-muted: oklch(0.18 0.008 272);
+  --surface-emphasis: oklch(0.25 0.012 272);
+  --border: oklch(0.30 0.010 272);
 }
 
 @theme inline {
@@ -26,7 +40,13 @@
   --color-brand-tertiary: var(--brand-tertiary);
   --color-brand-accent-1: var(--brand-accent-1);
   --color-brand-accent-2: var(--brand-accent-2);
+  --color-brand-cloud: var(--brand-cloud);
   --color-brand-highlight: var(--brand-highlight);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-emphasis: var(--surface-emphasis);
+  --color-border: var(--border);
+  --color-foreground-strong: var(--foreground-strong);
   --font-sans: var(--font-manrope);
   --font-display: var(--font-fraunces);
   --font-subtitle: var(--font-cormorant);
@@ -38,6 +58,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-manrope), sans-serif;
   font-weight: 400;
+  background-image: linear-gradient(180deg, var(--background-elevated) 0%, var(--background) 100%);
 }
 
 h1, h2, h3, h4, h5, h6 {
