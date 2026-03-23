@@ -201,16 +201,16 @@ const GalleryPage = () => {
             <ScrollReveal>
               <div className="max-w-2xl space-y-3">
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-highlight sm:text-sm">
-                  {locale === "es" ? "Transformaciones destacadas" : "Featured transformations"}
+                  {locale === "es" ? "Proyectos seleccionados" : "Featured transformations"}
                 </p>
                 <h2 className="text-2xl font-display text-brand-secondary dark:text-brand-accent-1 sm:text-3xl">
                   {locale === "es"
                     ? "Resultados claros, no una cuadrícula aleatoria"
-                    : "Clear project stories, not a random grid"}
+                    : "Una muestra clara del trabajo realizado"}
                 </h2>
                   <p className="text-base leading-7 text-brand-tertiary/76 dark:text-brand-cloud/72">
                   {locale === "es"
-                    ? "Agrupamos las transformaciones conocidas para que el trabajo se vea intencional y fácil de entender de un vistazo."
+                    ? "Elegimos estos proyectos para presentar los resultados de forma ordenada, intencional y fácil de apreciar."
                     : "Known related work is grouped together so the gallery feels intentional and easy to understand at a glance."}
                 </p>
               </div>
@@ -297,7 +297,7 @@ const GalleryPage = () => {
             <ScrollReveal>
               <div className="max-w-2xl space-y-3">
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-highlight sm:text-sm">
-                  {locale === "es" ? "Más trabajo" : "More work"}
+                  {locale === "es" ? "Más transformaciones" : "More work"}
                 </p>
                 <h2 className="text-2xl font-display text-brand-secondary dark:text-brand-accent-1 sm:text-3xl">
                   {locale === "es"
@@ -306,8 +306,8 @@ const GalleryPage = () => {
                 </h2>
                 <p className="text-base leading-7 text-brand-tertiary/76 dark:text-brand-cloud/72">
                   {locale === "es"
-                    ? "El resto del portafolio permanece agrupado en secciones limpias para que sea fácil escanear interiores y exteriores residenciales."
-                    : "The rest of the portfolio stays grouped into clean sections so it is easy to scan residential interiors and exteriors."}
+                    ? "Agrupamos el resto de los proyectos para que interiores y exteriores residenciales se entiendan rápido y se vean mejor organizados."
+                    : "The rest of the portfolio stays grouped into clean sections so residential interiors and exteriors are easy to scan."}
                 </p>
               </div>
             </ScrollReveal>

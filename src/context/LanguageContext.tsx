@@ -134,7 +134,7 @@ const translations = {
       "Agregue un toque único a su espacio con nuestras técnicas y acabados de pintura especializados.",
     "video.title": "Vea la Transformación",
     "video.subtitle":
-      "Desplácese para revelar el antes y el después de nuestros servicios de pintura premium.",
+      "Desplácese hacia abajo para revelar el antes y el después de nuestros servicios de pintura premium.",
     "video.before": "Antes",
     "video.after": "Después",
     "video.alt": "Animación de transformación de pintura antes y después",
@@ -170,24 +170,33 @@ const detectBrowserLanguage = (): Language => {
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [language, setLanguage] = useState<Language>(() => {
-    if (typeof window === "undefined") {
-      return "en";
-    }
-
-    const savedLanguage = localStorage.getItem("language");
-
-    if (savedLanguage === "en" || savedLanguage === "es") {
-      return savedLanguage;
-    }
-
-    return detectBrowserLanguage();
-  });
+  const [language, setLanguage] = useState<Language>("en");
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
     localStorage.setItem("language", lang);
   };
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("language");
+
+    const nextLanguage =
+      savedLanguage === "en" || savedLanguage === "es"
+        ? savedLanguage
+        : detectBrowserLanguage();
+
+    if (nextLanguage === language) {
+      return;
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      setLanguage(nextLanguage);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+    };
+  }, [language]);
 
   useEffect(() => {
     document.documentElement.lang = language;

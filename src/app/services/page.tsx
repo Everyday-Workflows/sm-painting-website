@@ -63,7 +63,7 @@ const ServicesPage = () => {
         directCall: 'Call now',
       }
     : {
-        title: 'Solicitar un estimado',
+        title: 'Solicitar una cotización',
         description: 'Complete este formulario y abriremos un borrador de correo dirigido a nosotros con los detalles de su proyecto ya incluidos.',
         name: 'Nombre',
         email: 'Correo',
@@ -75,7 +75,7 @@ const ServicesPage = () => {
           email: 'usted@ejemplo.com',
           phone: '(813) 325-3931',
           projectType: 'Interior, exterior, gabinetes...',
-          details: 'Cuéntenos sobre los espacios, superficies, tiempos y cualquier detalle que quiera incluir en el estimado.',
+          details: 'Cuéntenos sobre los espacios, superficies, tiempos y cualquier detalle que quiera incluir en la cotización.',
         },
         submit: 'Enviar correo',
         success: `Si no se abrió un borrador, escríbanos directamente a ${CONTACT_INFO.email}.`,
@@ -118,7 +118,7 @@ const ServicesPage = () => {
 
     const subject = language === 'en'
       ? `Estimate request${estimateForm.projectType ? ` - ${estimateForm.projectType}` : ''}`
-      : `Solicitud de estimado${estimateForm.projectType ? ` - ${estimateForm.projectType}` : ''}`;
+      : `Solicitud de cotización${estimateForm.projectType ? ` - ${estimateForm.projectType}` : ''}`;
     const body = [
       language === 'en' ? 'Name' : 'Nombre',
       estimateForm.name,

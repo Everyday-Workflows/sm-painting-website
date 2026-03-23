@@ -42,8 +42,6 @@ type ServiceCard = {
   description: string;
   image: string;
   alt: string;
-  className?: string;
-  titleClassName?: string;
 };
 
 type Testimonial = {
@@ -224,8 +222,6 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
             "Walls, ceilings, trim, and lived-in spaces that need a cleaner, brighter reset.",
           image: FEATURED_GALLERY_ASSETS.interiorService,
           alt: "Bright freshly painted interior with a two-story living area and crisp trim lines.",
-          className: "md:col-span-2 md:row-span-2",
-          titleClassName: "text-2xl sm:text-3xl",
         },
         {
           title: "Exterior painting",
@@ -233,8 +229,6 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
             "Durable protection and curb appeal for siding, trim, doors, and outdoor surfaces.",
           image: FEATURED_GALLERY_ASSETS.exteriorService,
           alt: "Finished exterior painting project on a bright coastal-style home.",
-          titleClassName:
-            "max-w-[7.5ch] text-[1.08rem] sm:max-w-[8ch] sm:text-[1.55rem] lg:text-[2.05rem]",
         },
         {
           title: "Home refreshes",
@@ -242,17 +236,6 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
             "Lived-in homes and rental-ready properties refreshed with clean prep and dependable finishes.",
           image: FEATURED_GALLERY_ASSETS.commercialService,
           alt: "Residential exterior refresh with clean lines, updated paintwork, and a more finished presentation.",
-          titleClassName:
-            "max-w-[8.5ch] text-[1rem] sm:text-[1.5rem] lg:text-[1.95rem]",
-        },
-        {
-          title: "Cabinets & trim",
-          description:
-            "Factory-smooth updates that modernize high-touch surfaces without full replacement.",
-          image: FEATURED_GALLERY_ASSETS.commercialService,
-          alt: "Interior kitchen area carefully masked and prepped for cabinet and trim refinishing.",
-          className: "md:col-span-2",
-          titleClassName: "text-[1.85rem] sm:text-[2.25rem] lg:text-[2.6rem]",
         },
       ],
       cta: "Explore all services",
@@ -308,7 +291,7 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
       title2: "Hechos para durar.",
       description:
         "Pintura con enfoque en el detalle para hogares, negocios y espacios de trabajo. Preparación cuidadosa, ejecución limpia y decisiones de color que se sienten intencionales en cada ambiente.",
-      primaryCta: "Solicitar estimado gratis",
+      primaryCta: "Solicitar cotización gratis",
       secondaryCta: "Ver trabajos recientes",
       stats: [
         { value: "Líneas limpias", label: "Proceso guiado por preparación" },
@@ -318,12 +301,12 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
         },
         { value: "Revisión final", label: "Nada queda incompleto" },
       ],
-      panelTag: "Acabado distintivo",
+      panelTag: "Acabados únicos",
       panelTitle: "Un resultado pulido sin el caos de una remodelación.",
       panelDescription:
         "Planificamos la preparación, protegemos el espacio y entregamos la consistencia que los clientes notan apenas vuelven a entrar.",
       floatingCard:
-        "Espacios que se sienten más definidos, luminosos y bien resueltos.",
+        "Espacios que se sienten más definidos, luminosos y arreglados.",
       floatingDetail:
         "Renovaciones interiores, protección exterior y proyectos comerciales guiados por un proceso sereno.",
       bottomCardTitle: "Colores que funcionan con la luz",
@@ -343,9 +326,9 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
         "Mantenemos cada proyecto organizado desde la primera visita hasta los retoques finales para proteger su hogar o propiedad y mantener un acabado consistente.",
       steps: [
         {
-          title: "Recorrido y estimado",
+          title: "Recorrido y cotización",
           description:
-            "Revisamos superficies, detectamos reparaciones, hablamos del color y definimos el alcance antes de comenzar.",
+            "Revisamos superficies, identificamos reparaciones, conversamos sobre la dirección del color y definimos el alcance antes de comenzar.",
         },
         {
           title: "Preparación y protección",
@@ -363,7 +346,7 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
       eyebrow: "Por qué los clientes nos vuelven a llamar",
       title: "La artesanía empieza mucho antes de la primera capa.",
       description:
-        "Un acabado preciso depende de la preparación de superficies, el enmascarado limpio, productos premium y un equipo que comunica con claridad desde el estimado hasta la revisión final.",
+        "Un acabado preciso depende de la preparación de superficies, el enmascarado limpio, productos premium y un equipo que comunica con claridad desde la cotización hasta la revisión final.",
       checklist: [
         "Protección cuidadosa para pisos, muebles y accesorios.",
         "Reparación de superficies, lijado, sellado e imprimación donde realmente importa.",
@@ -409,8 +392,6 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
             "Paredes, techos, molduras y espacios vividos que necesitan un reinicio más limpio y luminoso.",
           image: FEATURED_GALLERY_ASSETS.interiorService,
           alt: "Interior recién pintado y luminoso con doble altura y líneas limpias.",
-          className: "md:col-span-2 md:row-span-2",
-          titleClassName: "text-2xl sm:text-3xl",
         },
         {
           title: "Pintura exterior",
@@ -418,8 +399,6 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
             "Protección duradera y mejor presencia para siding, molduras, puertas y superficies exteriores.",
           image: FEATURED_GALLERY_ASSETS.exteriorService,
           alt: "Proyecto exterior terminado en una vivienda de estilo costero con acabado renovado.",
-          titleClassName:
-            "max-w-[7.5ch] text-[1.08rem] sm:max-w-[8ch] sm:text-[1.55rem] lg:text-[2.05rem]",
         },
         {
           title: "Renovación del hogar",
@@ -427,17 +406,6 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
             "Hogares habitados y propiedades listas para renta renovados con preparación cuidadosa y acabados confiables.",
           image: FEATURED_GALLERY_ASSETS.commercialService,
           alt: "Renovación exterior residencial con líneas limpias, pintura actualizada y una presentación más terminada.",
-          titleClassName:
-            "max-w-[9ch] text-[0.98rem] sm:text-[1.5rem] lg:text-[1.95rem]",
-        },
-        {
-          title: "Gabinetes y molduras",
-          description:
-            "Actualizaciones suaves tipo fábrica para modernizar superficies de alto uso sin reemplazar todo.",
-          image: FEATURED_GALLERY_ASSETS.commercialService,
-          alt: "Área de cocina protegida y preparada para renovar gabinetes y molduras.",
-          className: "md:col-span-2",
-          titleClassName: "text-[1.85rem] sm:text-[2.25rem] lg:text-[2.6rem]",
         },
       ],
       cta: "Explorar todos los servicios",
@@ -474,7 +442,7 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
       title: "¿Listo para darle al espacio un mejor acabado?",
       description:
         "Cuéntenos qué habitaciones, superficies o propiedad quiere renovar. Le ayudaremos a definir alcance, tiempos y el mejor siguiente paso.",
-      primary: "Solicitar estimado",
+      primary: "Solicitar cotización",
       secondary: "Llamar ahora",
     },
     imageAlts: {
@@ -496,7 +464,7 @@ export default function Home() {
   const heroPanelTitleClassName =
     language === "es"
       ? "max-w-[8.75ch] text-[1.65rem] leading-[0.88] text-balance sm:max-w-[8.6ch] sm:text-[1.95rem] lg:max-w-[7ch] lg:text-[2rem]"
-      : "max-w-[9.8ch] text-[1.7rem] leading-[0.9] text-balance sm:max-w-[10.2ch] sm:text-[1.55rem] sm:leading-8 lg:text-[2.05rem]";
+      : "max-w-[9.8ch] text-[1.7rem] leading-[0.9] text-balance sm:text-[1.55rem] sm:leading-8 lg:text-[2.05rem]";
 
   return (
     <div className="flex flex-col bg-background text-foreground">
@@ -637,7 +605,7 @@ export default function Home() {
           {copy.trustStrip.map((item) => (
             <div
               key={item}
-              className="flex items-center justify-center gap-2 text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-secondary dark:text-white/80 sm:rounded-full sm:border sm:border-brand-highlight/14 sm:bg-white/80 sm:px-4 sm:py-3 sm:text-xs dark:sm:border-white/10 dark:sm:bg-white/5"
+              className="flex items-center justify-center gap-2 text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-secondary dark:text-white/80 sm:rounded-full sm:border sm:border-brand-highlight/14 sm:bg-white/80 sm:px-4 sm:py-3 sm:text-xs dark:sm:border-white/10 dark:sm:bg-white/[0.03]"
             >
               <span
                 className="h-1.5 w-1.5 rounded-full bg-brand-highlight sm:h-2 sm:w-2"
@@ -797,13 +765,13 @@ export default function Home() {
           </div>
 
           <StaggerContainer
-            className="grid gap-5 md:grid-cols-3 md:auto-rows-[340px]"
+            className="grid gap-5 md:grid-cols-3 md:auto-rows-[320px]"
             delay={0.12}
             staggerDelay={0.08}
           >
             {copy.services.cards.map((card) => (
-              <StaggerItem key={card.title} className={card.className}>
-                <div className="group relative h-[340px] sm:h-[380px] md:h-full overflow-hidden rounded-[1.9rem]">
+              <StaggerItem key={card.title}>
+                <div className="group relative h-[320px] overflow-hidden rounded-[1.9rem]">
                   <Image
                     src={card.image}
                     alt={card.alt}
@@ -817,7 +785,7 @@ export default function Home() {
                       S&amp;H Painting
                     </p>
                     <h3
-                      className={`mt-2 font-display leading-[0.92] text-balance text-white sm:mt-3 ${card.titleClassName ?? "text-2xl sm:text-3xl"}`}
+                      className={`mt-2 font-display text-[1.5rem] leading-[0.98] text-balance text-white sm:mt-3 sm:text-[1.9rem] lg:text-[2.2rem]`}
                     >
                       {card.title}
                     </h3>
