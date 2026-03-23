@@ -42,6 +42,7 @@ type ServiceCard = {
   description: string;
   image: string;
   alt: string;
+  featured?: boolean;
 };
 
 type Testimonial = {
@@ -222,6 +223,7 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
             "Walls, ceilings, trim, and lived-in spaces that need a cleaner, brighter reset.",
           image: FEATURED_GALLERY_ASSETS.interiorService,
           alt: "Bright freshly painted interior with a two-story living area and crisp trim lines.",
+          featured: true,
         },
         {
           title: "Exterior painting",
@@ -392,6 +394,7 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
             "Paredes, techos, molduras y espacios vividos que necesitan un reinicio más limpio y luminoso.",
           image: FEATURED_GALLERY_ASSETS.interiorService,
           alt: "Interior recién pintado y luminoso con doble altura y líneas limpias.",
+          featured: true,
         },
         {
           title: "Pintura exterior",
@@ -639,13 +642,9 @@ export default function Home() {
           </div>
         </div>
 
-        <StaggerContainer
-          className="mx-auto mt-12 grid max-w-7xl gap-5 px-4 sm:px-6 md:grid-cols-3 lg:px-8"
-          delay={0.1}
-          staggerDelay={0.08}
-        >
+        <div className="mx-auto mt-12 grid max-w-7xl gap-5 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
           {copy.process.steps.map((step, index) => (
-            <StaggerItem key={step.title}>
+            <ScrollReveal key={step.title} delay={0.12 + index * 0.08}>
               <div className="h-full rounded-[1.8rem] border border-brand-secondary/10 bg-white p-6 shadow-[0_22px_50px_-40px_rgba(26,20,58,0.35)] dark:border-white/10 dark:bg-white/[0.03]">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-highlight">
                   0{index + 1}
@@ -657,9 +656,9 @@ export default function Home() {
                   {step.description}
                 </p>
               </div>
-            </StaggerItem>
+            </ScrollReveal>
           ))}
-        </StaggerContainer>
+        </div>
       </section>
 
       <section className="relative overflow-hidden py-16 sm:py-24">
@@ -700,16 +699,12 @@ export default function Home() {
             </div>
           </div>
 
-          <StaggerContainer
-            className="grid gap-5 sm:grid-cols-2"
-            delay={0.12}
-            staggerDelay={0.08}
-          >
-            {copy.craft.features.map((feature) => {
+          <div className="grid gap-5 md:grid-cols-[minmax(0,1.18fr)_minmax(0,0.82fr)] md:auto-rows-[208px]">
+            {copy.craft.features.map((feature, index) => {
               const Icon = feature.icon;
 
               return (
-                <StaggerItem key={feature.title}>
+                <ScrollReveal key={feature.title} delay={0.12 + index * 0.08}>
                   <div className="group h-full rounded-[1.75rem] border border-brand-secondary/10 bg-white p-6 shadow-[0_22px_50px_-38px_rgba(26,20,58,0.5)] transition-transform duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.03]">
                     <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-highlight/12 text-brand-highlight dark:bg-brand-highlight/16 dark:text-brand-highlight">
                       <Icon className="h-5 w-5" />
@@ -721,10 +716,10 @@ export default function Home() {
                       {feature.description}
                     </p>
                   </div>
-                </StaggerItem>
+                </ScrollReveal>
               );
             })}
-          </StaggerContainer>
+          </div>
         </div>
       </section>
 
@@ -764,14 +759,15 @@ export default function Home() {
             </ScrollReveal>
           </div>
 
-          <StaggerContainer
-            className="grid gap-5 md:grid-cols-3 md:auto-rows-[320px]"
-            delay={0.12}
-            staggerDelay={0.08}
-          >
+          <div className="grid gap-5 md:grid-cols-[minmax(0,1.18fr)_minmax(0,0.82fr)] md:auto-rows-[208px]">
             {copy.services.cards.map((card) => (
-              <StaggerItem key={card.title}>
-                <div className="group relative h-[320px] overflow-hidden rounded-[1.9rem]">
+              <div
+                key={card.title}
+                className={card.featured ? "md:row-span-2" : ""}
+              >
+                <div
+                  className={`group relative overflow-hidden rounded-[1.9rem] ${card.featured ? "h-[360px] sm:h-[420px] md:h-full" : "h-[240px] sm:h-[260px] md:h-full"}`}
+                >
                   <Image
                     src={card.image}
                     alt={card.alt}
@@ -779,36 +775,30 @@ export default function Home() {
                     sizes="(min-width: 768px) 33vw, 100vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,12,40,0.12)_0%,rgba(17,12,40,0.8)_100%)]" />
-                  <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-7">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/65 sm:text-xs">
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,12,45,0.12)_0%,rgba(18,12,45,0.8)_100%)]" />
+                  <div
+                    className={`absolute inset-0 flex flex-col justify-end ${card.featured ? "p-6 sm:p-7" : "p-4 sm:p-5"}`}
+                  >
+                    <p
+                      className={`font-semibold uppercase tracking-[0.18em] text-white/65 ${card.featured ? "text-[10px] sm:text-xs" : "text-[9px] sm:text-[10px]"}`}
+                    >
                       S&amp;H Painting
                     </p>
                     <h3
-                      className={`mt-2 font-display text-[1.5rem] leading-[0.98] text-balance text-white sm:mt-3 sm:text-[1.9rem] lg:text-[2.2rem]`}
+                      className={`font-display text-balance text-white ${card.featured ? "mt-2 sm:mt-3 max-w-[9ch] text-[2rem] leading-[0.94] sm:text-[2.45rem] lg:text-[2.85rem]" : "mt-1.5 sm:mt-2 max-w-[12ch] text-[1.15rem] leading-[1] sm:text-[1.35rem] lg:text-[1.55rem]"}`}
                     >
                       {card.title}
                     </h3>
-                    <p className="mt-2 max-w-md text-xs leading-6 text-white/75 sm:mt-3 sm:text-sm sm:leading-7">
+                    <p
+                      className={`max-w-md text-white/75 ${card.featured ? "mt-2 text-xs leading-6 sm:mt-3 sm:text-sm sm:leading-7" : "mt-1.5 text-[0.72rem] leading-[1.4] sm:mt-2 sm:text-[0.8rem] sm:leading-5"}`}
+                    >
                       {card.description}
                     </p>
                   </div>
                 </div>
-              </StaggerItem>
+              </div>
             ))}
-          </StaggerContainer>
-
-          <ScrollReveal delay={0.18}>
-            <div className="mt-8 flex justify-end">
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-brand-highlight transition-colors hover:text-brand-secondary dark:hover:text-brand-highlight"
-              >
-                {copy.services.cta}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </ScrollReveal>
+          </div>
         </div>
       </section>
 
@@ -834,7 +824,7 @@ export default function Home() {
               </ScrollReveal>
             </div>
 
-            <div className="flex flex-col gap-5 lg:pt-6">
+            <div className="flex flex-col items-center gap-5 lg:pt-6">
               <ScrollReveal delay={0.08}>
                 <Image
                   src={BRAND_ASSETS.precisionStrokeArtboard}
@@ -846,7 +836,7 @@ export default function Home() {
                 />
               </ScrollReveal>
               <ScrollReveal delay={0.16}>
-                <div className="rounded-full border border-brand-highlight/18 bg-brand-highlight/8 px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-brand-highlight shadow-sm dark:border-brand-highlight/24 dark:bg-brand-highlight/10 dark:text-brand-highlight">
+                <div className="inline-flex whitespace-nowrap rounded-full border border-brand-highlight/18 bg-brand-highlight/8 px-5 py-3 text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-highlight shadow-sm dark:border-brand-highlight/24 dark:bg-brand-highlight/10 dark:text-brand-highlight sm:text-xs lg:translate-x-22">
                   {copy.testimonials.badge}
                 </div>
               </ScrollReveal>

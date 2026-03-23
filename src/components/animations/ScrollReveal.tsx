@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const revealEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -24,6 +24,15 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   distance = 50,
   className = '',
 }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [ready, setReady] = useState(false);
+
+  /* After hydration, hide the element so whileInView can reveal it. */
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setReady(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
+
   const variants = {
     hidden: {
       opacity: 0,
@@ -39,17 +48,26 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
     },
   };
 
+  /*
+   * Before JS hydrates: no initial/animate props → framer-motion renders
+   * children with no inline opacity:0, so content is visible in SSR HTML.
+   *
+   * After mount (ready=true): initial="hidden" + whileInView="visible"
+   * kicks in, giving us the scroll-reveal animation.
+   */
   return (
-    <div style={{ position: 'relative', width, overflow: 'visible' }} className={className}>
+    <div ref={ref} style={{ position: 'relative', width, overflow: 'visible' }} className={className}>
       <motion.div
         variants={variants}
-        initial="hidden"
-        whileInView="visible"
+        {...(ready
+          ? { initial: "hidden", animate: "hidden", whileInView: "visible" }
+          : {}
+        )}
         viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
         transition={{
           duration,
           delay,
-          ease: revealEase
+          ease: revealEase,
         }}
       >
         {children}
@@ -71,6 +89,13 @@ export const StaggerContainer: React.FC<StaggerContainerProps> = ({
   staggerDelay = 0.1,
   className = '',
 }) => {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setReady(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -85,8 +110,10 @@ export const StaggerContainer: React.FC<StaggerContainerProps> = ({
   return (
     <motion.div
       variants={container}
-      initial="hidden"
-      whileInView="show"
+      {...(ready
+        ? { initial: "hidden", animate: "hidden", whileInView: "show" }
+        : {}
+      )}
       viewport={{ once: true, margin: "-100px" }}
       className={className}
     >
@@ -122,4 +149,3 @@ export const StaggerItem: React.FC<{ children: React.ReactNode; direction?: 'up'
 
   return <motion.div variants={item} className={className}>{children}</motion.div>;
 };
-
