@@ -24,6 +24,7 @@
 # misc
 .DS_Store
 *.pem
+docs/S&HBrandingGuidelines.pdf
 
 # debug
 npm-debug.log*
