@@ -780,17 +780,17 @@ export default function Home() {
                     className={`absolute inset-0 flex flex-col justify-end ${card.featured ? "p-6 sm:p-7" : "p-4 sm:p-5"}`}
                   >
                     <p
-                      className={`font-semibold uppercase tracking-[0.18em] text-white/65 ${card.featured ? "text-[10px] sm:text-xs" : "text-[9px] sm:text-[10px]"}`}
+                      className={`font-semibold uppercase tracking-[0.18em] text-white/65 text-[9px] ${card.featured ? "sm:text-xs" : "sm:text-[10px]"}`}
                     >
                       S&amp;H Painting
                     </p>
                     <h3
-                      className={`font-display text-balance text-white ${card.featured ? "mt-2 sm:mt-3 max-w-[9ch] text-[2rem] leading-[0.94] sm:text-[2.45rem] lg:text-[2.85rem]" : "mt-1.5 sm:mt-2 max-w-[12ch] text-[1.15rem] leading-[1] sm:text-[1.35rem] lg:text-[1.55rem]"}`}
+                      className={`font-display text-balance text-white text-[1.15rem] leading-[1] ${card.featured ? "mt-2 sm:mt-3 max-w-[9ch] sm:text-[2.45rem] sm:leading-[0.94] lg:text-[2.85rem]" : "mt-1.5 sm:mt-2 max-w-[12ch] sm:text-[1.35rem] lg:text-[1.55rem]"}`}
                     >
                       {card.title}
                     </h3>
                     <p
-                      className={`max-w-md text-white/75 ${card.featured ? "mt-2 text-xs leading-6 sm:mt-3 sm:text-sm sm:leading-7" : "mt-1.5 text-[0.72rem] leading-[1.4] sm:mt-2 sm:text-[0.8rem] sm:leading-5"}`}
+                      className={`max-w-md text-white/75 text-[0.72rem] leading-[1.4] ${card.featured ? "mt-2 sm:mt-3 sm:text-sm sm:leading-7" : "mt-1.5 sm:mt-2 sm:text-[0.8rem] sm:leading-5"}`}
                     >
                       {card.description}
                     </p>
