@@ -7,7 +7,7 @@ import { Providers } from "@/components/Providers";
 import Footer from "@/components/Footer";
 import BackgroundBlobs from "@/components/BackgroundBlobs";
 import { CONTACT_INFO } from "@/lib/contact";
-import { BRAND_ASSETS, FEATURED_GALLERY_ASSETS } from "@/lib/siteAssets";
+import { BRAND_ASSETS } from "@/lib/siteAssets";
 import { resolvePublicSiteUrl } from "@/lib/siteUrl";
 
 const fraunces = Fraunces({
@@ -72,10 +72,10 @@ export const metadata: Metadata = {
       "High-quality residential and commercial painting services. / Servicios de pintura residencial y comercial de alta calidad.",
     images: [
       {
-        url: FEATURED_GALLERY_ASSETS.heroShowcase,
-        width: 1200,
-        height: 630,
-        alt: "S&H Painting finished interior project / Proyecto interior terminado de S&H Painting",
+        url: BRAND_ASSETS.openGraphImage,
+        width: 2048,
+        height: 1024,
+        alt: "S&H Painting branded social preview reading Quality Meets Color",
       },
     ],
   },
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
       "S&H Painting | Professional Painting Services | Servicios Profesionales de Pintura",
     description:
       "High-quality residential and commercial painting services. / Servicios de pintura residencial y comercial de alta calidad.",
-    images: [FEATURED_GALLERY_ASSETS.heroShowcase],
+    images: [BRAND_ASSETS.openGraphImage],
     creator: "@smpainting", // Replace with actual handle if known
   },
   robots: {

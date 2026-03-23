@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-brand-primary transition-colors"
+                  className="hover:text-brand-highlight transition-colors"
                 >
                   {t("nav.home")}
                 </Link>
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/gallery"
-                  className="hover:text-brand-primary transition-colors"
+                  className="hover:text-brand-highlight transition-colors"
                 >
                   {t("nav.gallery")}
                 </Link>
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/services"
-                  className="hover:text-brand-primary transition-colors"
+                  className="hover:text-brand-highlight transition-colors"
                 >
                   {t("nav.services")}
                 </Link>
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
               {t("footer.email")}: {" "}
               <a
                 href={CONTACT_LINKS.email}
-                className="hover:text-brand-primary transition-colors"
+                className="hover:text-brand-highlight transition-colors"
               >
                 {CONTACT_INFO.email}
               </a>
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
               {t("footer.phone")}: {" "}
               <a
                 href={CONTACT_LINKS.phone}
-                className="hover:text-brand-primary transition-colors"
+                className="hover:text-brand-highlight transition-colors"
               >
                 {CONTACT_INFO.phoneDisplay}
               </a>

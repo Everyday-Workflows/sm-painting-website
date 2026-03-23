@@ -181,7 +181,7 @@ const ServicesPage = () => {
               <div 
                 className="bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-gray-200/30 dark:border-gray-800/30 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col h-full group"
               >
-                <h2 className="text-xl sm:text-2xl font-display text-gray-900 dark:text-white mb-4 group-hover:text-brand-primary transition-colors duration-300">
+                <h2 className="text-xl sm:text-2xl font-display text-gray-900 dark:text-white mb-4 group-hover:text-brand-highlight transition-colors duration-300">
                   {service.title}
                 </h2>
                 <p className="text-base sm:text-lg font-sans text-gray-600 dark:text-gray-400 mb-6 leading-relaxed flex-grow">
@@ -190,7 +190,7 @@ const ServicesPage = () => {
                 <ul className="space-y-3 mb-8">
                   {SERVICE_FEATURES[language][index].map((feature) => (
                     <li key={feature} className="flex items-center text-sm sm:text-base font-sans text-gray-700 dark:text-gray-300">
-                      <svg aria-hidden="true" className="h-5 w-5 text-brand-primary mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg aria-hidden="true" className="h-5 w-5 text-brand-highlight mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>{feature}</span>
@@ -200,7 +200,7 @@ const ServicesPage = () => {
                 <button
                   type="button"
                   onClick={() => scrollToEstimateForm(service.title)}
-                  className="mt-auto inline-flex w-fit max-w-full items-center rounded-md bg-brand-primary px-6 py-2 text-sm font-semibold text-white shadow-lg shadow-brand-primary/10 transition-all duration-300 hover:bg-brand-secondary hover:shadow-brand-primary/20"
+                  className="mt-auto inline-flex w-fit max-w-full items-center rounded-md bg-brand-highlight px-6 py-2 text-sm font-semibold text-white shadow-lg shadow-brand-highlight/15 transition-all duration-300 hover:bg-brand-primary hover:shadow-brand-highlight/25"
                 >
                   {t('services.cta')} {service.title}
                 </button>
@@ -210,7 +210,7 @@ const ServicesPage = () => {
         </StaggerContainer>
 
         <ScrollReveal delay={0.4}>
-          <div className="mt-16 sm:mt-20 rounded-3xl border border-brand-primary/20 bg-brand-primary/10 p-8 backdrop-blur-md sm:p-12">
+          <div className="mt-16 sm:mt-20 rounded-3xl border border-brand-highlight/20 bg-brand-highlight/8 p-8 backdrop-blur-md sm:p-12">
             <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.85fr)] lg:items-start">
               <div className="text-center lg:text-left">
                 <h2 className="text-2xl sm:text-3xl font-display mb-4 sm:mb-6 leading-tight text-gray-900 dark:text-white">{t('services.footer.title')}</h2>
@@ -220,14 +220,14 @@ const ServicesPage = () => {
                 <div className="flex flex-col items-center gap-4 lg:items-start">
                   <a
                     href={CONTACT_LINKS.email}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-brand-secondary transition-colors hover:text-brand-primary dark:text-white dark:hover:text-brand-accent-1"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-brand-secondary transition-colors hover:text-brand-highlight dark:text-white dark:hover:text-brand-highlight"
                   >
                     <Mail className="h-4 w-4" />
                     {CONTACT_INFO.email}
                   </a>
                   <a
                     href={CONTACT_LINKS.phone}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-brand-secondary transition-colors hover:text-brand-primary dark:text-white dark:hover:text-brand-accent-1"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-brand-secondary transition-colors hover:text-brand-highlight dark:text-white dark:hover:text-brand-highlight"
                   >
                     <PhoneCall className="h-4 w-4" />
                     {CONTACT_INFO.phoneDisplay}
@@ -238,7 +238,7 @@ const ServicesPage = () => {
               <form
                 id="estimate-form"
                 onSubmit={handleEstimateSubmit}
-                className="rounded-[1.75rem] border border-white/40 bg-white/75 p-6 text-left shadow-[0_24px_60px_-42px_rgba(26,20,58,0.45)] dark:border-white/10 dark:bg-zinc-950/65"
+                className="rounded-[1.75rem] border border-brand-highlight/12 bg-white/75 p-6 text-left shadow-[0_24px_60px_-42px_rgba(26,20,58,0.45)] dark:border-white/10 dark:bg-zinc-950/65"
               >
                 <h3 className="text-2xl font-display text-gray-900 dark:text-white">{formCopy.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-gray-600 dark:text-gray-300">{formCopy.description}</p>
@@ -253,7 +253,7 @@ const ServicesPage = () => {
                       value={estimateForm.name}
                       onChange={handleEstimateChange}
                       placeholder={formCopy.placeholders.name}
-                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
                     />
                   </label>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
@@ -265,7 +265,7 @@ const ServicesPage = () => {
                       value={estimateForm.email}
                       onChange={handleEstimateChange}
                       placeholder={formCopy.placeholders.email}
-                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
                     />
                   </label>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
@@ -276,7 +276,7 @@ const ServicesPage = () => {
                       value={estimateForm.phone}
                       onChange={handleEstimateChange}
                       placeholder={formCopy.placeholders.phone}
-                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
                     />
                   </label>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
@@ -287,7 +287,7 @@ const ServicesPage = () => {
                       value={estimateForm.projectType}
                       onChange={handleEstimateChange}
                       placeholder={formCopy.placeholders.projectType}
-                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                      className="mt-2 w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
                     />
                   </label>
                 </div>
@@ -301,27 +301,27 @@ const ServicesPage = () => {
                     value={estimateForm.details}
                     onChange={handleEstimateChange}
                     placeholder={formCopy.placeholders.details}
-                    className="mt-2 w-full rounded-[1.5rem] border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
+                    className="mt-2 w-full rounded-[1.5rem] border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-brand-highlight focus:ring-2 focus:ring-brand-highlight/20 dark:border-white/10 dark:bg-black/20 dark:text-white"
                   />
                 </label>
 
                 <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-secondary"
+                    className="inline-flex items-center justify-center rounded-full bg-brand-highlight px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-primary"
                   >
                     {formCopy.submit}
                   </button>
                   <div className="flex flex-wrap gap-3 text-sm font-medium">
-                    <a href={CONTACT_LINKS.email} className="text-brand-secondary hover:text-brand-primary dark:text-white dark:hover:text-brand-accent-1">{formCopy.directEmail}</a>
-                    <a href={CONTACT_LINKS.phone} className="text-brand-secondary hover:text-brand-primary dark:text-white dark:hover:text-brand-accent-1">{formCopy.directCall}</a>
+                    <a href={CONTACT_LINKS.email} className="text-brand-secondary hover:text-brand-highlight dark:text-white dark:hover:text-brand-highlight">{formCopy.directEmail}</a>
+                    <a href={CONTACT_LINKS.phone} className="text-brand-secondary hover:text-brand-highlight dark:text-white dark:hover:text-brand-highlight">{formCopy.directCall}</a>
                   </div>
                 </div>
                 {formStatus === 'error' && (
                   <p className="mt-3 text-sm font-medium text-red-600 dark:text-red-400">{formCopy.error}</p>
                 )}
                 {formStatus === 'success' && (
-                  <p className="mt-3 text-sm font-medium text-brand-primary dark:text-brand-accent-1">{formCopy.success}</p>
+                  <p className="mt-3 text-sm font-medium text-brand-highlight dark:text-brand-highlight">{formCopy.success}</p>
                 )}
               </form>
             </div>

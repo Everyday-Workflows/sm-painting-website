@@ -10,6 +10,7 @@ const customTwMerge = extendTailwindMerge({
         "text-brand-tertiary",
         "text-brand-accent-1",
         "text-brand-accent-2",
+        "text-brand-highlight",
       ],
       "bg-color": [
         "bg-brand-primary",
@@ -17,6 +18,7 @@ const customTwMerge = extendTailwindMerge({
         "bg-brand-tertiary",
         "bg-brand-accent-1",
         "bg-brand-accent-2",
+        "bg-brand-highlight",
       ],
       "border-color": [
         "border-brand-primary",
@@ -24,6 +26,7 @@ const customTwMerge = extendTailwindMerge({
         "border-brand-tertiary",
         "border-brand-accent-1",
         "border-brand-accent-2",
+        "border-brand-highlight",
       ],
     },
   },

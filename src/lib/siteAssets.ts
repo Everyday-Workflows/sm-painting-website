@@ -7,29 +7,206 @@ export const BRAND_ASSETS = {
   anniversarySealArtboard: '/images/logos/Artboard3.webp',
   iconMarkArtboard: '/images/logos/Artboard4.webp',
   favicon: '/images/favicon.webp',
+  openGraphImage: '/images/OG_Image.png',
 } as const;
 
 export const FEATURED_GALLERY_ASSETS = {
-  heroShowcase: '/images/gallery/8510a805-0725-415e-a482-d3b7fe91cfe4.jpeg',
-  colorInspiration: '/images/gallery/589deba1-7a7b-496e-b8be-3ba64166a15e.jpeg',
-  ctaTexture: '/images/gallery/03f36018-e2da-49ff-a7d3-ce16ebcd2127.jpeg',
-  interiorService: '/images/gallery/8cf01e68-8464-4091-bab9-69c94208c746.jpeg',
-  exteriorService: '/images/gallery/c02cf30a-4ea3-4e7e-b6e6-71e96cd2cedd.jpeg',
-  commercialService: '/images/gallery/7b51ddca-47a8-4380-80b4-d3189b80b6af.jpeg',
-  cabinetsService: '/images/gallery/3248cf5d-16fe-4d74-b57b-a7030ff5908d.jpeg',
+  heroShowcase: '/images/gallery/011.jpeg',
+  colorInspiration: '/images/gallery/006.jpeg',
+  ctaTexture: '/images/gallery/001.jpeg',
+  interiorService: '/images/gallery/012.jpeg',
+  exteriorService: '/images/gallery/015.jpeg',
+  commercialService: '/images/gallery/009.jpeg',
+  cabinetsService: '/images/gallery/002.jpeg',
 } as const;
 
-export const PORTFOLIO_IMAGE_PATHS = [
-  '/images/gallery/03f36018-e2da-49ff-a7d3-ce16ebcd2127.jpeg',
-  '/images/gallery/3248cf5d-16fe-4d74-b57b-a7030ff5908d.jpeg',
-  '/images/gallery/3b2dc259-ffde-4026-87d4-41cd2d8224e5.jpeg',
-  '/images/gallery/4bb99444-ace9-4aeb-8333-61c9a5c5ab8f.jpeg',
-  '/images/gallery/589deba1-7a7b-496e-b8be-3ba64166a15e.jpeg',
-  '/images/gallery/5b9a8b60-8d7f-4a13-bb09-6e69d8382b3e.jpeg',
-  '/images/gallery/7b51ddca-47a8-4380-80b4-d3189b80b6af.jpeg',
-  '/images/gallery/8510a805-0725-415e-a482-d3b7fe91cfe4.jpeg',
-  '/images/gallery/8cf01e68-8464-4091-bab9-69c94208c746.jpeg',
-  '/images/gallery/ac4643e0-8d07-4469-b497-623bdb26c6db.jpeg',
-  '/images/gallery/bdfe8dac-2dd9-49d0-b0a9-83ac6c9ec408.jpeg',
-  '/images/gallery/c02cf30a-4ea3-4e7e-b6e6-71e96cd2cedd.jpeg',
-] as const;
+export type PortfolioCategory = 'interior' | 'exterior' | 'commercial' | 'specialty';
+export type PortfolioRelationship = 'before' | 'after' | 'same-project';
+
+export type PortfolioItem = {
+  src: string;
+  category: PortfolioCategory;
+  alt: {
+    en: string;
+    es: string;
+  };
+  relationship?: {
+    type: PortfolioRelationship;
+    groupId: string;
+  };
+};
+
+export const PORTFOLIO_ITEMS: PortfolioItem[] = [
+  {
+    src: '/images/gallery/001.jpeg',
+    category: 'interior',
+    alt: {
+      en: 'Interior living space with a smooth, even wall and trim finish',
+      es: 'Espacio interior con un acabado uniforme y limpio en paredes y molduras',
+    },
+  },
+  {
+    src: '/images/gallery/002.jpeg',
+    category: 'interior',
+    alt: {
+      en: 'Detailed interior painting work with crisp cabinetry and trim finish',
+      es: 'Trabajo detallado de pintura interior con un acabado preciso en gabinetes y molduras',
+    },
+  },
+  {
+    src: '/images/gallery/003.jpeg',
+    category: 'interior',
+    alt: {
+      en: 'Interior painting showcase with a clean, durable finish',
+      es: 'Muestra de pintura interior con un acabado limpio y duradero',
+    },
+  },
+  {
+    src: '/images/gallery/004.jpeg',
+    category: 'interior',
+    alt: {
+      en: 'Interior project highlighting smooth walls and refined trim work',
+      es: 'Proyecto interior que destaca paredes lisas y molduras refinadas',
+    },
+  },
+  {
+    src: '/images/gallery/005.JPG',
+    category: 'interior',
+    alt: {
+      en: 'Fresh white bedroom repaint with finished doors, trim, and closet panels',
+      es: 'Repintado fresco de dormitorio en blanco con puertas, molduras y paneles de clóset terminados',
+    },
+  },
+  {
+    src: '/images/gallery/006.jpeg',
+    category: 'interior',
+    alt: {
+      en: 'Interior color project showing balanced tones and polished finishing',
+      es: 'Proyecto interior de color que muestra tonos equilibrados y un acabado pulido',
+    },
+  },
+  {
+    src: '/images/gallery/007.jpeg',
+    category: 'exterior',
+    alt: {
+      en: 'Exterior painting showcase with a refreshed curb-appeal finish',
+      es: 'Muestra de pintura exterior con un acabado renovado que mejora la fachada',
+    },
+    relationship: {
+      type: 'before',
+      groupId: 'pair-007-015',
+    },
+  },
+  {
+    src: '/images/gallery/008.JPG',
+    category: 'interior',
+    alt: {
+      en: 'Moody blue-green interior repaint with paneled walls, trim, and stair detail',
+      es: 'Repintado interior en azul verdoso intenso con paneles, molduras y detalle de escalera',
+    },
+  },
+  {
+    src: '/images/gallery/009.jpeg',
+    category: 'exterior',
+    alt: {
+      en: 'Finished exterior repaint with bright siding, dark trim, and a stronger front-entry contrast',
+      es: 'Repintado exterior terminado con revestimiento claro, molduras oscuras y un contraste más marcado en la entrada principal',
+    },
+    relationship: {
+      type: 'after',
+      groupId: 'pair-014-009',
+    },
+  },
+  {
+    src: '/images/gallery/010.JPG',
+    category: 'exterior',
+    alt: {
+      en: 'Two-story exterior repaint featuring gray walls, white trim, and dark shutters',
+      es: 'Repintado exterior de dos pisos con paredes grises, molduras blancas y contraventanas oscuras',
+    },
+  },
+  {
+    src: '/images/gallery/011.jpeg',
+    category: 'interior',
+    alt: {
+      en: 'Finished interior painting project with clean lines and bright natural light',
+      es: 'Proyecto de pintura interior terminado con líneas limpias y luz natural brillante',
+    },
+    relationship: {
+      type: 'same-project',
+      groupId: 'project-011-012-013',
+    },
+  },
+  {
+    src: '/images/gallery/012.jpeg',
+    category: 'interior',
+    alt: {
+      en: 'Interior service showcase featuring neat trim work and a modern finish',
+      es: 'Muestra de servicio interior con molduras precisas y un acabado moderno',
+    },
+    relationship: {
+      type: 'same-project',
+      groupId: 'project-011-012-013',
+    },
+  },
+  {
+    src: '/images/gallery/013.jpeg',
+    category: 'commercial',
+    alt: {
+      en: 'Commercial-style painting project with durable, high-traffic finishes',
+      es: 'Proyecto de pintura estilo comercial con acabados duraderos para alto tránsito',
+    },
+    relationship: {
+      type: 'same-project',
+      groupId: 'project-011-012-013',
+    },
+  },
+  {
+    src: '/images/gallery/014.jpeg',
+    category: 'exterior',
+    alt: {
+      en: 'Exterior view before repaint with muted siding, lighter trim, and an unfinished front presentation',
+      es: 'Vista exterior antes del repintado con revestimiento apagado, molduras más claras y una presentación frontal menos terminada',
+    },
+    relationship: {
+      type: 'before',
+      groupId: 'pair-014-009',
+    },
+  },
+  {
+    src: '/images/gallery/015.jpeg',
+    category: 'exterior',
+    alt: {
+      en: 'Exterior house painting project with refreshed siding and trim',
+      es: 'Proyecto de pintura exterior de vivienda con revestimiento y molduras renovadas',
+    },
+    relationship: {
+      type: 'after',
+      groupId: 'pair-007-015',
+    },
+  },
+  {
+    src: '/images/gallery/016.JPG',
+    category: 'interior',
+    alt: {
+      en: 'Open-plan interior renovation with clean white walls, trim, and newly finished surfaces',
+      es: 'Renovación interior de concepto abierto con paredes blancas limpias, molduras y superficies recién terminadas',
+    },
+  },
+  {
+    src: '/images/gallery/017.jpg',
+    category: 'commercial',
+    alt: {
+      en: 'Room repaint with a bright blue accent wall and refreshed white side walls',
+      es: 'Repintado de habitación con pared de acento azul brillante y paredes laterales blancas renovadas',
+    },
+  },
+  {
+    src: '/images/gallery/019.jpg',
+    category: 'specialty',
+    alt: {
+      en: 'Fresh red and white shed repaint highlighting durable specialty exterior work',
+      es: 'Repintado fresco de cobertizo en rojo y blanco que destaca un trabajo exterior especial y duradero',
+    },
+  },
+];

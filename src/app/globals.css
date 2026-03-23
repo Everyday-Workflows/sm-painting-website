@@ -10,6 +10,7 @@
   --brand-tertiary: oklch(0.3347 0.0889 267.14);
   --brand-accent-1: oklch(0.5672 0.1111 267.72);
   --brand-accent-2: oklch(0.2513 0.0987 280.61);
+  --brand-highlight: oklch(0.6032 0.2319 26.79);
 }
 
 .dark {
@@ -25,6 +26,7 @@
   --color-brand-tertiary: var(--brand-tertiary);
   --color-brand-accent-1: var(--brand-accent-1);
   --color-brand-accent-2: var(--brand-accent-2);
+  --color-brand-highlight: var(--brand-highlight);
   --font-sans: var(--font-manrope);
   --font-display: var(--font-fraunces);
   --font-subtitle: var(--font-cormorant);

@@ -150,7 +150,7 @@ const ScrollVideo: React.FC<ScrollVideoProps> = ({ frameCount, framePath }) => {
               </motion.div>
               <motion.div
                 style={{ opacity: afterOpacity }}
-                className="absolute top-8 left-8 z-20 bg-brand-primary/90 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-xs font-sans font-bold uppercase tracking-widest"
+                className="absolute top-8 left-8 z-20 bg-brand-highlight/90 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-xs font-sans font-bold uppercase tracking-widest"
               >
                 {t('video.after')}
               </motion.div>

@@ -502,7 +502,7 @@ export default function Home() {
     <div className="flex flex-col bg-background text-foreground">
       <section className="relative overflow-hidden bg-brand-secondary text-white">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0)_35%,rgba(113,100,204,0.22)_100%)]" />
-        <div className="absolute -left-20 top-20 h-64 w-64 rounded-full bg-brand-accent-1/20 blur-3xl" />
+        <div className="absolute -left-20 top-20 h-64 w-64 rounded-full bg-brand-highlight/18 blur-3xl" />
         <div className="absolute -right-16 top-0 h-96 w-96 rounded-full bg-brand-primary/35 blur-3xl" />
         <div className="absolute bottom-0 left-1/3 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
 
@@ -534,7 +534,7 @@ export default function Home() {
             <ScrollReveal direction="right" delay={0.14}>
               <h1 className="max-w-3xl text-4xl font-display leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl lg:leading-[0.98] lg:tracking-[-0.04em]">
                 <span className="block">{copy.hero.title1}</span>
-                <span className="mt-2 block text-brand-accent-1">
+                <span className="mt-2 block text-brand-highlight">
                   {copy.hero.title2}
                 </span>
               </h1>
@@ -550,14 +550,14 @@ export default function Home() {
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
                 <Link
                   href="/services#estimate-form"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-semibold text-brand-secondary transition-transform duration-300 hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-highlight px-7 py-4 text-sm font-semibold text-white shadow-[0_20px_45px_-24px_color-mix(in_oklch,var(--brand-highlight)_72%,transparent)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-accent-1"
                 >
                   {copy.hero.primaryCta}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/gallery"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-300 hover:bg-white/15"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-300 hover:border-brand-highlight/60 hover:bg-white/15"
                 >
                   {copy.hero.secondaryCta}
                 </Link>
@@ -596,9 +596,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute -right-3 top-7 hidden max-w-[13.25rem] rounded-[1.35rem] border border-white/18 bg-[linear-gradient(180deg,rgba(24,18,56,0.72)_0%,rgba(41,35,88,0.56)_100%)] p-5 shadow-[0_28px_70px_-42px_rgba(8,6,24,0.95)] backdrop-blur-xl sm:block lg:-right-14">
+              <div className="absolute -right-3 top-7 hidden max-w-[13.25rem] rounded-[1.35rem] border border-brand-highlight/30 bg-[linear-gradient(180deg,rgba(72,28,20,0.72)_0%,rgba(94,35,28,0.58)_100%)] p-5 shadow-[0_28px_70px_-42px_rgba(73,21,16,0.95)] backdrop-blur-xl sm:block lg:-right-14">
                 <div className="absolute inset-0 rounded-[1.35rem] bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_38%)] opacity-80" />
-                <p className="relative text-[11px] font-semibold uppercase tracking-[0.18em] text-white/82">
+                <p className="relative text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-highlight/90">
                   S&amp;M Painting
                 </p>
                 <p className="relative mt-4 text-[1.05rem] font-medium leading-7 text-white/96">
@@ -609,7 +609,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="absolute -bottom-3 left-4 right-4 rounded-[1.5rem] border border-white/10 bg-brand-tertiary/80 p-4 shadow-xl shadow-black/20 backdrop-blur-sm sm:left-8 sm:right-auto sm:w-[18rem]">
+              <div className="absolute -bottom-3 left-4 right-4 rounded-[1.5rem] border border-brand-highlight/20 bg-[color-mix(in_oklch,var(--brand-tertiary)_82%,var(--brand-highlight)_18%)] p-4 shadow-xl shadow-black/20 backdrop-blur-sm sm:left-8 sm:right-auto sm:w-[18rem]">
                 <div className="relative h-24 overflow-hidden rounded-[1rem] border border-white/10">
                   <Image
                     src={FEATURED_GALLERY_ASSETS.colorInspiration}
@@ -637,10 +637,10 @@ export default function Home() {
           {copy.trustStrip.map((item) => (
             <div
               key={item}
-              className="flex items-center justify-center gap-2 text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-secondary dark:text-white/80 sm:rounded-full sm:border sm:border-brand-secondary/10 sm:bg-white/80 sm:px-4 sm:py-3 sm:text-xs dark:sm:border-white/10 dark:sm:bg-white/5"
+              className="flex items-center justify-center gap-2 text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-secondary dark:text-white/80 sm:rounded-full sm:border sm:border-brand-highlight/14 sm:bg-white/80 sm:px-4 sm:py-3 sm:text-xs dark:sm:border-white/10 dark:sm:bg-white/5"
             >
               <span
-                className="h-1.5 w-1.5 rounded-full bg-brand-primary sm:h-2 sm:w-2"
+                className="h-1.5 w-1.5 rounded-full bg-brand-highlight sm:h-2 sm:w-2"
                 aria-hidden="true"
               />
               {item}
@@ -650,11 +650,11 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden py-16 sm:py-24">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-primary/15 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-highlight/25 to-transparent" />
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:px-8">
           <div>
             <ScrollReveal direction="right">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-primary">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-highlight">
                 {copy.process.eyebrow}
               </p>
             </ScrollReveal>
@@ -679,7 +679,7 @@ export default function Home() {
           {copy.process.steps.map((step, index) => (
             <StaggerItem key={step.title}>
               <div className="h-full rounded-[1.8rem] border border-brand-secondary/10 bg-white p-6 shadow-[0_22px_50px_-40px_rgba(26,20,58,0.35)] dark:border-white/10 dark:bg-white/[0.03]">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-primary">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-highlight">
                   0{index + 1}
                 </p>
                 <h3 className="mt-4 text-2xl font-display text-brand-secondary dark:text-white">
@@ -695,11 +695,11 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden py-16 sm:py-24">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-primary/15 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-highlight/25 to-transparent" />
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:px-8">
           <div>
             <ScrollReveal direction="right">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-primary">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-highlight">
                 {copy.craft.eyebrow}
               </p>
             </ScrollReveal>
@@ -721,7 +721,7 @@ export default function Home() {
                   direction="right"
                   delay={0.2 + index * 0.08}
                 >
-                  <div className="flex items-start gap-3 sm:rounded-[1.2rem] sm:border sm:border-brand-secondary/10 sm:bg-brand-secondary/[0.03] sm:p-4 dark:sm:border-white/10 dark:sm:bg-white/[0.03]">
+                  <div className="flex items-start gap-3 sm:rounded-[1.2rem] sm:border sm:border-brand-highlight/12 sm:bg-brand-highlight/[0.05] sm:p-4 dark:sm:border-white/10 dark:sm:bg-white/[0.03]">
                     <CheckCircleIcon />
                     <p className="text-sm leading-7 text-foreground/80 dark:text-white/70">
                       {item}
@@ -743,7 +743,7 @@ export default function Home() {
               return (
                 <StaggerItem key={feature.title}>
                   <div className="group h-full rounded-[1.75rem] border border-brand-secondary/10 bg-white p-6 shadow-[0_22px_50px_-38px_rgba(26,20,58,0.5)] transition-transform duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.03]">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-primary/10 text-brand-primary dark:bg-brand-accent-1/15 dark:text-brand-accent-1">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-highlight/12 text-brand-highlight dark:bg-brand-highlight/16 dark:text-brand-highlight">
                       <Icon className="h-5 w-5" />
                     </div>
                     <h3 className="mt-5 text-2xl font-display text-brand-secondary dark:text-white">
@@ -766,7 +766,7 @@ export default function Home() {
       />
 
       <section className="relative overflow-hidden pb-8 pt-16 sm:py-24">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-primary/15 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-highlight/25 to-transparent" />
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:px-8">
           <div>
             <ScrollReveal direction="right" delay={0.04}>
@@ -780,7 +780,7 @@ export default function Home() {
               />
             </ScrollReveal>
             <ScrollReveal direction="right">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-primary">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-highlight">
                 {copy.services.eyebrow}
               </p>
             </ScrollReveal>
@@ -834,7 +834,7 @@ export default function Home() {
             <div className="mt-8 flex justify-end">
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary transition-colors hover:text-brand-secondary dark:hover:text-brand-accent-1"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-brand-highlight transition-colors hover:text-brand-secondary dark:hover:text-brand-highlight"
               >
                 {copy.services.cta}
                 <ArrowRight className="h-4 w-4" />
@@ -845,12 +845,12 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden bg-brand-secondary/[0.04] py-20 dark:bg-white/[0.03] sm:py-24">
-        <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-brand-accent-1/10 blur-3xl" />
+        <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-brand-highlight/12 blur-3xl" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1fr)] lg:items-start lg:gap-14">
             <div>
               <ScrollReveal>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-primary">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-highlight">
                   {copy.testimonials.eyebrow}
                 </p>
               </ScrollReveal>
@@ -878,7 +878,7 @@ export default function Home() {
                 />
               </ScrollReveal>
               <ScrollReveal delay={0.16}>
-                <div className="rounded-full border border-brand-secondary/10 bg-white/80 px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-brand-secondary shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-white/75">
+                <div className="rounded-full border border-brand-highlight/18 bg-brand-highlight/8 px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-brand-highlight shadow-sm dark:border-brand-highlight/24 dark:bg-brand-highlight/10 dark:text-brand-highlight">
                   {copy.testimonials.badge}
                 </div>
               </ScrollReveal>
@@ -893,7 +893,7 @@ export default function Home() {
             {copy.testimonials.items.map((item) => (
               <StaggerItem key={`${item.name}-${item.role}`}>
                 <div className="flex h-full flex-col rounded-[1.8rem] border border-brand-secondary/10 bg-white p-7 shadow-[0_24px_60px_-42px_rgba(26,20,58,0.45)] dark:border-white/10 dark:bg-brand-accent-2/20">
-                  <div className="flex items-center gap-1 text-brand-primary">
+                  <div className="flex items-center gap-1 text-brand-highlight">
                     {Array.from({ length: 5 }).map((_, index) => (
                       <Star
                         key={`${item.name}-star-${index}`}
@@ -932,10 +932,10 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(23,16,49,0.82)_0%,rgba(52,30,104,0.86)_55%,rgba(74,62,157,0.74)_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(23,16,49,0.82)_0%,rgba(52,30,104,0.86)_55%,rgba(166,77,52,0.72)_100%)]" />
               <div className="relative z-10 grid gap-10 px-6 py-12 sm:px-10 sm:py-16 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:px-14">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-accent-1">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-highlight">
                     S&amp;M Painting
                   </p>
                   <h2 className="mt-4 max-w-3xl text-4xl font-display text-white sm:text-5xl lg:text-6xl">
@@ -949,14 +949,14 @@ export default function Home() {
                 <div className="flex flex-col gap-4 sm:flex-row lg:flex-col lg:items-end">
                   <Link
                     href="/services#estimate-form"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-semibold text-brand-secondary transition-transform duration-300 hover:-translate-y-0.5"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-highlight px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-accent-1"
                   >
                     {copy.finalCta.primary}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     href={CONTACT_LINKS.phone}
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-300 hover:bg-white/15"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-300 hover:border-brand-highlight/60 hover:bg-white/15"
                   >
                     <PhoneCall className="h-4 w-4" />
                     {copy.finalCta.secondary}
@@ -973,7 +973,7 @@ export default function Home() {
 
 function CheckCircleIcon() {
   return (
-    <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary/10 text-brand-primary dark:bg-brand-accent-1/15 dark:text-brand-accent-1">
+    <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-highlight/12 text-brand-highlight dark:bg-brand-highlight/16 dark:text-brand-highlight">
       <ShieldCheck className="h-3.5 w-3.5" />
     </div>
   );
