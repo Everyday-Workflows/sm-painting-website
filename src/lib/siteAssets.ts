@@ -1,13 +1,12 @@
 export const BRAND_ASSETS = {
-  logoLightWordmark: '/images/logos/Logo_Light_Mode.webp',
-  logoDarkWordmark: '/images/logos/Logo_Dark_Mode.webp',
-  logoWhiteWordmark: '/images/logos/Logo_White.webp',
-  precisionStrokeArtboard: '/images/logos/Artboard1.webp',
-  qualityColorArtboard: '/images/logos/Artboard2.webp',
-  anniversarySealArtboard: '/images/logos/Artboard3.webp',
-  iconMarkArtboard: '/images/logos/Artboard4.webp',
+  logoLightWordmark: '/images/logos/SH_Logo_Light_Mode_Red.webp',
+  logoDarkWordmark: '/images/logos/SH_Logo_Dark_Mode_Red.webp',
+  logoWhiteWordmark: '/images/logos/SH_Logo_White.webp',
+  precisionStrokeArtboard: '/images/logos/SH_Precision_Logo.webp',
+  qualityColorArtboard: '/images/logos/SH_Quality_Logo.webp',
+  anniversarySealArtboard: '/images/logos/SH_Quality_Logo_Round_White.webp',
   favicon: '/images/favicon.webp',
-  openGraphImage: '/images/OG_Image.png',
+  openGraphImage: '/images/OG_Image.webp',
 } as const;
 
 export const FEATURED_GALLERY_ASSETS = {

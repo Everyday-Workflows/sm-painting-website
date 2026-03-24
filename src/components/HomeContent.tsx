@@ -112,7 +112,6 @@ type HomeCopy = {
     heroShowcase: string;
     bottomCard: string;
     ctaBackground: string;
-    iconMark: string;
     precisionArtboard: string;
     qualityArtboard: string;
   };
@@ -281,7 +280,6 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
       heroShowcase: "Freshly painted open-concept living room by S&H Painting",
       bottomCard: "Color and finish inspiration from an S&H Painting project",
       ctaBackground: "Exterior architectural detail during painting prep",
-      iconMark: "S&H Painting icon mark artwork",
       precisionArtboard: "Brand artboard reading Precision in Every Stroke",
       qualityArtboard: "Brand artboard reading Quality Meets Color",
     },
@@ -454,7 +452,6 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
       bottomCard:
         "Inspiración de color y acabado de un proyecto de S&H Painting",
       ctaBackground: "Detalle exterior en preparación para pintura",
-      iconMark: "Isotipo artístico de S&H Painting",
       precisionArtboard: "Arte de marca con el lema Precision in Every Stroke",
       qualityArtboard: "Arte de marca con el lema Quality Meets Color",
     },
