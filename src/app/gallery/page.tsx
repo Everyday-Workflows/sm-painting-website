@@ -5,7 +5,7 @@ import { resolvePublicSiteUrl } from "@/lib/siteUrl";
 
 export const metadata: Metadata = {
   title: "Our Work | S&H Painting Portfolio - Tampa & St. Petersburg",
-  description: "Explore our gallery of completed residential and commercial painting projects in Tampa and St. Petersburg. We speak Spanish! / Vea nuestro portafolio de proyectos residenciales y comerciales en Tampa y St. Petersburg. ¡Hablamos español!",
+  description: "Browse completed residential and commercial painting projects by S&H Painting in Tampa and St. Petersburg. Before-and-after transformations.",
   keywords: [
     "painting portfolio Tampa",
     "interior painting gallery",

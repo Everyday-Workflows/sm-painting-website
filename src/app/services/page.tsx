@@ -4,7 +4,7 @@ import { resolvePublicSiteUrl } from "@/lib/siteUrl";
 
 export const metadata: Metadata = {
   title: "Painting Services | Interior, Exterior & Commercial - Tampa & St. Petersburg",
-  description: "Professional painting services in Tampa and St. Petersburg. We speak Spanish! / Servicios profesionales de pintura en Tampa y St. Petersburg. ¡Hablamos español!",
+  description: "Interior, exterior, commercial painting and cabinet refinishing in Tampa & St. Petersburg. Free estimates. We speak Spanish!",
   keywords: [
     "painting services Tampa",
     "interior painters St. Petersburg",

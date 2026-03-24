@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
                   href="/"
                   className="hover:text-brand-highlight transition-colors"
                 >
-                  {t("nav.home")}
+                  {t("footer.link.home")}
                 </Link>
               </li>
               <li>
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
                   href="/gallery"
                   className="hover:text-brand-highlight transition-colors"
                 >
-                  {t("nav.gallery")}
+                  {t("footer.link.gallery")}
                 </Link>
               </li>
               <li>
@@ -60,7 +60,15 @@ const Footer: React.FC = () => {
                   href="/services"
                   className="hover:text-brand-highlight transition-colors"
                 >
-                  {t("nav.services")}
+                  {t("footer.link.services")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services#estimate-form"
+                  className="hover:text-brand-highlight transition-colors"
+                >
+                  {t("footer.link.estimate")}
                 </Link>
               </li>
             </ul>
@@ -70,6 +78,14 @@ const Footer: React.FC = () => {
             <p className="text-sm font-sans text-foreground/74 dark:text-brand-cloud/74">
               {t("footer.areas.list")}
             </p>
+            <a
+              href="https://www.google.com/maps/place/Tampa,+FL/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-block text-sm text-brand-highlight hover:underline transition-colors"
+            >
+              {language === "es" ? "Ver en Google Maps" : "View on Google Maps"} →
+            </a>
           </div>
           <div>
             <h3 className="text-lg font-display mb-4">{t("footer.contact")}</h3>
@@ -93,7 +109,20 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="mt-12 border-t border-brand-primary/20 pt-8 text-center text-xs font-sans text-foreground/55 dark:text-brand-cloud/55">
-          &copy; {new Date().getFullYear()} S&H Painting. {t("footer.rights")}
+          <p>&copy; {new Date().getFullYear()} S&H Painting. {t("footer.rights")}</p>
+          <p className="mt-2">
+            Made with{" "}
+            <span className="text-brand-highlight" aria-label="love">❤</span>
+            {" "}by{" "}
+            <a
+              href="https://everydayworkflows.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-highlight hover:underline transition-colors"
+            >
+              everydayworkflows.com
+            </a>
+          </p>
         </div>
       </div>
     </footer>

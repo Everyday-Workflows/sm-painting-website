@@ -3,8 +3,8 @@ import HomeContent from "@/components/HomeContent";
 import { resolvePublicSiteUrl } from "@/lib/siteUrl";
 
 export const metadata: Metadata = {
-  title: "S&H Painting | Professional Painting in Tampa & St. Petersburg",
-  description: "High-quality residential and commercial painting services in Tampa, St. Petersburg, and surrounding areas. We speak Spanish! / Servicios de pintura residencial y comercial de alta calidad en Tampa y St. Petersburg. ¡Hablamos español!",
+  title: "S&H Painting | Tampa & St. Petersburg Residential & Commercial Painters",
+  description: "Detail-first painting for homes, storefronts, and workspaces in Tampa & St. Petersburg. We speak Spanish! Free estimates available.",
   keywords: [
     "Tampa Bay painting company",
     "free painting estimate Tampa",

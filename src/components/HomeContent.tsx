@@ -124,7 +124,7 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
       title1: "Perfect finishes.",
       title2: "Built to last.",
       description:
-        "Detail-first painting for homes, storefronts, and workspaces in Tampa, St. Petersburg, and all surrounding cities. We speak Spanish! Thoughtful prep, clean execution, and color decisions that feel intentional in every room.",
+        "Detail-first painting for homes, storefronts, and workspaces in Tampa, St. Petersburg, and all surrounding cities. We speak Spanish! Perfect finishes built to last through thoughtful prep, clean execution, and color decisions that feel intentional in every room.",
       primaryCta: "Get a free estimate",
       secondaryCta: "See recent work",
       stats: [
@@ -290,7 +290,7 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
       title1: "Acabados impecables.",
       title2: "Hechos para durar.",
       description:
-        "Pintura con enfoque en el detalle para hogares, negocios y espacios de trabajo en Tampa, St. Petersburg y todas las ciudades circundantes. ¡Hablamos español! Preparación cuidadosa, ejecución limpia y decisiones de color que se sienten intencionales en cada ambiente.",
+        "Pintura con enfoque en el detalle para hogares, negocios y espacios de trabajo en Tampa, St. Petersburg y todas las ciudades circundantes. ¡Hablamos español! Acabados impecables hechos para durar con preparación cuidadosa, ejecución limpia y decisiones de color que se sienten intencionales en cada ambiente.",
       primaryCta: "Solicitar cotización gratis",
       secondaryCta: "Ver trabajos recientes",
       stats: [
