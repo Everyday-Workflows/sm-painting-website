@@ -520,7 +520,7 @@ export default function HomeContent() {
             <ScrollReveal direction="right" delay={0.14}>
               <h1 className="max-w-3xl text-4xl font-display leading-[1.1] tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] sm:text-6xl lg:text-7xl lg:leading-[0.98] lg:tracking-[-0.04em]">
                 <span className="block">{copy.hero.title1}</span>
-                <span className="mt-2 block text-brand-highlight">
+                <span className="mt-2 block text-brand-accent-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.42)]">
                   {copy.hero.title2}
                 </span>
               </h1>
