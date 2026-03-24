@@ -33,7 +33,7 @@ const FAQ_ITEMS: Record<'en' | 'es', { question: string; answer: string }[]> = {
   en: [
     {
       question: "What areas do you serve?",
-      answer: "We serve Tampa, St. Petersburg, Brandon, Riverview, Wesley Chapel, and surrounding areas in Hillsborough and Pinellas counties."
+      answer: "We serve Tampa, St. Petersburg, Brandon, Riverview, Wesley Chapel, Clearwater, Lutz, Land O' Lakes, Valrico, Seffner, Largo, Pinellas Park, Dunedin, Oldsmar, Safety Harbor, and surrounding areas in Hillsborough and Pinellas counties."
     },
     {
       question: "Do you provide free estimates?",
@@ -51,7 +51,7 @@ const FAQ_ITEMS: Record<'en' | 'es', { question: string; answer: string }[]> = {
   es: [
     {
       question: "¿Qué áreas atienden?",
-      answer: "Atendemos Tampa, St. Petersburg, Brandon, Riverview, Wesley Chapel y áreas circundantes en los condados de Hillsborough y Pinellas."
+      answer: "Atendemos Tampa, St. Petersburg, Brandon, Riverview, Wesley Chapel, Clearwater, Lutz, Land O' Lakes, Valrico, Seffner, Largo, Pinellas Park, Dunedin, Oldsmar, Safety Harbor y áreas circundantes en los condados de Hillsborough y Pinellas."
     },
     {
       question: "¿Ofrecen presupuestos gratuitos?",

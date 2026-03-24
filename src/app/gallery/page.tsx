@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import GalleryContent from "@/components/GalleryContent";
-import Script from "next/script";
 import { PORTFOLIO_ITEMS } from "@/lib/siteAssets";
 import { resolvePublicSiteUrl } from "@/lib/siteUrl";
 
@@ -57,20 +56,14 @@ export default function GalleryPage() {
 
   return (
     <>
-      <Script
-        id="breadcrumb-schema"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
-      >
-        {JSON.stringify(breadcrumbJsonLd)}
-      </Script>
-      <Script
-        id="gallery-schema"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
-      >
-        {JSON.stringify(galleryJsonLd)}
-      </Script>
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(galleryJsonLd) }}
+      />
       <GalleryContent />
     </>
   );

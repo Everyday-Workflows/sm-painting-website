@@ -10,36 +10,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
-      alternates: {
-        languages: {
-          es: `${baseUrl}/es`,
-          en: `${baseUrl}/en`,
-        },
-      },
     },
     {
       url: `${baseUrl}/gallery`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
-      alternates: {
-        languages: {
-          es: `${baseUrl}/es/gallery`,
-          en: `${baseUrl}/en/gallery`,
-        },
-      },
     },
     {
       url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
-      alternates: {
-        languages: {
-          es: `${baseUrl}/es/services`,
-          en: `${baseUrl}/en/services`,
-        },
-      },
     },
   ]
 }

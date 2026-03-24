@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Fraunces, Manrope } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import { Providers } from "@/components/Providers";
@@ -103,7 +102,6 @@ export const metadata: Metadata = {
     description:
       "High-quality residential and commercial painting services in Tampa Bay. / Servicios de pintura residencial y comercial de alta calidad en Tampa Bay.",
     images: [BRAND_ASSETS.openGraphImage],
-    creator: "@smpainting", // Replace with actual handle if known
   },
   robots: {
     index: true,
@@ -118,10 +116,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: SITE_URL,
-    languages: {
-      "en-US": `${SITE_URL}/en`,
-      "es-ES": `${SITE_URL}/es`,
-    },
   },
 };
 
@@ -181,24 +175,16 @@ export default function RootLayout({
       opens: "08:00",
       closes: "18:00",
     },
-    sameAs: [
-      "https://www.facebook.com/smpainting",
-      "https://www.instagram.com/smpainting",
-      "https://twitter.com/smpainting",
-    ],
     priceRange: "$$",
   };
 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Script
-          id="painting-service-schema"
+        <script
           type="application/ld+json"
-          strategy="afterInteractive"
-        >
-          {JSON.stringify(jsonLd)}
-        </Script>
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body
         className={`${fraunces.variable} ${cormorant.variable} ${manrope.variable} min-h-screen flex flex-col bg-background text-foreground antialiased transition-colors duration-300`}

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import ServicesContent from "@/components/ServicesContent";
-import Script from "next/script";
 import { resolvePublicSiteUrl } from "@/lib/siteUrl";
 
 export const metadata: Metadata = {
@@ -51,7 +50,7 @@ export default function ServicesPage() {
         "name": "What areas do you serve?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We serve Tampa, St. Petersburg, Brandon, Riverview, Wesley Chapel, and surrounding areas in Hillsborough and Pinellas counties."
+          "text": "We serve Tampa, St. Petersburg, Brandon, Riverview, Wesley Chapel, Clearwater, Lutz, Land O' Lakes, Valrico, Seffner, Largo, Pinellas Park, Dunedin, Oldsmar, Safety Harbor, and surrounding areas in Hillsborough and Pinellas counties."
         }
       },
       {
@@ -146,27 +145,18 @@ export default function ServicesPage() {
 
   return (
     <>
-      <Script
-        id="breadcrumb-schema"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
-      >
-        {JSON.stringify(breadcrumbJsonLd)}
-      </Script>
-      <Script
-        id="faq-schema"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
-      >
-        {JSON.stringify(faqJsonLd)}
-      </Script>
-      <Script
-        id="services-schema"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
-      >
-        {JSON.stringify(servicesJsonLd)}
-      </Script>
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
+      />
       <ServicesContent />
     </>
   );
