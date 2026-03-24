@@ -10,12 +10,13 @@ export const BRAND_ASSETS = {
 } as const;
 
 export const FEATURED_GALLERY_ASSETS = {
-  heroShowcase: '/images/gallery/011.jpeg',
+  heroShowcase: '/images/gallery/015.jpeg',
   colorInspiration: '/images/gallery/006.jpeg',
   ctaTexture: '/images/gallery/015.jpeg',
-  interiorService: '/images/gallery/012.jpeg',
-  exteriorService: '/images/gallery/015.jpeg',
+  interiorService: '/images/gallery/016.jpeg',
+  exteriorService: '/images/gallery/010.jpeg',
   commercialService: '/images/gallery/009.jpeg',
+  refreshService: '/images/gallery/019.jpeg',
   cabinetsService: '/images/gallery/002.jpeg',
 } as const;
 

@@ -221,7 +221,7 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
           description:
             "Walls, ceilings, trim, and lived-in spaces that need a cleaner, brighter reset.",
           image: FEATURED_GALLERY_ASSETS.interiorService,
-          alt: "Bright freshly painted interior with a two-story living area and crisp trim lines.",
+          alt: "Freshly painted open-plan interior with bright walls, clean trim, and an updated everyday living space.",
           featured: true,
         },
         {
@@ -229,14 +229,14 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
           description:
             "Durable protection and curb appeal for siding, trim, doors, and outdoor surfaces.",
           image: FEATURED_GALLERY_ASSETS.exteriorService,
-          alt: "Finished exterior painting project on a bright coastal-style home.",
+          alt: "Completed exterior repaint on a two-story stucco home with soft gray tones and crisp trim.",
         },
         {
           title: "Home refreshes",
           description:
             "Lived-in homes and rental-ready properties refreshed with clean prep and dependable finishes.",
-          image: FEATURED_GALLERY_ASSETS.commercialService,
-          alt: "Residential exterior refresh with clean lines, updated paintwork, and a more finished presentation.",
+          image: FEATURED_GALLERY_ASSETS.refreshService,
+          alt: "Refreshed bedroom with soft neutral paint, bright trim, and a clean move-in-ready finish.",
         },
       ],
       cta: "Explore all services",
@@ -391,7 +391,7 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
           description:
             "Paredes, techos, molduras y espacios vividos que necesitan un reinicio más limpio y luminoso.",
           image: FEATURED_GALLERY_ASSETS.interiorService,
-          alt: "Interior recién pintado y luminoso con doble altura y líneas limpias.",
+          alt: "Interior de concepto abierto recién pintado con paredes luminosas, molduras limpias y un ambiente renovado.",
           featured: true,
         },
         {
@@ -399,14 +399,14 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
           description:
             "Protección duradera y mejor presencia para siding, molduras, puertas y superficies exteriores.",
           image: FEATURED_GALLERY_ASSETS.exteriorService,
-          alt: "Proyecto exterior terminado en una vivienda de estilo costero con acabado renovado.",
+          alt: "Repintado exterior terminado en una casa de dos pisos con estuco, tonos grises suaves y molduras definidas.",
         },
         {
           title: "Renovación del hogar",
           description:
             "Hogares habitados y propiedades listas para renta renovados con preparación cuidadosa y acabados confiables.",
-          image: FEATURED_GALLERY_ASSETS.commercialService,
-          alt: "Renovación exterior residencial con líneas limpias, pintura actualizada y una presentación más terminada.",
+          image: FEATURED_GALLERY_ASSETS.refreshService,
+          alt: "Dormitorio renovado con pintura en tono neutro suave, molduras claras y un acabado limpio listo para habitar.",
         },
       ],
       cta: "Explorar todos los servicios",
@@ -461,6 +461,11 @@ const HOME_COPY: Record<"en" | "es", HomeCopy> = {
 export default function HomeContent() {
   const { language, t } = useLanguage();
   const copy = HOME_COPY[language];
+  const processStepBackgrounds = [
+    FEATURED_GALLERY_ASSETS.exteriorService,
+    FEATURED_GALLERY_ASSETS.interiorService,
+    FEATURED_GALLERY_ASSETS.commercialService,
+  ] as const;
   const heroPanelTitleClassName =
     language === "es"
       ? "max-w-[8.75ch] text-[1.65rem] leading-[0.88] text-balance sm:max-w-[8.6ch] sm:text-[1.95rem] lg:max-w-[7ch] lg:text-[2rem]"
@@ -469,6 +474,19 @@ export default function HomeContent() {
   return (
     <div className="flex flex-col bg-background text-foreground">
       <section className="relative overflow-hidden bg-brand-secondary text-white">
+        <div className="absolute inset-0 lg:hidden">
+          <Image
+            src={FEATURED_GALLERY_ASSETS.heroShowcase}
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+            priority
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklch,var(--brand-secondary)_42%,transparent)_0%,color-mix(in_oklch,var(--brand-secondary)_74%,transparent)_28%,color-mix(in_oklch,var(--brand-secondary)_90%,transparent)_62%,color-mix(in_oklch,var(--brand-secondary)_96%,black_4%)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,color-mix(in_oklch,var(--brand-highlight)_16%,transparent)_0%,transparent_42%)]" />
+        </div>
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0)_35%,rgba(113,100,204,0.22)_100%)]" />
         <div className="absolute -left-20 top-20 h-64 w-64 rounded-full bg-brand-highlight/18 blur-3xl" />
         <div className="absolute -right-16 top-0 h-96 w-96 rounded-full bg-brand-primary/35 blur-3xl" />
@@ -481,7 +499,7 @@ export default function HomeContent() {
               delay={0.05}
               className="mx-auto lg:mx-0"
             >
-              <div className="mx-auto mb-6 w-28 sm:w-32 lg:mx-0">
+              <div className="mx-auto mb-6 hidden w-28 sm:block sm:w-32 lg:mx-0">
                 <Image
                   src={BRAND_ASSETS.anniversarySealArtboard}
                   alt={t("common.sealAlt")}
@@ -564,7 +582,7 @@ export default function HomeContent() {
                 </div>
               </div>
 
-              <div className="absolute -right-3 top-7 hidden max-w-[13.25rem] rounded-[1.35rem] border border-brand-accent-1/24 bg-[linear-gradient(180deg,rgba(39,35,97,0.88)_0%,rgba(34,51,101,0.82)_100%)] p-5 shadow-[0_28px_70px_-42px_rgba(28,23,79,0.78)] backdrop-blur-xl sm:block lg:-right-14">
+              <div className="absolute -right-3 top-7 hidden max-w-[13.25rem] rounded-[1.35rem] border border-brand-accent-1/24 bg-[linear-gradient(180deg,rgba(255,255,255,0.16),transparent_38%)] p-5 shadow-[0_28px_70px_-42px_rgba(28,23,79,0.78)] backdrop-blur-xl sm:block lg:-right-14">
                 <div className="absolute inset-0 rounded-[1.35rem] bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_38%)] opacity-80" />
                 <p className="relative text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-cloud/78">
                   S&amp;H Painting
@@ -642,16 +660,27 @@ export default function HomeContent() {
         <div className="mx-auto mt-12 grid max-w-7xl gap-5 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
           {copy.process.steps.map((step, index) => (
             <ScrollReveal key={step.title} delay={0.12 + index * 0.08} className="h-full">
-              <div className="h-full rounded-[1.8rem] border border-brand-secondary/10 bg-white p-6 shadow-[0_22px_50px_-40px_rgba(26,20,58,0.35)] dark:border-white/10 dark:bg-white/[0.03]">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-highlight">
-                  0{index + 1}
-                </p>
-                <h3 className="mt-4 text-2xl font-display text-brand-secondary dark:text-white">
-                  {step.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-foreground/70 dark:text-white/65">
-                  {step.description}
-                </p>
+              <div className="relative h-full min-h-[260px] overflow-hidden rounded-[1.8rem] border border-brand-secondary/10 shadow-[0_22px_50px_-38px_rgba(26,20,58,0.5)] transition-transform duration-300 hover:-translate-y-1 dark:border-white/10">
+                <Image
+                  src={processStepBackgrounds[index]}
+                  alt=""
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover"
+                  aria-hidden="true"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,12,45,0.12)_0%,rgba(18,12,45,0.7)_100%)]" />
+                <div className="relative z-10 flex h-full min-h-[260px] flex-col justify-end p-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-highlight">
+                    0{index + 1}
+                  </p>
+                  <h3 className="mt-4 text-2xl font-display text-white">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-white/78">
+                    {step.description}
+                  </p>
+                </div>
               </div>
             </ScrollReveal>
           ))}
