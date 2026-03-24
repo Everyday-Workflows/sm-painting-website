@@ -8,12 +8,12 @@ import { useLanguage } from "@/context/LanguageContext";
 import { BRAND_ASSETS } from "@/lib/siteAssets";
 
 const Footer: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <footer className="relative z-10 bg-surface-muted py-12 text-brand-secondary dark:bg-surface-muted dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <Image
               src={BRAND_ASSETS.logoDarkWordmark}
@@ -31,6 +31,9 @@ const Footer: React.FC = () => {
             />
             <p className="text-sm font-sans text-foreground/74 dark:text-brand-cloud/74">
               {t("footer.description")}
+            </p>
+            <p className="mt-2 text-sm font-semibold text-brand-highlight">
+              {language === "es" ? "¡Hablamos español!" : "We speak Spanish!"}
             </p>
           </div>
           <div>
@@ -61,6 +64,12 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
             </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-display mb-4">{t("footer.areas")}</h3>
+            <p className="text-sm font-sans text-foreground/74 dark:text-brand-cloud/74">
+              {t("footer.areas.list")}
+            </p>
           </div>
           <div>
             <h3 className="text-lg font-display mb-4">{t("footer.contact")}</h3>

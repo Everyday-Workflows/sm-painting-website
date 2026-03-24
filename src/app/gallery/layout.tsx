@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Gallery / Galería | S&H Painting",
+  title: "Our Work | S&H Painting Portfolio - Tampa & St. Petersburg",
   description:
-    "View our portfolio of residential interior and exterior painting projects. / Vea nuestro portafolio de proyectos residenciales de pintura interior y exterior.",
+    "Explore our gallery of completed residential and commercial painting projects in Tampa and St. Petersburg. We speak Spanish! / Vea nuestro portafolio de proyectos residenciales y comerciales en Tampa y St. Petersburg. ¡Hablamos español!",
   openGraph: {
-    title: "Gallery / Galería | S&H Painting",
+    title: "Our Work | S&H Painting Portfolio",
     description:
-      "View our portfolio of residential interior and exterior painting projects. / Vea nuestro portafolio de proyectos residenciales de pintura interior y exterior.",
-    images: ["/og-image.webp"],
+      "Explore our gallery of completed residential and commercial painting projects in Tampa and St. Petersburg.",
+    images: ["/images/OG_Image.png"],
   },
 };
 

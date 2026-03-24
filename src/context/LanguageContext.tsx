@@ -41,6 +41,8 @@ const translations = {
     "footer.email": "Email",
     "footer.phone": "Phone",
     "footer.rights": "All rights reserved.",
+    "footer.areas": "Service Areas",
+    "footer.areas.list": "Tampa, St. Petersburg, Brandon, Riverview, Wesley Chapel, Clearwater, Lutz, Land O' Lakes, Valrico, Seffner, Largo, Pinellas Park, Dunedin, and surrounding areas.",
     "gallery.title": "Our Work Gallery",
     "gallery.subtitle":
       "A look at our recent residential painting work, from carefully prepped interiors to refreshed exterior finishes.",
@@ -106,6 +108,8 @@ const translations = {
     "footer.email": "Correo",
     "footer.phone": "Teléfono",
     "footer.rights": "Todos los derechos reservados.",
+    "footer.areas": "Áreas de Servicio",
+    "footer.areas.list": "Tampa, St. Petersburg, Brandon, Riverview, Wesley Chapel, Clearwater, Lutz, Land O' Lakes, Valrico, Seffner, Largo, Pinellas Park, Dunedin y áreas circundantes.",
     "gallery.title": "Nuestra Galería de Trabajo",
     "gallery.subtitle":
       "Una muestra de nuestro trabajo residencial reciente, desde interiores cuidadosamente preparados hasta acabados exteriores renovados.",

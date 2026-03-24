@@ -34,19 +34,36 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "S&H Painting | Professional Residential & Commercial Painting | Pintura Residencial y Comercial",
+      "S&H Painting | Professional Painting in Tampa & St. Petersburg | Pintura Profesional en Tampa",
     template: "%s | S&H Painting",
   },
   description:
-    "High-quality residential and commercial painting services by S&H Painting. / Servicios de pintura residencial y comercial de alta calidad por S&H Painting.",
+    "High-quality residential and commercial painting services in Tampa, St. Petersburg, and surrounding areas. / Servicios de pintura residencial y comercial de alta calidad en Tampa, St. Petersburg y áreas circundantes.",
   keywords: [
-    "painting services",
-    "residential painting",
-    "commercial painting",
-    "interior painting",
-    "exterior painting",
-    "cabinet painting",
+    "painting services Tampa",
+    "painting services St. Petersburg",
+    "residential painting Tampa",
+    "commercial painting Tampa",
+    "interior painting Tampa",
+    "exterior painting Tampa",
+    "cabinet painting Tampa",
     "S&H Painting",
+    "professional painters Tampa",
+    "house painting Tampa",
+    "painting contractor Tampa",
+    "painters St. Petersburg FL",
+    "Hillsborough County painters",
+    "Pinellas County painters",
+    "painters in Lutz FL",
+    "painters in Land O Lakes",
+    "painters in Valrico",
+    "painters in Seffner",
+    "painters in Clearwater",
+    "painters in Largo",
+    "painters in Pinellas Park",
+    "painters in Dunedin",
+    "painters in Oldsmar",
+    "painters in Safety Harbor",
   ],
   authors: [{ name: "S&H Painting" }],
   creator: "S&H Painting",
@@ -69,7 +86,7 @@ export const metadata: Metadata = {
     title:
       "S&H Painting | Professional Painting Services | Servicios Profesionales de Pintura",
     description:
-      "High-quality residential and commercial painting services. / Servicios de pintura residencial y comercial de alta calidad.",
+      "High-quality residential and commercial painting services in Tampa Bay. / Servicios de pintura residencial y comercial de alta calidad en Tampa Bay.",
     images: [
       {
         url: BRAND_ASSETS.openGraphImage,
@@ -84,7 +101,7 @@ export const metadata: Metadata = {
     title:
       "S&H Painting | Professional Painting Services | Servicios Profesionales de Pintura",
     description:
-      "High-quality residential and commercial painting services. / Servicios de pintura residencial y comercial de alta calidad.",
+      "High-quality residential and commercial painting services in Tampa Bay. / Servicios de pintura residencial y comercial de alta calidad en Tampa Bay.",
     images: [BRAND_ASSETS.openGraphImage],
     creator: "@smpainting", // Replace with actual handle if known
   },
@@ -117,6 +134,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "PaintingService",
     name: "S&H Painting",
+    description:
+      "Professional residential and commercial painting services in Tampa, St. Petersburg, and surrounding areas. We speak Spanish! / Servicios de pintura residencial y comercial de alta calidad en Tampa, St. Petersburg y áreas circundantes. ¡Hablamos español!",
     image: `${SITE_URL}${BRAND_ASSETS.logoLightWordmark}`,
     "@id": SITE_URL,
     url: SITE_URL,
@@ -130,26 +149,31 @@ export default function RootLayout({
     },
     address: {
       "@type": "PostalAddress",
-      streetAddress: "123 Main St",
-      addressLocality: "Your City",
-      addressRegion: "ST",
-      postalCode: "12345",
+      addressLocality: "Tampa",
+      addressRegion: "FL",
       addressCountry: "US",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 40.7128,
-      longitude: -74.006,
+      latitude: 27.9506,
+      longitude: -82.4572,
     },
     areaServed: [
-      {
-        "@type": "City",
-        name: "Your City",
-      },
-      {
-        "@type": "City",
-        name: "Surrounding Area",
-      },
+      { "@type": "City", name: "Tampa" },
+      { "@type": "City", name: "St. Petersburg" },
+      { "@type": "City", name: "Brandon" },
+      { "@type": "City", name: "Riverview" },
+      { "@type": "City", name: "Wesley Chapel" },
+      { "@type": "City", name: "Clearwater" },
+      { "@type": "City", name: "Lutz" },
+      { "@type": "City", name: "Land O' Lakes" },
+      { "@type": "City", name: "Valrico" },
+      { "@type": "City", name: "Seffner" },
+      { "@type": "City", name: "Largo" },
+      { "@type": "City", name: "Pinellas Park" },
+      { "@type": "City", name: "Dunedin" },
+      { "@type": "City", name: "Oldsmar" },
+      { "@type": "City", name: "Safety Harbor" },
     ],
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -181,7 +205,7 @@ export default function RootLayout({
       >
         <Providers>
           <Navigation />
-          <main className="flex-grow">{children}</main>
+          <main className="grow">{children}</main>
           <Footer />
         </Providers>
       </body>

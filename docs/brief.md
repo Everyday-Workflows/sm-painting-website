@@ -52,9 +52,9 @@ S&H Painting is a professional painting business seeking a modern, scalable, and
 ## Assets Checklist
 - [x] Brand logos (light, dark, white)
 - [x] Gallery images
-- [ ] Favicon (to be added)
-- [ ] Open Graph image (for social sharing)
-- [ ] SEO meta tags and alt text
+- [x] Favicon
+- [x] Open Graph image (for social sharing)
+- [x] SEO meta tags and alt text
 
 ## Future Considerations
 - Contact form integration

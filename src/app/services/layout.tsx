@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Services / Servicios | S&H Painting",
+  title: "Painting Services | Interior, Exterior & Commercial - Tampa & St. Petersburg",
   description:
-    "Professional interior and exterior painting, commercial painting, cabinet refinishing, and specialty finishes. / Pintura interior y exterior, pintura comercial, gabinetes y acabados especiales.",
+    "Professional painting services in Tampa and St. Petersburg. We speak Spanish! / Servicios profesionales de pintura en Tampa y St. Petersburg. ¡Hablamos español!",
   openGraph: {
-    title: "Our Services / Servicios | S&H Painting",
+    title: "Painting Services | S&H Painting",
     description:
-      "Professional interior and exterior painting, commercial painting, and more. / Pintura interior, exterior, comercial y más.",
-    images: ["/og-image.webp"],
+      "Professional interior, exterior, and commercial painting services in Tampa and St. Petersburg.",
+    images: ["/images/OG_Image.png"],
   },
 };
 
