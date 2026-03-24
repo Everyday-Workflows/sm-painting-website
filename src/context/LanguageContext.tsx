@@ -37,6 +37,10 @@ const translations = {
     "footer.description":
       "Professional painting services for residential and commercial properties. Quality you can trust.",
     "footer.links": "Quick Links",
+    "footer.link.home": "About S&H Painting",
+    "footer.link.gallery": "Project Gallery",
+    "footer.link.services": "Our Services",
+    "footer.link.estimate": "Free Estimate",
     "footer.contact": "Contact Us",
     "footer.email": "Email",
     "footer.phone": "Phone",
@@ -104,6 +108,10 @@ const translations = {
     "footer.description":
       "Servicios de pintura profesional para propiedades residenciales y comerciales. Calidad en la que puede confiar.",
     "footer.links": "Enlaces Rápidos",
+    "footer.link.home": "Sobre S&H Painting",
+    "footer.link.gallery": "Galería de Proyectos",
+    "footer.link.services": "Nuestros Servicios",
+    "footer.link.estimate": "Cotización Gratis",
     "footer.contact": "Contáctenos",
     "footer.email": "Correo",
     "footer.phone": "Teléfono",

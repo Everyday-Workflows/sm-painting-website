@@ -33,11 +33,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "S&H Painting | Professional Painting in Tampa & St. Petersburg | Pintura Profesional en Tampa",
+      "S&H Painting | Tampa & St. Petersburg Residential & Commercial Painters",
     template: "%s | S&H Painting",
   },
   description:
-    "High-quality residential and commercial painting services in Tampa, St. Petersburg, and surrounding areas. / Servicios de pintura residencial y comercial de alta calidad en Tampa, St. Petersburg y áreas circundantes.",
+    "Professional residential & commercial painting in Tampa, St. Petersburg, and surrounding areas. We speak Spanish! Free estimates.",
   keywords: [
     "painting services Tampa",
     "painting services St. Petersburg",
