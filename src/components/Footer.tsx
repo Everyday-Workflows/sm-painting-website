@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
           <p>&copy; {new Date().getFullYear()} S&H Painting. {t("footer.rights")}</p>
           <p className="mt-2">
             Made with{" "}
-            <span className="text-brand-highlight" aria-label="love">❤</span>
+            <span className="text-brand-barn-red dark:text-brand-barn-red" aria-label="love">❤</span>
             {" "}by{" "}
             <a
               href="https://everydayworkflows.com"

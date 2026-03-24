@@ -623,10 +623,10 @@ export default function HomeContent() {
           {copy.trustStrip.map((item) => (
             <div
               key={item}
-              className="flex items-center justify-center gap-2 text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-secondary dark:text-white/80 sm:rounded-full sm:border sm:border-brand-highlight/14 sm:bg-white/80 sm:px-4 sm:py-3 sm:text-xs dark:sm:border-white/10 dark:sm:bg-white/[0.03]"
+              className="flex items-center justify-center gap-2 text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-secondary dark:text-white/80 sm:rounded-full sm:border sm:border-brand-barn-red/16 sm:bg-white/80 sm:px-4 sm:py-3 sm:text-xs dark:sm:border-white/10 dark:sm:bg-white/[0.03]"
             >
               <span
-                className="h-1.5 w-1.5 rounded-full bg-brand-highlight sm:h-2 sm:w-2"
+                className="h-1.5 w-1.5 rounded-full bg-brand-barn-red sm:h-2 sm:w-2 dark:bg-brand-barn-red"
                 aria-hidden="true"
               />
               {item}
@@ -636,11 +636,11 @@ export default function HomeContent() {
       </section>
 
       <section className="relative overflow-hidden py-16 sm:py-24">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-highlight/25 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-barn-red/25 to-transparent dark:via-brand-barn-red/25" />
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:px-8">
           <div>
             <ScrollReveal direction="right">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-highlight">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-barn-red dark:text-brand-barn-red">
                 {copy.process.eyebrow}
               </p>
             </ScrollReveal>
@@ -671,7 +671,7 @@ export default function HomeContent() {
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,12,45,0.12)_0%,rgba(18,12,45,0.7)_100%)]" />
                 <div className="relative z-10 flex h-full min-h-[260px] flex-col justify-end p-6">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-highlight">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-barn-red dark:text-brand-barn-red">
                     0{index + 1}
                   </p>
                   <h3 className="mt-4 text-2xl font-display text-white">
@@ -688,11 +688,11 @@ export default function HomeContent() {
       </section>
 
       <section className="relative overflow-hidden py-16 sm:py-24">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-highlight/25 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-barn-red/25 to-transparent dark:via-brand-barn-red/25" />
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:px-8">
           <div>
             <ScrollReveal direction="right">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-highlight">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-barn-red dark:text-brand-barn-red">
                 {copy.craft.eyebrow}
               </p>
             </ScrollReveal>
@@ -714,7 +714,7 @@ export default function HomeContent() {
                   direction="right"
                   delay={0.2 + index * 0.08}
                 >
-                  <div className="flex items-start gap-3 sm:rounded-[1.2rem] sm:border sm:border-brand-highlight/12 sm:bg-brand-highlight/[0.05] sm:p-4 dark:sm:border-white/10 dark:sm:bg-white/[0.03]">
+                  <div className="flex items-start gap-3 sm:rounded-[1.2rem] sm:border sm:border-brand-barn-red/14 sm:bg-brand-barn-red/[0.05] sm:p-4 dark:sm:border-white/10 dark:sm:bg-white/[0.03]">
                     <CheckCircleIcon />
                     <p className="text-sm leading-7 text-foreground/80 dark:text-white/70">
                       {item}
@@ -732,7 +732,7 @@ export default function HomeContent() {
               return (
                 <ScrollReveal key={feature.title} delay={0.12 + index * 0.08} className="h-full">
                   <div className="group h-full rounded-[1.75rem] border border-brand-secondary/10 bg-white p-6 shadow-[0_22px_50px_-38px_rgba(26,20,58,0.5)] transition-transform duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.03]">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-highlight/12 text-brand-highlight dark:bg-brand-highlight/16 dark:text-brand-highlight">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-barn-red/12 text-brand-barn-red dark:bg-brand-barn-red/16 dark:text-brand-barn-red">
                       <Icon className="h-5 w-5" />
                     </div>
                     <h3 className="mt-5 text-2xl font-display text-brand-secondary dark:text-white">
@@ -755,7 +755,7 @@ export default function HomeContent() {
       />
 
       <section className="relative overflow-hidden pb-8 pt-16 sm:py-24">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-highlight/25 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-barn-red/25 to-transparent dark:via-brand-barn-red/25" />
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:px-8">
           <div>
             <ScrollReveal direction="right" delay={0.04}>
@@ -769,7 +769,7 @@ export default function HomeContent() {
               />
             </ScrollReveal>
             <ScrollReveal direction="right">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-highlight">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-barn-red dark:text-brand-barn-red">
                 {copy.services.eyebrow}
               </p>
             </ScrollReveal>
@@ -834,7 +834,7 @@ export default function HomeContent() {
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1fr)] lg:items-start lg:gap-14">
             <div>
               <ScrollReveal>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-highlight">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-barn-red dark:text-brand-barn-red">
                   {copy.testimonials.eyebrow}
                 </p>
               </ScrollReveal>
@@ -862,7 +862,7 @@ export default function HomeContent() {
                 />
               </ScrollReveal>
               <ScrollReveal delay={0.16}>
-                <div className="inline-flex whitespace-nowrap rounded-full border border-brand-highlight/18 bg-brand-highlight/8 px-5 py-3 text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-highlight shadow-sm dark:border-brand-highlight/24 dark:bg-brand-highlight/10 dark:text-brand-highlight sm:text-xs lg:translate-x-22">
+                <div className="inline-flex whitespace-nowrap rounded-full border border-brand-barn-red/18 bg-brand-barn-red/8 px-5 py-3 text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-barn-red shadow-sm dark:border-brand-barn-red/24 dark:bg-brand-barn-red/10 dark:text-brand-barn-red sm:text-xs lg:translate-x-22">
                   {copy.testimonials.badge}
                 </div>
               </ScrollReveal>
@@ -876,8 +876,8 @@ export default function HomeContent() {
           >
             {copy.testimonials.items.map((item) => (
               <StaggerItem key={`${item.name}-${item.role}`}>
-                <div className="flex h-full flex-col rounded-[1.8rem] border border-brand-secondary/10 bg-white p-7 shadow-[0_24px_60px_-42px_rgba(26,20,58,0.45)] dark:border-border dark:bg-surface">
-                  <div className="flex items-center gap-1 text-brand-highlight">
+                <div className="group relative overflow-hidden rounded-[1.8rem] border border-brand-secondary/10 bg-white p-7 shadow-[0_24px_60px_-42px_rgba(26,20,58,0.45)] dark:border-border dark:bg-surface">
+                  <div className="flex items-center gap-1 text-brand-barn-red dark:text-brand-barn-red">
                     {Array.from({ length: 5 }).map((_, index) => (
                       <Star
                         key={`${item.name}-star-${index}`}
@@ -919,7 +919,7 @@ export default function HomeContent() {
               <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0)_24%,rgba(113,100,204,0.12)_100%)]" />
               <div className="relative z-10 grid gap-10 px-6 py-12 sm:px-10 sm:py-16 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:px-14">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-highlight">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-barn-red dark:text-brand-barn-red">
                     S&amp;H Painting
                   </p>
                   <h2 className="mt-4 max-w-3xl text-4xl font-display text-white sm:text-5xl lg:text-6xl">
@@ -957,7 +957,7 @@ export default function HomeContent() {
 
 function CheckCircleIcon() {
   return (
-    <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-highlight/12 text-brand-highlight dark:bg-brand-highlight/16 dark:text-brand-highlight">
+    <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-barn-red/12 text-brand-barn-red dark:bg-brand-barn-red/16 dark:text-brand-barn-red">
       <ShieldCheck className="h-3.5 w-3.5" />
     </div>
   );

@@ -6,6 +6,7 @@
   --brand-primary: oklch(0.4662 0.1341 267.6);
   --brand-secondary: oklch(0.3012 0.1062 280.8);
   --brand-tertiary: oklch(0.3347 0.0889 267.14);
+  --brand-barn-red: oklch(0.43 0.125 28);
   --brand-accent-1: oklch(0.5672 0.1111 267.72);
   --brand-accent-2: oklch(0.2513 0.0987 280.61);
   --brand-cloud: oklch(0.9177 0.0134 262.38);
@@ -38,6 +39,7 @@
   --color-brand-primary: var(--brand-primary);
   --color-brand-secondary: var(--brand-secondary);
   --color-brand-tertiary: var(--brand-tertiary);
+  --color-brand-barn-red: var(--brand-barn-red);
   --color-brand-accent-1: var(--brand-accent-1);
   --color-brand-accent-2: var(--brand-accent-2);
   --color-brand-cloud: var(--brand-cloud);

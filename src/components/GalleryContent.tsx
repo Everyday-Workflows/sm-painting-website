@@ -125,7 +125,7 @@ const GalleryImageCard = ({
       </div>
       <figcaption className="space-y-3 px-5 py-4 sm:px-6">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="inline-flex rounded-full bg-brand-highlight/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-highlight sm:text-[11px]">
+          <span className="inline-flex rounded-full bg-brand-barn-red/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-barn-red dark:bg-brand-barn-red/10 dark:text-brand-barn-red sm:text-[11px]">
             {categoryLabel}
           </span>
           {label && (
@@ -200,7 +200,7 @@ export default function GalleryContent() {
           <section className="space-y-6">
             <ScrollReveal>
               <div className="max-w-2xl space-y-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-highlight sm:text-sm">
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-barn-red dark:text-brand-barn-red sm:text-sm">
                   {locale === "es" ? "Proyectos seleccionados" : "Featured transformations"}
                 </p>
                 <h2 className="text-2xl font-display text-brand-secondary dark:text-brand-accent-1 sm:text-3xl">
@@ -239,7 +239,7 @@ export default function GalleryContent() {
                             {group.description[locale]}
                           </p>
                         </div>
-                        <span className="inline-flex w-fit rounded-full bg-brand-highlight/12 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-highlight sm:text-xs">
+                        <span className="inline-flex w-fit rounded-full bg-brand-barn-red/12 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-barn-red dark:bg-brand-barn-red/12 dark:text-brand-barn-red sm:text-xs">
                           {locale === "es" ? "Antes y después" : "Before & after"}
                         </span>
                       </div>
