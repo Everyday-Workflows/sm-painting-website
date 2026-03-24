@@ -641,7 +641,7 @@ export default function HomeContent() {
 
         <div className="mx-auto mt-12 grid max-w-7xl gap-5 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
           {copy.process.steps.map((step, index) => (
-            <ScrollReveal key={step.title} delay={0.12 + index * 0.08}>
+            <ScrollReveal key={step.title} delay={0.12 + index * 0.08} className="h-full">
               <div className="h-full rounded-[1.8rem] border border-brand-secondary/10 bg-white p-6 shadow-[0_22px_50px_-40px_rgba(26,20,58,0.35)] dark:border-white/10 dark:bg-white/[0.03]">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-highlight">
                   0{index + 1}
@@ -696,12 +696,12 @@ export default function HomeContent() {
             </div>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-[minmax(0,1.18fr)_minmax(0,0.82fr)] md:auto-rows-[208px]">
+          <div className="grid gap-5 md:grid-cols-2">
             {copy.craft.features.map((feature, index) => {
               const Icon = feature.icon;
 
               return (
-                <ScrollReveal key={feature.title} delay={0.12 + index * 0.08}>
+                <ScrollReveal key={feature.title} delay={0.12 + index * 0.08} className="h-full">
                   <div className="group h-full rounded-[1.75rem] border border-brand-secondary/10 bg-white p-6 shadow-[0_22px_50px_-38px_rgba(26,20,58,0.5)] transition-transform duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.03]">
                     <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-highlight/12 text-brand-highlight dark:bg-brand-highlight/16 dark:text-brand-highlight">
                       <Icon className="h-5 w-5" />

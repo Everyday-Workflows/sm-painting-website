@@ -69,6 +69,7 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
           delay,
           ease: revealEase,
         }}
+        style={{ height: 'inherit' }}
       >
         {children}
       </motion.div>
