@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import ServicesContent from "@/components/ServicesContent";
 import { resolvePublicSiteUrl } from "@/lib/siteUrl";
 
+const SITE_URL = resolvePublicSiteUrl();
+
 export const metadata: Metadata = {
   title: "Painting Services | Interior, Exterior & Commercial - Tampa & St. Petersburg",
   description: "Interior, exterior, commercial painting and cabinet refinishing in Tampa & St. Petersburg. Free estimates. We speak Spanish!",
@@ -13,6 +15,9 @@ export const metadata: Metadata = {
     "cabinet refinishing Tampa",
     "residential painting contractor",
   ],
+  alternates: {
+    canonical: `${SITE_URL}/services`,
+  },
   openGraph: {
     title: "Painting Services | S&H Painting",
     description: "Professional interior, exterior, and commercial painting services in Tampa and St. Petersburg.",
@@ -20,8 +25,6 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  const SITE_URL = resolvePublicSiteUrl();
-
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

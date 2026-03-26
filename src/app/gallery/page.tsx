@@ -3,6 +3,8 @@ import GalleryContent from "@/components/GalleryContent";
 import { PORTFOLIO_ITEMS } from "@/lib/siteAssets";
 import { resolvePublicSiteUrl } from "@/lib/siteUrl";
 
+const SITE_URL = resolvePublicSiteUrl();
+
 export const metadata: Metadata = {
   title: "Our Work | S&H Painting Portfolio - Tampa & St. Petersburg",
   description: "Browse completed residential and commercial painting projects by S&H Painting in Tampa and St. Petersburg. Before-and-after transformations.",
@@ -14,6 +16,9 @@ export const metadata: Metadata = {
     "residential painting examples",
     "commercial painting projects",
   ],
+  alternates: {
+    canonical: `${SITE_URL}/gallery`,
+  },
   openGraph: {
     title: "Our Work | S&H Painting Portfolio",
     description: "Explore our gallery of completed residential and commercial painting projects in Tampa and St. Petersburg.",
@@ -21,8 +26,6 @@ export const metadata: Metadata = {
 };
 
 export default function GalleryPage() {
-  const SITE_URL = resolvePublicSiteUrl();
-  
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

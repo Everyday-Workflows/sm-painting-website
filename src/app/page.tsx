@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import HomeContent from "@/components/HomeContent";
 import { resolvePublicSiteUrl } from "@/lib/siteUrl";
 
+const SITE_URL = resolvePublicSiteUrl();
+
 export const metadata: Metadata = {
   title: "S&H Painting | Tampa & St. Petersburg Residential & Commercial Painters",
   description: "Detail-first painting for homes, storefronts, and workspaces in Tampa & St. Petersburg. We speak Spanish! Free estimates available.",
@@ -15,6 +17,9 @@ export const metadata: Metadata = {
     "home painting near me Tampa",
     "affordable house painters St Petersburg",
   ],
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     title: "S&H Painting | Professional Painting Services in Tampa & St. Petersburg",
     description: "High-quality residential and commercial painting services. Detail-first painting for homes, storefronts, and workspaces.",
@@ -22,8 +27,6 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const SITE_URL = resolvePublicSiteUrl();
-  
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
